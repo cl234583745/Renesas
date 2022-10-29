@@ -61,6 +61,7 @@ jlink/swd替换jlink-ob
 ![arm](./images/arm.jpg)
 #### 低端MCU带有CAN通讯
 #### 外设电容触摸单元（CTSU）瑞萨特色
+![arm](./images/nvm3.jpg)
 ![arm](./images/ctsu.jpg)
 ![arm](./1.1_CAPACITIVE%20TOUCH%20-01-2022%20V1.0%20.pdf)
 #### 外设数据运算电路(DOC)
