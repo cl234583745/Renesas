@@ -31,10 +31,10 @@ jlink/swd替换jlink-ob
 
 ##### 4种方式
 
-| 集成开发环境<br>IDE | [e2studio:<br>2022-07](https://www2.renesas.cn/cn/zh/software-tool/e-studio) | [fsp_v4_0_0_e2s](https://www2.renesas.cn/cn/zh/software-tool/flexible-software-package-fsp#overview) | MDK:<br>5.31 | IAR:<br>8.50.6 |
+| 集成开发环境<br>IDE | [e2studio](https://www2.renesas.cn/cn/zh/software-tool/e-studio) | [fsp_v4_0_0_e2s](https://www2.renesas.cn/cn/zh/software-tool/flexible-software-package-fsp#overview) | MDK:<br>5.31 | IAR:<br>8.50.6 |
 |:-:|:-:|:-:|:-:|:-:|
-| **软件包** |FPS:<br>4.0.0 | [FPS:<br>4.0.0](https://github.com/renesas/fsp/releases) | [RA Smart Configurator(RASC):2022-07](https://github.com/renesas/fsp/releases) | RASC:<br>2022-07 |
-| **编译工具链<br>Toolchain** |GCC Compiler:<br>10.3-2021.10|GCC Compiler<br>10.3-2021.10|ARM Compiler:<br>6.18|IAR Compiler: <br>9.20.2|
+| **软件包** |FPS | [FPS](https://github.com/renesas/fsp/releases) | [RA Smart Configurator(RASC)<br>fsp_v4_1_0_e2s](https://github.com/renesas/fsp/releases) | RASC |
+| **编译工具链<br>Toolchain** |GCC Compiler|GCC Compiler|ARM Compiler|IAR Compiler|
 | **IDE特点** |支持多种RenesasMCU<br>安装中下载FPS和Toolchain等等|RA系列一键安装<br>包括了FPS和Toolchain| RASC嵌入MDK<br>FPS和Toolchain | RASC嵌入IAR<br>FPS和Toolchain |
 |**[J-link烧写软件和硬件](https://www.segger.com/downloads/jlink/)**|SEGGER J-Link: <br>7.68b|SEGGER J-Link: <br>7.68b|SEGGER J-Link: <br>7.68b|SEGGER J-Link: <br>7.68b|
 |**[Renesas烧写软件](https://www2.renesas.cn/us/zh/software-tool/renesas-flash-programmer-programming-gui#overview)**|Renesas Flash Programme（RFP）|RFP|RFP|RFP|
@@ -51,7 +51,7 @@ jlink/swd替换jlink-ob
 <img src="./images/Renesas RA.jpg" width=800 height=500 />
 
 #### Renesas MCU&MPU
-<img src="./images/Renesas MCU MPU.jpg" width=800 height=500 />
+<img src="./images/Renesas MCU MPU.jpg" width=800 height=700 />
 
 
 ## 四、为什么选择RA2L1
@@ -62,8 +62,9 @@ jlink/swd替换jlink-ob
 #### 低端MCU带有CAN通讯
 #### 外设电容触摸单元（CTSU）瑞萨特色
 ![arm](./images/nvm3.jpg)
-![arm](./images/ctsu.jpg)
-![arm](./1.1_CAPACITIVE%20TOUCH%20-01-2022%20V1.0%20.pdf)
+<img src="./images/ctsu.jpg" width=800 height=500 />
+
+[PDF：INTRODUCTION OF  RENESAS CAPACITIVE TOUCH IP](./1.1_CAPACITIVE%20TOUCH%20-01-2022%20V1.0%20.pdf)
 #### 外设数据运算电路(DOC)
 https://www2.renesas.cn/cn/zh/blogs/what-s-doc-smart-way-manage-smart-peripherals
 
