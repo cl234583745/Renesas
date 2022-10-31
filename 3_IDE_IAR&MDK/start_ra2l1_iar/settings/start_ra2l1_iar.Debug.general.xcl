@@ -1,0 +1,19 @@
+"D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\bin\armPROC.dll" 
+
+"D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\bin\armJLINK.dll" 
+
+"C:\Users\jerry\RASmartConfigurator\workspace\start_ra2l1_iar\Debug\Exe\start_ra2l1_iar.out" 
+
+--plugin="D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\bin\armbat.dll" 
+
+--device_macro="D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\config\debugger\Renesas\R7FA_AUTH.dmac" 
+
+--device_macro="D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\config\debugger\Renesas\R7FA2_CLOCKv2.dmac" 
+
+--device_macro="D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\config\debugger\Renesas\R7FA2L1.dmac" 
+
+--flash_loader="D:\Program Files (x86)\IAR Systems\IAR Embedded Workbench for Arm version 9.10.2\arm\config\flashloader\Renesas\FlashR7FA2L1AB.board" 
+
+
+
+
