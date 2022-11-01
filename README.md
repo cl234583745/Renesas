@@ -11,4 +11,6 @@ RA2L1官方文档和例程、软件打包下载
 bilibili：多卡酱fllpll
 https://space.bilibili.com/417060922/video
 
-GitHub、bilibili、公众号：多卡酱fllpll
+公众号：多卡酱fllpll
+
+Qqun：33718742
