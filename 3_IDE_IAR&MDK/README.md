@@ -12,7 +12,6 @@
 ## 三、使用RASC创建一个工程，发现问题？
 然后分别用IAR和KEIL打开工程，然后点亮LED和打印HelloWorld，验证软硬件是否正常。
 
-使用上一节的代码会发现问题：
 ```
 /**
  * 1.uart0 callback:g_uart0CB
@@ -73,6 +72,10 @@ void hal_entry (void)
     printf("PI=%f\n", PI);
 #endif//PRINTF
 ```
+
+使用上一节的代码会发现问题：
+1、不同编译器的适配
+2、Semihost模式
 
 **我们优化代码如下，使其能在3个平台都可以使用。
 问题：在keil使用使用Semihost模式吗？如何使用？**
