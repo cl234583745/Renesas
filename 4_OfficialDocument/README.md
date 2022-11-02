@@ -1,10 +1,10 @@
-# 瑞萨RA&e2studio快速上手视频笔记 四、瑞萨官方资料的介绍
+# 瑞萨RA&e2studio快速上手视频笔记 四、瑞萨RA2L1资料来源和jlink rtt打印
 [toc]
 
 ## 一、官网RA2L1：
 https://www2.renesas.cn/cn/en/products/microcontrollers-microprocessors/ra-cortex-m-mcus/ra2l1-48mhz-arm-cortex-m23-ultra-low-power-general-purpose-microcontroller
-Datasheet
-##### 1.1 User's Manual
+
+##### 1.1 Datasheet&User's Manual
 ##### 1.2 Documentation
 ##### 1.3 Software & Tools
 ##### 1.4 Sample Code
