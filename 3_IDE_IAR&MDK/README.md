@@ -12,32 +12,19 @@
 ## 三、使用RASC创建一个工程，发现问题？
 然后分别用IAR和KEIL打开工程，然后点亮LED和打印HelloWorld，验证软硬件是否正常。
 
-使用上一节的代码会发现问题：
 ```
-#ifndef PRINTF
-#define PRINTF
-#endif
-#ifdef PRINTF
-#include <stdio.h>
 /**
- * notice: g_uart0CB; g_uart0_ctrl
- *
- * e2s:
  * 1.uart0 callback:g_uart0CB
  * 2.FSP-BSP-heap size:0x400
  * 3.-u _printf_float
  * 4.other link void
- *
- * iar:
- * 1.uart0 callback:g_uart0CB
- * 2.FSP-BSP-heap size:0x400
- * 3.libray=full
- * 4.Semihosted=None
- *
- * keil:
- * 1.uart0 callback:g_uart0CB
- * 2.FSP-BSP-heap size:0x400
  */
+#ifndef PRINTF
+#define PRINTF
+#endif
+
+#ifdef PRINTF
+
 volatile bool uart_send_complete_flag = false;
 void g_uart0CB (uart_callback_args_t * p_args)
 {
@@ -46,30 +33,28 @@ void g_uart0CB (uart_callback_args_t * p_args)
         uart_send_complete_flag = true;
     }
 }
-#if defined __GNUC__ && !defined __clang__
-int _write(int fd, char *pBuffer, int size); //??????
-int _write(int fd, char *pBuffer, int size)
-{
-   (void)fd;
-   fsp_err_t err = R_SCI_UART_Write(&g_uart0_ctrl, (uint8_t *)pBuffer, (uint32_t)size);
-   if(FSP_SUCCESS != err) __BKPT();
-   while(uart_send_complete_flag == false);
-   uart_send_complete_flag = false;
-
-   return size;
-}
+#ifdef __GNUC__
+    #define PUTCHAR_PROTOTYPE int __io_putchar(int ch)
 #else
-int fputc(int ch, FILE *f)
+    #define PUTCHAR_PROTOTYPE int fputc(int ch, FILE *f)
+#endif
+PUTCHAR_PROTOTYPE
 {
-   (void)f;
-   fsp_err_t err = R_SCI_UART_Write(&g_uart0_ctrl, (uint8_t *)&ch, 1);
-   if(FSP_SUCCESS != err) __asm("bkpt 0");
-   while(uart_send_complete_flag == false);
-   uart_send_complete_flag = false;
-
-   return ch;
+    uint8_t err = R_SCI_UART_Write(&g_uart0_ctrl, (uint8_t *)&ch, 1);
+    if(FSP_SUCCESS != err) __BKPT();
+    while(uart_send_complete_flag == false){}
+    uart_send_complete_flag = false;
+    return ch;
 }
-#endif//#if defined __GNUC__ && !defined __clang__
+int _write(int fd,char *pBuffer,int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        __io_putchar(*pBuffer++);
+    }
+    return size;
+}
+
 #endif//PRINTF
 
 ````
@@ -87,6 +72,10 @@ void hal_entry (void)
     printf("PI=%f\n", PI);
 #endif//PRINTF
 ```
+
+使用上一节的代码会发现问题：
+1、不同编译器的适配
+2、Semihost模式
 
 **我们优化代码如下，使其能在3个平台都可以使用。
 问题：在keil使用使用Semihost模式吗？如何使用？**
