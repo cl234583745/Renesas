@@ -1,4 +1,4 @@
-# 瑞萨RA&e2studio快速上手视频笔记 六、读取芯片温度(TSN&ADC)
+# 瑞萨RA&e2studio快速上手视频笔记 六、瑞萨RA2L1读取芯片温度(TSN&ADC)
 [toc]
 ## 一、直接上封装API
 #### 1.1 R_ADC_Read_Chip_Temp
