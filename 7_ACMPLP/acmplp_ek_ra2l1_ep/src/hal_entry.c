@@ -80,7 +80,8 @@ void hal_entry(void)
         deinit_acmplp();
         APP_ERR_TRAP(error);
     }
-
+    
+#if 1
     fsp_err_t err = FSP_SUCCESS;
     /* Open/Initialize ADC module */
     err = R_ADC_Open (&g_adc0_ctrl, &g_adc0_cfg);
@@ -92,7 +93,6 @@ void hal_entry(void)
         APP_PRINT("ERR[%d]%d %d",err,__FUNCTION__,__LINE__);;
     }
 
-#if 1
     /* Configures the ADC scan parameters */
     err = R_ADC_ScanCfg (&g_adc0_ctrl, &g_adc0_channel_cfg);
 
