@@ -1,0 +1,418 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.6.8\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p,html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div{display:inline}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  300px/2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <h1 class="mume-header" id="%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%8D%B7%E5%87%BA%E4%B8%80%E4%B8%AA%E6%96%B0%E9%A1%B9%E7%9B%AE%E4%B9%8B%E7%91%9E%E8%90%A8ra6m5">&#x4ECE;0&#x5F00;&#x59CB;&#x5377;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;&#x4E4B;&#x745E;&#x8428;RA6M5</h1>
+
+
+<div class="md-toc">
+<details style="padding:0;;padding-left:0px;" open>
+        <summary class="md-toc-link-wrapper">
+          <a href="#&#x4ECE;0&#x5F00;&#x59CB;&#x5377;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;&#x4E4B;&#x745E;&#x8428;ra6m5" class="md-toc-link"><p>&#x4ECE;0&#x5F00;&#x59CB;&#x5377;&#x51FA;&#x4E00;&#x4E2A;&#x65B0;&#x9879;&#x76EE;&#x4E4B;&#x745E;&#x8428;RA6M5</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x4E00;-&#x8303;&#x56F4;" class="md-toc-link">
+            <p>&#x4E00;&#x3001;&#x8303;&#x56F4;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x4E8C;-&#x76EE;&#x7684;" class="md-toc-link">
+            <p>&#x4E8C;&#x3001;&#x76EE;&#x7684;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x4E09;-&#x745E;&#x8428;ra6m5&#x7B80;&#x4ECB;" class="md-toc-link">
+            <p>&#x4E09;&#x3001;&#x745E;&#x8428;RA6M5&#x7B80;&#x4ECB;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x56DB;-&#x745E;&#x8428;ra6m5&#x5E94;&#x7528;" class="md-toc-link">
+            <p>&#x56DB;&#x3001;&#x745E;&#x8428;RA6M5&#x5E94;&#x7528;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x4E94;-&#x5206;&#x4EAB;&#x5185;&#x5BB9;" class="md-toc-link">
+            <p>&#x4E94;&#x3001;&#x5206;&#x4EAB;&#x5185;&#x5BB9;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x516D;-&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;" class="md-toc-link">
+            <p>&#x516D;&#x3001;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#&#x4E03;-&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;" class="md-toc-link">
+            <p>&#x4E03;&#x3001;&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+</div>
+<h2 class="mume-header" id="%E4%B8%80-%E8%8C%83%E5%9B%B4">&#x4E00;&#x3001;&#x8303;&#x56F4;</h2>
+
+<h5 class="mume-header" id="11-%E5%88%9D%E6%AC%A1%E5%9C%A8%E9%A1%B9%E7%9B%AE%E4%B8%AD%E4%BD%BF%E7%94%A8%E7%91%9E%E8%90%A8ra">1.1 &#x521D;&#x6B21;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x745E;&#x8428;RA</h5>
+
+<h5 class="mume-header" id="12-%E7%94%A8%E8%BF%87st%E7%AD%89%E4%BD%86%E4%B8%8D%E7%86%9F%E6%82%89%E7%91%9E%E8%90%A8%E7%8E%AF%E5%A2%83">1.2 &#x7528;&#x8FC7;ST&#x7B49;&#x4F46;&#x4E0D;&#x719F;&#x6089;&#x745E;&#x8428;&#x73AF;&#x5883;</h5>
+
+<h5 class="mume-header" id="13-%E5%AF%B9%E5%B5%8C%E5%85%A5%E5%BC%8F%E5%BC%80%E5%8F%91%E6%84%9F%E5%85%B4%E8%B6%A3">1.3 &#x5BF9;&#x5D4C;&#x5165;&#x5F0F;&#x5F00;&#x53D1;&#x611F;&#x5174;&#x8DA3;</h5>
+
+<h2 class="mume-header" id="%E4%BA%8C-%E7%9B%AE%E7%9A%84">&#x4E8C;&#x3001;&#x76EE;&#x7684;</h2>
+
+<p>&#x901A;&#x8FC7;boot+app&#x4E24;&#x4E2A;&#x5DE5;&#x7A0B;&#x6E90;&#x7801;&#x548C;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x7684;&#x5206;&#x4EAB;&#xFF0C;&#x4F7F;&#x5F97;&#x745E;&#x8428;RA6M5&#x5FEB;&#x901F;&#x7528;&#x4E8E;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x3002;</p>
+<h2 class="mume-header" id="%E4%B8%89-%E7%91%9E%E8%90%A8ra6m5%E7%AE%80%E4%BB%8B">&#x4E09;&#x3001;&#x745E;&#x8428;RA6M5&#x7B80;&#x4ECB;</h2>
+
+<p><img src="./images/ra6m5-blockdiagram.png" alt><br>
+<img src="./images/RA.png" alt><br>
+<img src="./images/fsp-block-diagram_10.png" alt><br>
+<img src="./images/ek-ra6m5-board.png" alt></p>
+<h2 class="mume-header" id="%E5%9B%9B-%E7%91%9E%E8%90%A8ra6m5%E5%BA%94%E7%94%A8">&#x56DB;&#x3001;&#x745E;&#x8428;RA6M5&#x5E94;&#x7528;</h2>
+
+<h5 class="mume-header" id="%E6%96%B0%E8%83%BD%E6%BA%90">&#x65B0;&#x80FD;&#x6E90;</h5>
+
+<h5 class="mume-header" id="%E5%85%85%E7%94%B5%E6%A1%A9">&#x5145;&#x7535;&#x6869;</h5>
+
+<h5 class="mume-header" id="bms">BMS</h5>
+
+<h5 class="mume-header" id="dtu-rtu">DTU RTU</h5>
+
+<p>&#x8702;&#x7A9D;&#x4E91;&#x8FDE;&#x63A5;&#x7CFB;&#x7EDF;<br>
+&#x4EA4;&#x6D41;&#x53D8;&#x9891;&#x5668;/GP &#x9006;&#x53D8;&#x5668;&#x89E3;&#x51B3;&#x65B9;&#x6848;<br>
+&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x548C;&#x667A;&#x80FD;&#x63A7;&#x5236;<br>
+&#x57FA;&#x4E8E; ROS &#x7684;&#x673A;&#x5668;&#x4EBA;&#x672C;&#x4F53;&#x63A7;&#x5236;&#x5668;<br>
+micro-ROS Solutions<br>
+Ubiquitous AI Edge Trust for RA MCUs<br>
+&#x5DE5;&#x4E1A;&#x7528;&#x5D4C;&#x5165;&#x5F0F;&#x53EF;&#x7F16;&#x7A0B;&#x903B;&#x8F91;&#x63A7;&#x5236;&#x5668; (PLC)<br>
+&#x65E0;&#x7EBF;&#x591A;&#x901A;&#x9053;&#x9694;&#x79BB;&#x6570;&#x636E;&#x8BB0;&#x5F55;&#x5668;<br>
+ABUP UA&#x5DEE;&#x5206;&#x5347;&#x7EA7;&#x89E3;&#x51B3;&#x65B9;&#x6848;<br>
+Remote Predictive Maintenance Solution<br>
+&#x8FDC;&#x7A0B;&#x9884;&#x6D4B;&#x6027;&#x7EF4;&#x62A4;<br>
+&#x6709;&#x7EBF;&#x4EE5;&#x592A;&#x7F51;&#x5E94;&#x7528;<br>
+&#x9700;&#x8981;&#x589E;&#x5F3A;&#x5B89;&#x5168;&#x529F;&#x80FD;&#x7684;&#x4EA7;&#x54C1;&#xFF08;&#x706B;&#x707E;&#x63A2;&#x6D4B;&#x3001;&#x9632;&#x76D7;&#x68C0;&#x6D4B;&#x3001;&#x9762;&#x677F;&#x63A7;&#x5236;&#xFF09;<br>
+&#x8868;&#x8BA1;&#x7C7B;&#x4EA7;&#x54C1;&#xFF08;&#x7535;&#x529B;&#xFF0C;&#x81EA;&#x52A8;&#x6284;&#x8868;&#xFF09;<br>
+&#x5DE5;&#x4E1A;&#x5E94;&#x7528;&#xFF08;&#x673A;&#x5668;&#x4EBA;&#x3001;&#x5F00;&#x95E8;&#x5668;&#x3001;&#x7F1D;&#x7EAB;&#x673A;&#x3001;&#x81EA;&#x52A8;&#x552E;&#x8D27;&#x673A;&#x3001;UPS&#xFF09;<br>
+HVAC&#xFF08;&#x4F9B;&#x6696;&#x3001;&#x7A7A;&#x8C03;&#x3001;&#x9505;&#x7089;&#x63A7;&#x5236;&#xFF09;</p>
+<h2 class="mume-header" id="%E4%BA%94-%E5%88%86%E4%BA%AB%E5%86%85%E5%AE%B9">&#x4E94;&#x3001;&#x5206;&#x4EAB;&#x5185;&#x5BB9;</h2>
+
+<h5 class="mume-header" id="51-%E5%B7%A5%E7%A8%8B%E6%A1%86%E5%9B%BE">5.1 &#x5DE5;&#x7A0B;&#x6846;&#x56FE;</h5>
+
+<p><img src="./images/kuangtu.png" alt></p>
+<h5 class="mume-header" id="51-flash%E5%88%86%E5%8C%BA">5.1 flash&#x5206;&#x533A;</h5>
+
+<p><img src="./images/flash%20fenqv.png" alt></p>
+<h5 class="mume-header" id="51-%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90">5.1 &#x8F6F;&#x4EF6;&#x8D44;&#x6E90;</h5>
+
+<p><img src="./images/gongchen%20ruanjian.png" alt></p>
+<h2 class="mume-header" id="%E5%85%AD-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1">&#x516D;&#x3001;&#x786C;&#x4EF6;&#x8BBE;&#x8BA1;</h2>
+
+<h4 class="mume-header" id="61-%E8%B5%84%E6%96%99%E6%9D%A5%E6%BA%90">6.1 &#x8D44;&#x6599;&#x6765;&#x6E90;</h4>
+
+<p><img src="./images/doc.png" alt></p>
+<h5 class="mume-header" id="611-%E5%AE%98%E6%96%B9ra6-%E5%BF%AB%E9%80%9F%E8%AE%BE%E8%AE%A1%E6%8C%87%E5%8D%97-datasheet-users-manual-ek-designpackage">6.1.1 &#x5B98;&#x65B9;&#xFF1A;RA6 &#x5FEB;&#x901F;&#x8BBE;&#x8BA1;&#x6307;&#x5357;&#x3001;datasheet&#x3001;User&#x2019;s Manual&#x3001;ek-designpackage</h5>
+
+<p><img src="./images/ek.png" alt></p>
+<h5 class="mume-header" id="613-%E7%AC%AC%E4%B8%89%E6%96%B9%E9%87%8E%E7%81%AB%E5%90%AF%E6%98%8E6m5%E5%BC%80%E5%8F%91%E6%9D%BF-httpsdocembedfirecommcurenesasfsp_razhlatestindexhtml">6.1.3 &#x7B2C;&#x4E09;&#x65B9;&#xFF1A;&#x91CE;&#x706B;&#x542F;&#x660E;6M5&#x5F00;&#x53D1;&#x677F; <a href="https://doc.embedfire.com/mcu/renesas/fsp_ra/zh/latest/index.html">https://doc.embedfire.com/mcu/renesas/fsp_ra/zh/latest/index.html</a></h5>
+
+<p><img src="./images/fire.png" alt><br>
+<img src="./images/firedoc.png" alt></p>
+<h5 class="mume-header" id="614-%E5%98%89%E7%AB%8B%E5%88%9B-b%E7%AB%99%E7%AD%89">6.1.4 &#x5609;&#x7ACB;&#x521B;&#x3001;b&#x7AD9;&#x7B49;</h5>
+
+<p><img src="./images/lcsc.png" alt></p>
+<h4 class="mume-header" id="62-%E5%90%84%E9%83%A8%E5%88%86%E8%AE%BE%E8%AE%A1">6.2 &#x5404;&#x90E8;&#x5206;&#x8BBE;&#x8BA1;</h4>
+
+<h5 class="mume-header" id="621-%E7%94%B5%E6%BA%90">6.2.1 &#x7535;&#x6E90;</h5>
+
+<pre class="language-text">VSS VSS **VCL** AVCC AVSS VREF VBAT
+</pre>
+<p><img src="./images/power.png" alt></p>
+<h5 class="mume-header" id="622-%E6%97%B6%E9%92%9F">6.2.2 &#x65F6;&#x949F;</h5>
+
+<pre class="language-text">24M 32.768K(**&#x6CE8;&#x610F;&#x672A;&#x4F7F;&#x7528;**) 25M 
+</pre>
+<p><img src="./images/clock.png" alt></p>
+<h5 class="mume-header" id="623-%E8%B0%83%E8%AF%95%E6%8E%A5%E5%8F%A3">6.2.3 &#x8C03;&#x8BD5;&#x63A5;&#x53E3;</h5>
+
+<pre class="language-text">&#x5EFA;&#x8BAE;&#x9884;&#x7559;JTAG&#xFF0C;&#x975E;&#x5355;SWD&#xFF0C;&#x4E0A;&#x62C9;
+</pre>
+<p><img src="./images/debug.png" alt></p>
+<h5 class="mume-header" id="624--%E5%A4%8D%E4%BD%8D">6.2.4  &#x590D;&#x4F4D;</h5>
+
+<p><img src="./images/M33%20reset.png" alt></p>
+<h5 class="mume-header" id="625--%E4%B8%B2%E5%8F%A3-can-%E4%BB%A5%E5%A4%AA%E7%BD%91">6.2.5  &#x4E32;&#x53E3;&#x3001;CAN&#x3001;&#x4EE5;&#x592A;&#x7F51;</h5>
+
+<pre class="language-text">&#x4E0A;&#x62C9;
+</pre>
+<h5 class="mume-header" id="626--%E6%9C%AA%E4%BD%BF%E7%94%A8%E5%BC%95%E8%84%9A">6.2.6  &#x672A;&#x4F7F;&#x7528;&#x5F15;&#x811A;</h5>
+
+<p><img src="./images/unused%20pins.png" alt></p>
+<h2 class="mume-header" id="%E4%B8%83-%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1">&#x4E03;&#x3001;&#x8F6F;&#x4EF6;&#x8BBE;&#x8BA1;</h2>
+
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>

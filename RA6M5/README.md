@@ -44,3 +44,33 @@ HVAC（供暖、空调、锅炉控制）
 ##### 5.1 软件资源
 ![](./images/gongchen%20ruanjian.png)
 
+## 六、硬件设计
+
+#### 6.1 资料来源
+![](./images/doc.png)
+##### 6.1.1 官方：RA6 快速设计指南、datasheet、User’s Manual、ek-designpackage
+![](./images/ek.png)
+##### 6.1.3 第三方：野火启明6M5开发板 https://doc.embedfire.com/mcu/renesas/fsp_ra/zh/latest/index.html
+![](./images/fire.png)
+![](./images/firedoc.png)
+##### 6.1.4 嘉立创、b站等
+![](./images/lcsc.png)
+
+#### 6.2 各部分设计
+##### 6.2.1 电源
+    VSS VSS **VCL** AVCC AVSS VREF VBAT
+![](./images/power.png)   
+##### 6.2.2 时钟
+    24M 32.768K(**注意未使用**) 25M 
+![](./images/clock.png)     
+##### 6.2.3 调试接口
+    建议预留JTAG，非单SWD，上拉
+![](./images/debug.png)     
+##### 6.2.4  复位
+![](./images/M33%20reset.png)
+##### 6.2.5  串口、CAN、以太网
+    上拉
+##### 6.2.6  未使用引脚
+![](./images/unused%20pins.png)
+
+## 七、软件设计
