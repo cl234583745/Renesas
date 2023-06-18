@@ -139,7 +139,6 @@ const struct lfs_config g_rm_littlefs0_lfs_cfg =
     .lookahead_buffer = (void *) g_rm_littlefs0_lookahead,
 
 #endif
-
         };
 
 const rm_littlefs_flash_cfg_t g_rm_littlefs0_ext_cfg =

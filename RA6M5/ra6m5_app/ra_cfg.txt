@@ -312,7 +312,7 @@ FSP Configuration
   Module "UART (r_sci_uart)"
     Parameter Checking: Default (BSP)
     FIFO Support: Disable
-    DTC Support: Disable
+    DTC Support: Enable
     Flow Control Support: Disable
     RS-485 Support: Disable
     
@@ -509,7 +509,7 @@ FSP Configuration
       General: Clear after read: On
       General: Mode: Single Scan
       General: Double-trigger: Disabled
-      Input: Channel Scan Mask (channel availability varies by MCU): 
+      Input: Channel Scan Mask (channel availability varies by MCU): Temperature Sensor
       Input: Group B Scan Mask (channel availability varies by MCU): 
       Interrupts: Normal/Group A Trigger: Software
       Interrupts: Group B Trigger: Disabled

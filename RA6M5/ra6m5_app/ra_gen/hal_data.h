@@ -74,7 +74,7 @@ void NULL(adc_callback_args_t *p_args);
 #endif
 
 #ifndef NULL
-#define ADC_DMAC_CHANNELS_PER_BLOCK_NULL  0
+#define ADC_DMAC_CHANNELS_PER_BLOCK_NULL  1
 #endif
 void hal_entry(void);
 void g_hal_init(void);

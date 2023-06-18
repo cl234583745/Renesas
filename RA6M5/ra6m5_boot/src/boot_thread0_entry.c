@@ -110,16 +110,6 @@ int fputc(int ch, FILE *f)
 }
 #endif//#if defined __GNUC__ && !defined __clang__
 #endif//PRINTF
-
-void elogUart(const char *pBuffer, uint32_t size);
-void elogUart(const char *pBuffer, uint32_t size)
-{
-    fsp_err_t err = R_SCI_UART_Write(&g_uart9_ctrl, (uint8_t *)pBuffer, (uint32_t)size);
-    if(FSP_SUCCESS != err) __BKPT();
-
-    while(uart_send_complete_flag == false);
-    uart_send_complete_flag = false;
-}
 /////////////////////////////////////////////
 
 /*******************************************************************************************************************//**

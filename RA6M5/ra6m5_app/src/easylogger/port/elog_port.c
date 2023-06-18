@@ -37,9 +37,9 @@
 
 extern void elogUart(const char *pBuffer, uint32_t size);
 
+#ifdef ELOG_ASYNC_OUTPUT_ENABLE
 static void elog_async_thread_entry(void *pvParameters);
 
-#ifdef ELOG_ASYNC_OUTPUT_ENABLE
 static elog_async_init_result = 0;
 SemaphoreHandle_t xelog_lock_Handle = NULL;
 StaticSemaphore_t xelog_lock_SemaphoreBuffer;
@@ -149,7 +149,9 @@ void elog_port_output_lock(void) {
 //        xSemaphoreTakeFromISR(xelog_lock_Handle, &yield);
 //        portYIELD_FROM_ISR (yield);
 //    }
+#ifdef ELOG_ASYNC_OUTPUT_ENABLE
     xSemaphoreTake( xelog_lock_Handle, portMAX_DELAY );
+#endif
 }
 
 /**
@@ -169,7 +171,9 @@ void elog_port_output_unlock(void) {
 //        xSemaphoreGiveFromISR(xelog_lock_Handle, &yield);
 //        portYIELD_FROM_ISR (yield);
 //    }
+#ifdef ELOG_ASYNC_OUTPUT_ENABLE
     xSemaphoreGive( xelog_lock_Handle );
+#endif
 }
 
 /**
@@ -230,9 +234,11 @@ void elog_async_output_notice(void) {
 //        xSemaphoreGiveFromISR(xelog_lock_Handle, &yield);
 //        portYIELD_FROM_ISR (yield);
 //    }
+#ifdef ELOG_ASYNC_OUTPUT_ENABLE
     xSemaphoreGive( xelog_async_Handle );
+#endif
 }
-
+#ifdef ELOG_ASYNC_OUTPUT_ENABLE
 static void elog_async_thread_entry(void *pvParameters)
 {
     FSP_PARAMETER_NOT_USED(pvParameters);
@@ -272,3 +278,4 @@ static void elog_async_thread_entry(void *pvParameters)
     fail:
     vTaskDelete (NULL);
 }
+#endif
