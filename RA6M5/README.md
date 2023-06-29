@@ -612,7 +612,132 @@ I/TCP_TAG [2386481] tcp_thread1_thread
 I/UART_TAG [2386487] uart_thread2_thread
 I/TCP_TAG [2391484] tcp_thread1_thread
 I/UART_TAG [2391490] uart_thread2_thread
-``
+```
+
+
+## 八、生成库和使用库
+### 8.1 方法
+    e2s帮助功能:生成库+创建CDT
+![](./images/helplib.png)
+![](./images/creatlib.png)
+![](./images/uselib.png)
+
+### 8.2 过程
+    生成库
+![](./images/clickstaticlib.png)
+![](./images/setstaticlib.png)
+![](./images/libafile.png)
+
+    创建CDT工程
+![](./images/creatcdc.png)
+![](./images/creatcdc2.png)
+![](./images/uselibprj.png)
+
+    链接库
+
+### 8.3 测试结果
+```
+#include "tcp_thread1.h"
+
+#define LOG_TAG          "TCP_TAG"
+#define LOG_LVL          ELOG_LVL_VERBOSE
+#include "elog.h"
+
+/* Tcp Thread entry function */
+/* pvParameters contains TaskHandle_t */
+void tcp_thread1_entry(void *pvParameters)
+{
+    FSP_PARAMETER_NOT_USED (pvParameters);
+    log_i("tcp_thread1_entry");
+    /* TODO: add your own code here */
+    while (1)
+    {
+        log_i("tcp_thread1_thread in app test");
+        vTaskDelay (5000);
+    }
+}
+```
+```
+#include "uart_thread2.h"
+
+#define LOG_TAG          "UART_TAG"
+#define LOG_LVL          ELOG_LVL_VERBOSE
+#include "elog.h"
+
+/* Uart Thread entry function */
+/* pvParameters contains TaskHandle_t */
+void uart_thread2_entry(void *pvParameters)
+{
+    FSP_PARAMETER_NOT_USED (pvParameters);
+    log_i("uart_thread2_entry");
+    /* TODO: add your own code here */
+    while (1)
+    {
+        log_i("uart_thread2_thread in app test");
+        vTaskDelay (5000);
+    }
+}
+```
+    链接选项修改
+```
+--specs=rdimon.specs -Wl,--whole-archive -lra6m5_app -Wl,--no-whole-archive
+-Wl,--whole-archive -lra6m5_app -Wl,--no-whole-archive
+```
+
+```
+app log uart init successed!!!
+
+printf redirect successed!!!
+date:Jun 29 2023
+time:18:18:36
+file:../src/start_thread0_entry.c
+func:start_thread0_entry,line:438
+hello world!
+fsp:Built with Renesas Advanced Flexible Software Package version 4.4.0bspVCC=3300 MV,bspStack:8192 Byte,bspHeap=8192 ByteuniqueID:2D033F8E5736363299DA4E364E4B292DMAC:001122334455g_rm_littlefs0.p_api->open successed!!!
+g_log_lfs_file.id ID:0
+ID:1
+boot_count2: 4
+txt2: 4
+
+I/elog    [43] EasyLogger V2.2.99 is initialize success.
+I/TCP_TAG [48] tcp_thread1_entry
+I/TCP_TAG [51] tcp_thread1_thread in app test
+I/UART_TAG [55] uart_thread2_entry
+I/UART_TAG [58] uart_thread2_thread in app test
+A/INIT_TAG [1048  ] (../src/start_thread0_entry.c:539 start_thread0_entry)Hello EasyLogger!
+E/INIT_TAG [1056] Hello EasyLogger!
+W/INIT_TAG [1059] Hello EasyLogger!
+I/INIT_TAG [1062] Hello EasyLogger!
+D/INIT_TAG [1065] (../src/start_thread0_entry.c 547)Hello EasyLogger!
+V/INIT_TAG [1071] (../src/start_thread0_entry.c 549)Hello EasyLogger!
+D/HEX test: 0000-000F: 00 01 02 03 04 05 06 07  08 09 0A 0B 0C 0D 0E 0F    ................
+D/HEX test: 0010-001F: 10 11 12 13 14 15 16 17  18 19 1A 1B 1C 1D 1E 1F    ................
+D/HEX test: 0020-002F: 20 21 22 23 24 25 26 27  28 29 2A 2B 2C 2D 2E 2F     !"#$%&'()*+,-./
+D/HEX test: 0030-003F: 30 31 32 33 34 35 36 37  38 39 3A 3B 3C 3D 3E 3F    0123456789:;<=>?
+D/HEX test: 0040-004F: 40 41 42 43 44 45 46 47  48 49 4A 4B 4C 4D 4E 4F    @ABCDEFGHIJKLMNO
+D/HEX test: 0050-005F: 50 51 52 53 54 55 56 57  58 59 5A 5B 5C 5D 5E 5F    PQRSTUVWXYZ[\]^_
+D/HEX test: 0060-006F: 60 61 62 63 64 65 66 67  68 69 6A 6B 6C 6D 6E 6F    `abcdefghijklmno
+D/HEX test: 0070-007F: 70 71 72 73 74 75 76 77  78 79 7A 7B 7C 7D 7E 7F    pqrstuvwxyz{|}~.
+D/HEX test: 0080-008F: 80 81 82 83 84 85 86 87  88 89 8A 8B 8C 8D 8E 8F    ................
+D/HEX test: 0090-009F: 90 91 92 93 94 95 96 97  98 99 9A 9B 9C 9D 9E 9F    ................
+D/HEX test: 00A0-00AF: A0 A1 A2 A3 A4 A5 A6 A7  A8 A9 AA AB AC AD AE AF    ................
+D/HEX test: 00B0-00BF: B0 B1 B2 B3 B4 B5 B6 B7  B8 B9 BA BB BC BD BE BF    ................
+D/HEX test: 00C0-00CF: C0 C1 C2 C3 C4 C5 C6 C7  C8 C9 CA CB CC CD CE CF    ................
+D/HEX test: 00D0-00DF: D0 D1 D2 D3 D4 D5 D6 D7  D8 D9 DA DB DC DD DE DF    ................
+D/HEX test: 00E0-00EF: E0 E1 E2 E3 E4 E5 E6 E7  E8 E9 EA EB EC ED EE EF    ................
+D/HEX test: 00F0-00FF: F0 F1 F2 F3 F4 F5 F6 F7  F8 F9 FA FB FC FD FE FF    ................
+D/INIT_TAG [1209] (../src/start_thread0_entry.c 560)
+TEXT END!
+
+I/INIT_TAG [1214] shell: welcome to shell ra6m5
+I/TCP_TAG [5055] tcp_thread1_thread in app test
+I/UART_TAG [5062] uart_thread2_thread in app test
+I/TCP_TAG [10059] tcp_thread1_thread in app test
+I/UART_TAG [10066] uart_thread2_thread in app test
+I/TCP_TAG [15063] tcp_thread1_thread in app test
+I/UART_TAG [15070] uart_thread2_thread in app test
+```
+
 
 
 
