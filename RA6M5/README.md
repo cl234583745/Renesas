@@ -739,8 +739,141 @@ I/UART_TAG [15070] uart_thread2_thread in app test
 ```
 
 
+## 九、RA6M5“工厂生产流程”
+
+抛砖引玉。这里把工厂烧写固件、设置读保护、产测流程统称为“**工厂生产流程**”。主要介绍工厂烧写、产测流程的做法和注意事项。引出简介瑞萨DLM芯片生命周期管理、Arm® （CM33）的TrustZone® 。
+### 9.1 框图
+这是最常见MCU工厂烧录方式：
+
+    a、使用治具，通过segger jlink或瑞萨RFP Jlink/串口烧写bin/hex等固件文件
+    b、设置flash读保护（DLM切换状态），保护固件被读取破解
+    c、产测流程，确保pcba正常。常把上述软件嵌入到公司的系统软件中。
+
+**框图：**
+![](./images/factory%20test.png)
+
+### 9.2 瑞萨Renesas Flash Programmer（RFP）
+    正常模式：RFP可以读写RA6M5固件（同segger j-flash）
+    引导模式：RFP可以读写RA6M5固件、读写配置、DLM关联相关功能等等
+
+#### 9.2.1 RFP下载
+![](./images/rfp%20download.png)
+![](./images/rfp%20download1.png)
+![](./images/rfp%20gui.png)
+
+
+#### 9.2.2 相关文档
+1、[Renesas Flash Programmer V3.12](https://www.renesas.cn/cn/zh/document/mat/renesas-flash-programmer-v312-flash-memory-programming-software-users-manual?r=488871)
+2、[Renesas RA Family Standard Boot Firmware for the RA family MCUs Based on Arm® Cortex®-M33](https://www.renesas.cn/cn/zh/document/apn/standard-boot-firmware-ra-family-mcus-based-arm-cortex-m33?language=en&r=1333976)
+3、[Renesas RA Family Device Lifecycle Management Key Injection](https://www.renesas.com/us/en/document/apn/renesas-ra-family-device-lifecycle-management-key-installation?language=en&r=1333976)
+4、[瑞萨 RA 产品家族 器件生命周期管理密钥安装](https://www.renesas.cn/cn/zh/document/apn/renesas-ra-family-device-lifecycle-management-key-installation)
+5、[安全密钥管理工具 V.1.03 用户手册](https://www.renesas.cn/cn/zh/document/mat/security-key-management-tool-v103-users-manual)
+6、[Renesas RA Family Implementing Production Programming Tools for
+RA Cortex-M33 with Device Lifecycle Management](https://www.renesas.cn/cn/zh/document/apn/implementing-production-programming-tools-ra-cortex-m33-device-lifecycle-management)
 
 
 
+### 9.3 RA启动模式
+![](./images/MD%20startup.png)
+
+#### 9.3.1 boot硬件接口
+
+![](./images/boot%20interface1.png)
+![](./images/boot%20interface2.png)
+![](./images/boot%20interface3.png)
+硬件设计建议预留MD引脚和jtag接口，而非单独swd接口。
+#### 9.3.2 boot软件接口
+
+1、uart/usb boot协议
+2、RFPV3.exe、rfp-cli.exe、
+3、rpe.exe
+![](./images/rfp%20tool.png)
+
+### 9.4 RA DLM（生命周期管理）
+
+**1、写入.rpd分区文件**
+**2、读保护就是使用RFP切换CM/SSD模式切换到DPL模式**
 
 
+
+#### 9.4.1 .rpd分区文件
+**rpd文件会根据应用大小自动修改，只需用RFP烧写即可**
+![](./images/rpd.png)
+
+#### 9.4.2 DLM介绍
+##### 9.4.2.1 DLM模式转换图
+![](./images/RA%20DLM%20lifecycles.png)
+
+##### 9.4.2.2 DLM模式说明图
+
+![](./images/RA%20DLM%20list.png)
+![](./images/RA%20DLM%20list1.png)
+![](./images/RA%20DLM%20list2.png)
+
+
+##### 9.4.2.3 DLM-DPL部署到客户现场说明图
+![](./images/RA%20DLM%20DPL8.png)
+
+##### 9.4.2.4 DLM写入秘钥（略）
+1、秘钥用于从DPL部署模式返回到SSD安全软件开发模式，即可以读写flash和相关配置。
+2、未写入秘钥则无法返回SSD模式，只能擦除整片flash（Initialize命令）
+3、非明文写入秘钥，需要使用瑞萨相关工具，不详细介绍了
+
+#### 9.4.2.5 DLM结合公司项目开发
+
+| DLM模式| DLM备注| 公司项目阶段 | 权限 |
+| -- | -- | -- | --- | --- |
+|CM<br>芯片出厂| 用keil&IAR开发，始终为该模式 | EVT |任意读写固件|
+|SSD<br>安全软件开发| 用e2s开发，自动切换到SSD | DVT | 公司可信任的开发人员 |
+|NSECSD<br>非安全软件开发|需要手动切换| DVT | 一般开发人员、测试人员 |
+|DPL<br>LCK_DBG<br>LCK_BOOT<br>用户现场|工厂生产流程<br>保护公司IP| PVT/MP | 一般用户 |
+|RMA_REQ<br>RMA_ACK<br>退货给瑞萨|故障分析|-| 瑞萨 |
+
+#### 9.4.2.6 演示RFP的使用
+1、RFP GUI
+RFPV3.exe和RFPV3.Console.exe
+2、rfp-cli.exe
+![](./images/rfp-cli.exe)
+3、rpe.exe
+![](./images/rpe.exe)
+4、RFP boot模式串口通讯协议
+[Renesas RA Family Standard Boot Firmware for the RA family MCUs Based on Arm® Cortex®-M33](https://www.renesas.cn/cn/zh/document/apn/standard-boot-firmware-ra-family-mcus-based-arm-cortex-m33?language=en&r=1333976)
+
+#### 9.4.2.7 例程打印DLM模式和分区
+debug下载时候可以在console可以看见flash、sram分区的大小
+![](./images/rpd%20trust%20zone.png)
+![](./images/rpd%20trust%20zone1.png)
+![](./images/rpd%20trust%20zone2.png)
+![](./images/rpd%20trust%20zone3.png)
+![](./images/rpd%20trust%20zone4.png)
+
+例程代码可用于用户产测程序：
+```
+    const char dlmlist[] = "0x1: CM 0x2: SSD 0x3: NSECSD 0x4: DPL 0x5: LCK_DBG 0x6: LCK_BOOT 0x7: RMA_REQ 0x8: RMA_ACK ";
+    printf("%s\n", dlmlist);
+
+    uint8_t dlm = R_PSCU->DLMMON_b.DLMMON;
+    char dlm_str[20] = {0};
+    sprintf(dlm_str, "dlm mode:%d\n", dlm);
+    printf("%s", dlm_str);
+
+    uint8_t cfs2 = R_PSCU->CFSAMONA_b.CFS2;
+    sprintf(dlm_str, "cfs2:%d\n", cfs2);
+    printf("%s", dlm_str);
+
+    uint8_t cfs1 = R_PSCU->CFSAMONB_b.CFS1;
+    sprintf(dlm_str, "cfs1:%d\n", cfs1);
+    printf("%s", dlm_str);
+
+    uint8_t dfs = R_PSCU->DFSAMON_b.DFS;
+    sprintf(dlm_str, "dfs:%d\n", dfs);
+    printf("%s", dlm_str);
+
+    uint8_t ss2 = R_PSCU->SSAMONA_b.SS2;
+    sprintf(dlm_str, "ss2:%d\n", ss2);
+    printf("%s", dlm_str);
+
+    uint8_t ss1 = R_PSCU->SSAMONB_b.SS1;
+    sprintf(dlm_str, "ss1:%d\n", ss1);
+    printf("%s", dlm_str);
+```

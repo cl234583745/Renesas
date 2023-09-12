@@ -1,0 +1,19 @@
+T199C 000:004.180   SEGGER J-Link V7.88d Log File
+T199C 000:005.111   DLL Compiled: May 24 2023 15:18:11
+T199C 000:005.135   Logging started @ 2023-09-12 11:21
+T199C 000:005.157 - 5.168ms
+T199C 000:005.315 JLINK_GetDLLVersion()
+T199C 000:005.340 - 0.036ms returns 78804
+T199C 000:006.670 JLINK_OpenEx(...)
+T199C 000:013.605   Looking for J-Link GUI Server exe at: C:\Users\jerry\.eclipse\com.renesas.platform_1690616020\DebugComp\RA\ARM\Segger_v7.88.4\JLinkGUIServer.exe
+T199C 000:013.962   Looking for J-Link GUI Server exe at: C:\Program Files\SEGGER\JLink_V780c\JLinkGUIServer.exe
+T199C 000:014.036   Forking J-Link GUI Server: C:\Program Files\SEGGER\JLink_V780c\JLinkGUIServer.exe
+T199C 000:081.605   J-Link GUI Server info: "J-Link GUI server V7.80c "
+T199C 001:375.957   
+  ***** Error: 
+T199C 001:375.989   Cannot connect to J-Link.
+T199C 001:393.984 - 1387.335ms returns "Cannot connect to J-Link."
+T199C 003:230.393 JLINK_Close()
+T199C 003:230.790 - 0.404ms
+T199C 003:230.803   
+T199C 003:230.810   Closed
