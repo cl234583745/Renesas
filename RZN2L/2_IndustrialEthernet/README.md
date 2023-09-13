@@ -29,13 +29,13 @@ https://www.renesas.cn/cn/zh/document/bro/industrial-network-brochure)
 ![](./images/master.png)
 ## 3.4 瑞萨工业网络从站
 ![](./images/slave.png)
-## 3.6 RZN2L支持的工业以太网协议：
+## 3.5 RZN2L支持的工业以太网协议：
 ![](./images/rz%20iiot.png)
-## 3.7 瑞萨传感器解决方案
+## 3.6 瑞萨传感器解决方案
 ![](./images/sensor%20adc.png)
-## 3.8 瑞萨IO-Link解决方案
+## 3.7 瑞萨IO-Link解决方案
 ![](./images/iolink.png)
-## 3.9 瑞萨功能安全
+## 3.8 瑞萨功能安全
 ![](./images/safety.png)
 
 # 四、目标应用
