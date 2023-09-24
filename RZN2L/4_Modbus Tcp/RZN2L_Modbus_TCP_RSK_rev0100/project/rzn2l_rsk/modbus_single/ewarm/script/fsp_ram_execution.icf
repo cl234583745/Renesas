@@ -1,0 +1,206 @@
+/*###ICF### Section handled by ICF editor, don't touch! ****/
+/*-Editor annotation file-*/
+/* IcfEditorFile="$TOOLKIT_DIR$\config\ide\IcfEditor\a_v1_0.xml" */
+/*-Specials-*/
+define symbol __ICFEDIT_intvec_start__ = 0x00000000;
+/*-Memory Regions-*/
+define symbol __ICFEDIT_region_RAM_start__ = 0x00010000;
+define symbol __ICFEDIT_region_RAM_end__   = 0x0001FFFF;
+/**** End of ICF editor section. ###ICF###*/
+
+define memory mem with size = 4G;
+define region RAM_region   = mem:[from __ICFEDIT_region_RAM_start__   to __ICFEDIT_region_RAM_end__];
+
+define symbol __region_USER_PRG_start__      = 0x00000100;
+define symbol __region_USER_PRG_end__        = 0x0000FFFF;
+
+define symbol __region_D_LDR_DATA_start__    = 0x00100000;
+define symbol __region_D_LDR_DATA_end__      = 0x00101FFF;
+define symbol __region_D_LDR_PRG_start__     = 0x00102000;
+define symbol __region_D_LDR_PRG_end__       = 0x0011FFFF;
+
+define symbol __region_SHARED_NONCACHE_BUFFER_start__ = 0x300C0000;
+define symbol __region_SHARED_NONCACHE_BUFFER_end__   = 0x300FFFFF;
+define symbol __region_NONCACHE_BUFFER_start__        = 0x30100000;
+define symbol __region_NONCACHE_BUFFER_end__          = 0x3013FFFF;
+
+define symbol __region_SYSTEM_RAM_start__        = 0x10000000;
+define symbol __region_SYSTEM_RAM_end__          = 0x1017FFFF;
+define symbol __region_SYSTEM_RAM_MIRROR_start__ = 0x30000000;
+define symbol __region_SYSTEM_RAM_MIRROR_end__   = 0x3017FFFF;
+
+define symbol __region_XSPI0_CS0_MIRROR_start__ = 0x40000000;
+define symbol __region_XSPI0_CS0_MIRROR_end__   = 0x43FFFFFF;
+define symbol __region_XSPI0_CS1_MIRROR_start__ = 0x44000000;
+define symbol __region_XSPI0_CS1_MIRROR_end__   = 0x47FFFFFF;
+define symbol __region_XSPI1_CS0_MIRROR_start__ = 0x48000000;
+define symbol __region_XSPI1_CS0_MIRROR_end__   = 0x4BFFFFFF;
+define symbol __region_XSPI1_CS1_MIRROR_start__ = 0x4C000000;
+define symbol __region_XSPI1_CS1_MIRROR_end__   = 0x4FFFFFFF;
+define symbol __region_CS0_MIRROR_start__       = 0x50000000;
+define symbol __region_CS0_MIRROR_end__         = 0x53FFFFFF;
+define symbol __region_CS2_MIRROR_start__       = 0x54000000;
+define symbol __region_CS2_MIRROR_end__         = 0x57FFFFFF;
+define symbol __region_CS3_MIRROR_start__       = 0x58000000;
+define symbol __region_CS3_MIRROR_end__         = 0x5BFFFFFF;
+define symbol __region_CS5_MIRROR_start__       = 0x5C000000;
+define symbol __region_CS5_MIRROR_end__         = 0x5FFFFFFF;
+define symbol __region_XSPI0_CS0_start__        = 0x60000000;
+define symbol __region_XSPI0_CS0_end__          = 0x63FFFFFF;
+define symbol __region_XSPI0_CS1_start__        = 0x64000000;
+define symbol __region_XSPI0_CS1_end__          = 0x67FFFFFF;
+define symbol __region_XSPI1_CS0_start__        = 0x68000000;
+define symbol __region_XSPI1_CS0_end__          = 0x6BFFFFFF;
+define symbol __region_XSPI1_CS1_start__        = 0x6C000000;
+define symbol __region_XSPI1_CS1_end__          = 0x6FFFFFFF;
+define symbol __region_CS0_start__              = 0x70000000;
+define symbol __region_CS0_end__                = 0x73FFFFFF;
+define symbol __region_CS2_start__              = 0x74000000;
+define symbol __region_CS2_end__                = 0x77FFFFFF;
+define symbol __region_CS3_start__              = 0x78000000;
+define symbol __region_CS3_end__                = 0x7BFFFFFF;
+define symbol __region_CS5_start__              = 0x7C000000;
+define symbol __region_CS5_end__                = 0x7FFFFFFF;
+
+define region USER_PRG_region   = mem:[from __region_USER_PRG_start__   to __region_USER_PRG_end__];
+define region D_LDR_DATA_region = mem:[from __region_D_LDR_DATA_start__   to __region_D_LDR_DATA_end__];
+define region D_LDR_PRG_region  = mem:[from __region_D_LDR_PRG_start__   to __region_D_LDR_PRG_end__];
+define region SHARED_NONCACHE_BUFFER_region  = mem:[from __region_SHARED_NONCACHE_BUFFER_start__   to __region_SHARED_NONCACHE_BUFFER_end__];
+define region NONCACHE_BUFFER_region  = mem:[from __region_NONCACHE_BUFFER_start__   to __region_NONCACHE_BUFFER_end__];
+
+define region SYSTEM_RAM_region        = mem:[from __region_SYSTEM_RAM_start__  to __region_SYSTEM_RAM_end__ ];
+define region SYSTEM_RAM_MIRROR_region = mem:[from __region_SYSTEM_RAM_MIRROR_start__  to __region_SYSTEM_RAM_MIRROR_end__ ];
+define region XSPI0_CS0_MIRROR_region  = mem:[from __region_XSPI0_CS0_MIRROR_start__  to __region_XSPI0_CS0_MIRROR_end__ ];
+define region XSPI0_CS1_MIRROR_region  = mem:[from __region_XSPI0_CS1_MIRROR_start__  to __region_XSPI0_CS1_MIRROR_end__ ];
+define region XSPI1_CS0_MIRROR_region  = mem:[from __region_XSPI1_CS0_MIRROR_start__  to __region_XSPI1_CS0_MIRROR_end__ ];
+define region XSPI1_CS1_MIRROR_region  = mem:[from __region_XSPI1_CS1_MIRROR_start__  to __region_XSPI1_CS1_MIRROR_end__ ];
+define region CS0_MIRROR_region        = mem:[from __region_CS0_MIRROR_start__  to __region_CS0_MIRROR_end__ ];
+define region CS2_MIRROR_region        = mem:[from __region_CS2_MIRROR_start__  to __region_CS2_MIRROR_end__ ];
+define region CS3_MIRROR_region        = mem:[from __region_CS3_MIRROR_start__  to __region_CS3_MIRROR_end__ ];
+define region CS5_MIRROR_region        = mem:[from __region_CS5_MIRROR_start__  to __region_CS5_MIRROR_end__ ];
+define region XSPI0_CS0_region         = mem:[from __region_XSPI0_CS0_start__  to __region_XSPI0_CS0_end__ ];
+define region XSPI0_CS1_region         = mem:[from __region_XSPI0_CS1_start__  to __region_XSPI0_CS1_end__ ];
+define region XSPI1_CS0_region         = mem:[from __region_XSPI1_CS0_start__  to __region_XSPI1_CS0_end__ ];
+define region XSPI1_CS1_region         = mem:[from __region_XSPI1_CS1_start__  to __region_XSPI1_CS1_end__ ];
+define region CS0_region               = mem:[from __region_CS0_start__  to __region_CS0_end__ ];
+define region CS2_region               = mem:[from __region_CS2_start__  to __region_CS2_end__ ];
+define region CS3_region               = mem:[from __region_CS3_start__  to __region_CS3_end__ ];
+define region CS5_region               = mem:[from __region_CS5_start__  to __region_CS5_end__ ];
+
+define block LDR_PRG_RBLOCK with fixed order
+                             { ro code object startup.o,
+                               ro code object system.o,
+                               ro code object bsp_clocks.o,
+                               ro code object bsp_irq.o,
+                               ro code object bsp_register_protection.o,
+                               ro code object r_ioport.o,
+                               ro code object data_init.o,
+                               ro code object copy_init3.o,
+                               ro code section .warm_start }
+                               except { section .intvec };
+define block LDR_DATA_ZBLOCK { section .bss object startup.o,
+                               section .bss object system.o,
+                               section .bss object bsp_clocks.o,
+                               section .bss object bsp_irq.o,
+                               section .bss object bsp_register_protection.o,
+                               section .bss object r_ioport.o,
+                               section .bss object data_init.o,
+                               section .bss object copy_init3.o };
+define block LDR_DATA_RBLOCK with fixed order
+                             { section .data_init object startup.o,
+                               section .data_init object system.o,
+                               section .data_init object bsp_clocks.o,
+                               section .data_init object bsp_irq.o,
+                               section .data_init object bsp_register_protection.o,
+                               section .data_init object r_ioport.o,
+                               section .data_init object data_init.o,
+                               section .data_init object copy_init3.o };
+define block LDR_DATA_WBLOCK with fixed order
+                             { section .data object startup.o,
+                               section .data object system.o,
+                               section .data object bsp_clocks.o,
+                               section .data object bsp_irq.o,
+                               section .data object bsp_register_protection.o,
+                               section .data object r_ioport.o,
+                               section .data object data_init.o,
+                               section .data object copy_init3.o };
+
+define block VECTOR_RBLOCK with alignment = 32 { section .intvec };
+define block USER_PRG_RBLOCK  { ro code };
+define block USER_DATA_ZBLOCK { section .bss };
+define block USER_DATA_RBLOCK with fixed order
+                              { section .data_init,
+                                section __DLIB_PERTHREAD_init };
+define block USER_DATA_WBLOCK with fixed order
+                              { section .data,
+                                section __DLIB_PERTHREAD };
+define block SHARED_NONCACHE_BUFFER_ZBLOCK with alignment = 32 { section .shared_noncache_buffer* };
+define block NONCACHE_BUFFER_ZBLOCK with alignment = 32 { section .noncache_buffer* };
+
+initialize by copy { readwrite };
+
+do not initialize  { section .noinit,
+                     section .bss object startup.o,
+                     section .bss object system.o,
+                     section .bss object bsp_clocks.o,
+                     section .bss object bsp_irq.o,
+                     section .bss object bsp_register_protection.o,
+                     section .bss object r_ioport.o,
+                     section .shared_noncache_buffer*,
+                     section .noncache_buffer*,
+                     rw section HEAP,
+                     rw section .stack*,
+                     rw section .sys_stack,
+                     rw section .svc_stack,
+                     rw section .irq_stack,
+                     rw section .fiq_stack,
+                     rw section .und_stack,
+                     rw section .abt_stack };
+
+initialize manually  { section .data object startup.o,
+                       section .data object system.o,
+                       section .data object bsp_clocks.o,
+                       section .data object bsp_irq.o,
+                       section .data object bsp_register_protection.o,
+                       section .data object r_ioport.o };
+
+place at address mem: __ICFEDIT_intvec_start__ { block VECTOR_RBLOCK };
+place in USER_PRG_region   { };
+place in RAM_region        { };
+place in D_LDR_DATA_region { section LDR_DATA_WBLOCK, block LDR_DATA_WBLOCK,
+                             section LDR_DATA_ZBLOCK, block LDR_DATA_ZBLOCK };
+place in D_LDR_PRG_region  { section LDR_DATA_RBLOCK, block LDR_DATA_RBLOCK,
+                             block LDR_PRG_RBLOCK };
+place in D_LDR_PRG_region  { rw section .sys_stack,
+                             rw section .svc_stack,
+                             rw section .irq_stack,
+                             rw section .fiq_stack,
+                             rw section .und_stack,
+                             rw section .abt_stack };
+place in SHARED_NONCACHE_BUFFER_region { block SHARED_NONCACHE_BUFFER_ZBLOCK };
+place in NONCACHE_BUFFER_region { block NONCACHE_BUFFER_ZBLOCK };
+place in SYSTEM_RAM_region { };
+place in SYSTEM_RAM_MIRROR_region { block USER_PRG_RBLOCK,
+                                    block USER_DATA_RBLOCK,
+                                    readonly };
+place in SYSTEM_RAM_MIRROR_region { readwrite };
+place in SYSTEM_RAM_MIRROR_region { block USER_DATA_WBLOCK,
+                                    block USER_DATA_ZBLOCK };
+place in SYSTEM_RAM_MIRROR_region { rw section HEAP,
+                                    rw section .stack* };
+place in XSPI0_CS0_MIRROR_region { };
+place in XSPI0_CS1_MIRROR_region { };
+place in XSPI1_CS0_MIRROR_region { };
+place in XSPI1_CS1_MIRROR_region { };
+place in CS0_MIRROR_region { };
+place in CS2_MIRROR_region { };
+place in CS3_MIRROR_region { };
+place in CS5_MIRROR_region { };
+place in XSPI0_CS0_region { };
+place in XSPI0_CS1_region { };
+place in XSPI1_CS0_region { };
+place in XSPI1_CS1_region { };
+place in CS0_region { };
+place in CS2_region { };
+place in CS3_region { };
+place in CS5_region { };
