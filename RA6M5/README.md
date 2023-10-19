@@ -877,3 +877,159 @@ debug下载时候可以在console可以看见flash、sram分区的大小
     sprintf(dlm_str, "ss1:%d\n", ss1);
     printf("%s", dlm_str);
 ```
+
+
+# 十、发布新固件---Release和Debug版本的差异
+产品/项目小批量后会发布新固件，从而迭代新功能和修复bug等。可以通过如下方式升级：
+- boot+app工厂引导在线升级
+- 拉低MD引脚进入boot引导模式，串口升级
+- 直接通过jtag/swd烧写
+
+所以，就需要发布新固件！
+
+## 10.1 公司自行管理维护
+宏定义、版本号、git、svn、测试、发布、烧录、升级
+
+
+## 10.2 Release和Debug版本的差异
+### 10.2.1 引用文章
+![](./images/rs.png)
+[Release和Debug版本的差异](
+https://mp.weixin.qq.com/s?__biz=MzkxMzMyMTUzMg==&mid=2247485928&idx=2&sn=a5d823b0434779d3d29cb0b2b159193a&chksm=c17e32bbf609bbad873eadc476294785f822b215ad1febab3c1a60f34243d320a3253da26586&scene=21&token=1307419528&lang=zh_CN#wechat_redirect)
+![](./images/sh.png)
+[IAR中 Debug 和 Release 区别是什么？](https://mp.weixin.qq.com/s?__biz=MzI4MDI4MDE5Ng==&mid=2247518681&idx=1&sn=6420fa1b40c32ad877b72605157a8d00&chksm=ebb82432dccfad248a3acd1f2ce7b736f131f1b2877386434344e9c130b75c2f5f013698dd3c&scene=21&token=1307419528&lang=zh_CN#wechat_redirect)
+
+**主要功能与目的：**
+- 代码优化等级
+- 预处理-调试信息
+- 固件生成与合并
+- 版本号管理
+- 重命名固件
+- 校验
+- 备份
+
+### 10.2.2 个人观点
+- Release和Debug就是IDE给开发者提供一种管理调试和发布软件的功能。
+- 个人不推荐使用该功能。
+- 发布过程中可能碰到问题
+- 依赖IDE、不利于中间层构建。
+
+![](./images/middle.png)
+
+## 10.3 version存储
+### 10.3.1 e2studio .version Section
+
+```
+SECTIONS
+{
+    ......
+    .text :
+    {
+        __tz_FLASH_S = ABSOLUTE(FLASH_START);
+        __ROM_Start = .;
+        ......
+        KEEP(*(.version))
+        ......
+    }
+    ......
+}
+
+
+#define FSP_SECTION_VERSION      ".version"
+
+/* BSP version structure. */
+const fsp_version_t g_bsp_version =
+{
+    .api_version_minor  = BSP_API_VERSION_MINOR,
+    .api_version_major  = BSP_API_VERSION_MAJOR,
+    .code_version_major = BSP_CODE_VERSION_MAJOR,
+    .code_version_minor = BSP_CODE_VERSION_MINOR
+};
+
+/* FSP pack version structure. */
+static BSP_DONT_REMOVE const fsp_pack_version_t g_fsp_version BSP_PLACE_IN_SECTION (FSP_SECTION_VERSION) =
+{
+    .minor = FSP_VERSION_MINOR,
+    .major = FSP_VERSION_MAJOR,
+    .build = FSP_VERSION_BUILD,
+    .patch = FSP_VERSION_PATCH
+};
+
+/* Public FSP version name. */
+static BSP_DONT_REMOVE const uint8_t g_fsp_version_string[] BSP_PLACE_IN_SECTION(FSP_SECTION_VERSION) =
+    FSP_VERSION_STRING;
+
+/* Unique FSP version ID. */
+static BSP_DONT_REMOVE const uint8_t g_fsp_version_build_string[] BSP_PLACE_IN_SECTION(FSP_SECTION_VERSION) =
+    FSP_VERSION_BUILD_STRING;
+```
+### 10.3.2 绝对定位__attribute__((at()))
+```
+__attribute__((at())) 
+MDK AC5 AC6不同，不同IDE也有差异
+```
+
+
+[使用__attribute__((at()))来进行绝对定位](
+https://blog.csdn.net/cuihongqiang/article/details/104230363)
+
+```
+typedef struct {
+    uint32_t magic_word;        /*!< Magic word ESP_APP_DESC_MAGIC_WORD */
+    uint32_t secure_version;    /*!< Secure version */
+    uint32_t reserv1[2];        /*!< --- */
+    char version[32];           /*!< Application version */
+    char project_name[32];      /*!< Project name */
+    char time[16];              /*!< Compile time */
+    char date[16];              /*!< Compile date*/
+    char idf_ver[32];           /*!< Version IDF */
+    uint8_t app_elf_sha256[32]; /*!< sha256 of elf file */
+    uint32_t reserv2[20];       /*!< --- */
+} sprt_app_desc_t;
+ 
+/* MDK AC5 */
+__attribute__((at(0x08000000))) const uint32_t cnt;
+//cnt                                      0x08000000   Data           4  main.o(.ARM.__AT_0x08000000)
+ 
+__attribute__((at(0x08000004))) const sprt_app_desc_t sprt_app_desc = {
+	.version = "version",
+	.time = __TIME__,
+	.date = __DATE__,
+};
+//sprt_app_desc                            0x08000004   Data         256  main.o(.ARM.__AT_0x08000004)
+ 
+__attribute__((at(0x20000000))) sprt_app_desc_t sprt_app_desc = {
+	.version = "version",
+	.time = __TIME__,
+	.date = __DATE__,
+};
+//sprt_app_desc                            0x20000000   Data         256  main.o(.ARM.__AT_0x20000000)
+ 
+__attribute__((at(0x20001000))) uint32_t cnt;
+//cnt                                      0x20001000   Data           4  main.o(.ARM.__AT_0x20001000)
+ 
+/* MDK AC6 */
+/* section 等价 __section__ */
+__attribute__((section(".ARM.__at_0x08000000"))) const uint32_t cnt;
+//cnt                                      0x08000000   Data           4  main.o(.ARM.__at_0x08000000)
+ 
+__attribute__((__section__(".ARM.__at_0x08000004"))) const sprt_app_desc_t sprt_app_desc = {
+	.version = "version",
+	.time = __TIME__,
+	.date = __DATE__,
+};
+//sprt_app_desc                            0x08000004   Data         256  main.o(.ARM.__at_0x08000004)
+ 
+__attribute__((section(".ARM.__at_0x20000000"))) uint32_t cnt;
+//cnt                                      0x20000000   Data           4  main.o(.ARM.__at_0x20000000)
+ 
+__attribute__((section(".ARM.__at_0x20000004"))) sprt_app_desc_t sprt_app_desc = {
+	.version = "version",
+	.time = __TIME__,
+	.date = __DATE__,
+};
+//sprt_app_desc                            0x20000004   Data         256  main.o(.ARM.__at_0x20000004)
+ 
+```
+
+https://blog.csdn.net/qq_20553613/article/details/123756967
