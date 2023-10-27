@@ -1,0 +1,3283 @@
+{
+  "StcRevData": "1.28",
+  "CTRev": "",
+  "FileName": "renesas_opener_sample_app",
+  "StcDeviceName": "",
+  "SupportListInterface": false,
+  "devData": {
+    "MacId": 255,
+    "ExpMsgWait": 0,
+    "EncapTimeout": 500,
+    "MsgMaxWait": 500,
+    "ResetWait": 500,
+    "ResetPoll": 500,
+    "DoMaxEPR": 1,
+    "NetConfig": "",
+    "NetType": "ENet"
+  },
+  "DUTInfo": {
+    "productName": "Renesas OpENer Device",
+    "productRev": "2.3",
+    "productCode": 65001,
+    "devProfile": {
+      "ProductType": 12,
+      "Profile": "Communications Adapter"
+    },
+    "vendor": {
+      "Vid": 1105,
+      "Name": "Renesas Electronics"
+    }
+  },
+  "PhysicalInfo": {
+    "Rate10": true,
+    "Rate100": true,
+    "Rate1000": true,
+    "DuplexHalf": true,
+    "DuplexFull": true,
+    "RateSetSwitch": false,
+    "RateSetSoftware": false,
+    "RateSetAuto": true,
+    "DuplexSetSwitch": false,
+    "DuplexSetSoftware": false,
+    "DuplexSetAuto": true,
+    "IsIndustrial": false,
+    "ModuleLed": true,
+    "NetworkLed": true,
+    "AxisLed": false,
+    "ComboLed": false,
+    "IOLed": false,
+    "Open": true,
+    "Sealed": false,
+    "RJ45": true,
+    "M124D": false,
+    "M128X": false,
+    "FiberSC": false,
+    "FiberLC": false,
+    "FiberST": false,
+    "FiberMTRJ": false,
+    "other": null
+  },
+  "CommInfo": {
+    "ConnectionSize": 511,
+    "SupportRouting": false,
+    "IsTransltor": false,
+    "RoutingConfigs": []
+  },
+  "IOs": [
+    {
+      "AggregatedIOName": null,
+      "Name": "Board LED Exclusive Owner",
+      "TransportClass1": true,
+      "TransportClass0": false,
+      "CyclicTrigger": true,
+      "COSTrigger": false,
+      "ApplicationTrigger": false,
+      "ListOnly": false,
+      "InputOnly": false,
+      "ExclusiveOwner": true,
+      "RedundantOwner": false,
+      "IsServer": true,
+      "OTParams": {
+        "NullType": false,
+        "Multicast": false,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 1,
+          "Max": 1,
+          "Defval": 1
+        },
+        "RPI": 100,
+        "RealTime32bit": true,
+        "ZeroLengthData": false,
+        "Heartbeat": false,
+        "Modeless": false,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "TOParams": {
+        "NullType": false,
+        "Multicast": true,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 1,
+          "Max": 1,
+          "Defval": 1
+        },
+        "RPI": 100,
+        "RealTime32bit": false,
+        "ZeroLengthData": false,
+        "Heartbeat": false,
+        "Modeless": true,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "ConnectionPath": [
+        32,
+        4,
+        36,
+        151,
+        44,
+        150,
+        44,
+        100
+      ],
+      "ParticipantName": ""
+    },
+    {
+      "AggregatedIOName": null,
+      "Name": "Board SW Input Only",
+      "TransportClass1": true,
+      "TransportClass0": false,
+      "CyclicTrigger": true,
+      "COSTrigger": false,
+      "ApplicationTrigger": false,
+      "ListOnly": false,
+      "InputOnly": true,
+      "ExclusiveOwner": false,
+      "RedundantOwner": false,
+      "IsServer": true,
+      "OTParams": {
+        "NullType": false,
+        "Multicast": false,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 0,
+          "Max": 0,
+          "Defval": 0
+        },
+        "RPI": 100,
+        "RealTime32bit": false,
+        "ZeroLengthData": false,
+        "Heartbeat": true,
+        "Modeless": false,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "TOParams": {
+        "NullType": false,
+        "Multicast": true,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 1,
+          "Max": 1,
+          "Defval": 1
+        },
+        "RPI": 100,
+        "RealTime32bit": false,
+        "ZeroLengthData": false,
+        "Heartbeat": false,
+        "Modeless": true,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "ConnectionPath": [
+        32,
+        4,
+        36,
+        151,
+        44,
+        238,
+        44,
+        101
+      ],
+      "ParticipantName": ""
+    },
+    {
+      "AggregatedIOName": null,
+      "Name": "Board LED Listen Only",
+      "TransportClass1": true,
+      "TransportClass0": false,
+      "CyclicTrigger": true,
+      "COSTrigger": false,
+      "ApplicationTrigger": false,
+      "ListOnly": true,
+      "InputOnly": false,
+      "ExclusiveOwner": false,
+      "RedundantOwner": false,
+      "IsServer": true,
+      "OTParams": {
+        "NullType": false,
+        "Multicast": false,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 0,
+          "Max": 0,
+          "Defval": 0
+        },
+        "RPI": 100,
+        "RealTime32bit": false,
+        "ZeroLengthData": false,
+        "Heartbeat": true,
+        "Modeless": false,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "TOParams": {
+        "NullType": false,
+        "Multicast": true,
+        "Unicast": true,
+        "Low": false,
+        "High": false,
+        "Scheduled": true,
+        "Urgent": false,
+        "ConnectionSize": {
+          "Min": 1,
+          "Max": 1,
+          "Defval": 1
+        },
+        "RPI": 100,
+        "RealTime32bit": false,
+        "ZeroLengthData": false,
+        "Heartbeat": false,
+        "Modeless": true,
+        "Safety": false,
+        "bFixed": true,
+        "bVariable": false
+      },
+      "ConnectionPath": [
+        32,
+        4,
+        36,
+        151,
+        44,
+        237,
+        44,
+        100
+      ],
+      "ParticipantName": ""
+    }
+  ],
+  "IPConfigs": [
+    {
+      "Bootp": false,
+      "DHCP": true,
+      "DNS": false,
+      "HWConfigurable": false,
+      "ConfigSettable": false,
+      "IPAddr": "192.168.1.170",
+      "IPOth": null,
+      "MACID": "00:11:22:33:44:55",
+      "DHCPDNSUpdate": false,
+      "RequiresReset": false,
+      "ACDCapable": false,
+      "Other": "",
+      "RefInstanceIndex": 0,
+      "RefInstance": {
+        "Type": 0,
+        "IDs": [
+          4294967295
+        ],
+        "IDString": "Any Instance",
+        "Attributes": [
+          {
+            "Id": 1,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "ISOF",
+            "RelationStr": "1,17"
+          },
+          {
+            "Id": 2,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "IS",
+            "RelationStr": "0x04"
+          },
+          {
+            "Id": 3,
+            "IsImplemented": true,
+            "IsSet": true,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 4,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 5,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 6,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 8,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "ISIN",
+            "RelationStr": "1..255"
+          },
+          {
+            "Id": 9,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 10,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 11,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 12,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 13,
+            "IsImplemented": true,
+            "IsSet": false,
+            "RelationType": "ISIN",
+            "RelationStr": "0..3600"
+          },
+          {
+            "Id": 14,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 15,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 16,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          },
+          {
+            "Id": 17,
+            "IsImplemented": false,
+            "IsSet": false,
+            "RelationType": "DEFLT",
+            "RelationStr": ""
+          }
+        ],
+        "Services": [
+          {
+            "Id": 1,
+            "IsImplemented": true,
+            "Parameters": ""
+          },
+          {
+            "Id": 2,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 14,
+            "IsImplemented": true,
+            "Parameters": ""
+          },
+          {
+            "Id": 16,
+            "IsImplemented": true,
+            "Parameters": ""
+          },
+          {
+            "Id": 76,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 77,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 29,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 3,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 4,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 23,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 24,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 25,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 26,
+            "IsImplemented": false,
+            "Parameters": ""
+          },
+          {
+            "Id": 27,
+            "IsImplemented": false,
+            "Parameters": ""
+          }
+        ],
+        "Name": "Instance Group 1"
+      },
+      "LLDPSrcMAC": []
+    }
+  ],
+  "ImplementedObjects": {
+    "1": {
+      "Id": 1,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 17,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "1105"
+            },
+            {
+              "Id": 2,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "12"
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "65001"
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "2.3"
+            },
+            {
+              "Id": 5,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 6,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 7,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "Renesas OpENer Device"
+            },
+            {
+              "Id": 8,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 10,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 11,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 12,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 13,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 15,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 17,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 19,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 20,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 21,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 22,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 30,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 31,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 32,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 33,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 34,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 35,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 36,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 37,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 39,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": true,
+              "Parameters": "0,1"
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 75,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 76,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "2": {
+      "Id": 2,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 75,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 10,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 76,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "4": {
+      "Id": 4,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 8,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 9,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 3,
+          "IDs": [
+            100,
+            101
+          ],
+          "IDString": "100,101",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        },
+        {
+          "Type": 4,
+          "IDs": [
+            150,
+            237,
+            238
+          ],
+          "IDString": "150,237,238",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 2"
+        },
+        {
+          "Type": 2,
+          "IDs": [
+            151
+          ],
+          "IDString": "151",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 3"
+        },
+        {
+          "Type": 5,
+          "IDs": [
+            154
+          ],
+          "IDString": "154",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 4"
+        }
+      ]
+    },
+    "6": {
+      "Id": 6,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 6,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 7,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 8,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 11,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 12,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 13,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 15,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 17,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 18,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 19,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 20,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 78,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 82,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 84,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 86,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 87,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 90,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 91,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 29,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "245": {
+      "Id": 245,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "ISOF",
+              "RelationStr": "1,17"
+            },
+            {
+              "Id": 2,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "IS",
+              "RelationStr": "0x04"
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 6,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 8,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "ISIN",
+              "RelationStr": "1..255"
+            },
+            {
+              "Id": 9,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 10,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 11,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 12,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 13,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "ISIN",
+              "RelationStr": "0..3600"
+            },
+            {
+              "Id": 14,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 15,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 17,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 76,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 77,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 29,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "246": {
+      "Id": 246,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 2,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "ISMACADDRESS",
+              "RelationStr": "00:11:22:33:44:55"
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 6,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 7,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 8,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 10,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 11,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 12,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 13,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 15,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 17,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 76,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 29,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "72": {
+      "Id": 72,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 14,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 1,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 2,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 4,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 5,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 6,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 7,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 8,
+              "IsImplemented": true,
+              "IsSet": true,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            }
+          ],
+          "Services": [
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    },
+    "71": {
+      "Id": 71,
+      "ClassAttributes": [
+        {
+          "Id": 1,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 2,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 5,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 6,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 7,
+          "IsImplemented": true,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 200,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        },
+        {
+          "Id": 201,
+          "IsImplemented": false,
+          "IsSet": false,
+          "RelationType": "DEFLT",
+          "RelationStr": ""
+        }
+      ],
+      "ClassServices": [
+        {
+          "Id": 1,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 14,
+          "IsImplemented": true,
+          "Parameters": ""
+        },
+        {
+          "Id": 16,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 24,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 3,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 4,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 23,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 25,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 26,
+          "IsImplemented": false,
+          "Parameters": ""
+        },
+        {
+          "Id": 27,
+          "IsImplemented": false,
+          "Parameters": ""
+        }
+      ],
+      "Instances": [
+        {
+          "Type": 0,
+          "IDs": [
+            4294967295
+          ],
+          "IDString": "Any Instance",
+          "Attributes": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 2,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 5,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 6,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 7,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 8,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 9,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 10,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 11,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 12,
+              "IsImplemented": true,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 13,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 14,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 15,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 17,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 18,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            },
+            {
+              "Id": 19,
+              "IsImplemented": false,
+              "IsSet": false,
+              "RelationType": "DEFLT",
+              "RelationStr": null
+            }
+          ],
+          "Services": [
+            {
+              "Id": 1,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 14,
+              "IsImplemented": true,
+              "Parameters": ""
+            },
+            {
+              "Id": 16,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 24,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 75,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 76,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 77,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 78,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 29,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 3,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 4,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 23,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 25,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 26,
+              "IsImplemented": false,
+              "Parameters": ""
+            },
+            {
+              "Id": 27,
+              "IsImplemented": false,
+              "Parameters": ""
+            }
+          ],
+          "Name": "Instance Group 1"
+        }
+      ]
+    }
+  },
+  "SafetyInfo": {
+    "DoesSupportSafety": false,
+    "isInput": false,
+    "isOutput": false,
+    "isController": false,
+    "isBridge": false,
+    "isOSCP": false,
+    "isOSCC": false,
+    "isOMCC": false,
+    "isTSCP": false,
+    "isTSCC": false,
+    "isTMCP": false,
+    "forwardOpenConfigurationTypes": [],
+    "isResetSwitch": false,
+    "safetyIO": [],
+    "configClass": "",
+    "configInst": "",
+    "configNull": "",
+    "configAttribute": "",
+    "configConnPoint": "",
+    "dutSnnDate": "",
+    "dutSnnTime": "",
+    "dutNodeID": "",
+    "tstSnnDate": "",
+    "tstSnnTime": "",
+    "tstNodeID": "",
+    "isSNCTOriginator": false,
+    "isSNCTTarget": false,
+    "snctCfgFile": "",
+    "targCfgFile": "",
+    "safetyVersion": 0,
+    "defaultPassword": "",
+    "originatorTargetConfigs": []
+  },
+  "TestInfo": {
+    "LogHex": true,
+    "LogText": true,
+    "LogZero": true,
+    "LogEncap": true,
+    "DisableSuppression": false
+  }
+}
