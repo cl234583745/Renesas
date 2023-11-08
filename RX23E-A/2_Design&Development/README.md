@@ -1,4 +1,4 @@
-**万语始于HelloWorld，万物基于点灯之瑞萨RX23E-A设计和开发**
+**万语始于HelloWorld，万物基于点灯之瑞萨RX23E-A coremark测试**
 
 [TOC]
 
