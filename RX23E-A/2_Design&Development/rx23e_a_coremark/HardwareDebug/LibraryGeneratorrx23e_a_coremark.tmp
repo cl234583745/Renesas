@@ -1,0 +1,6 @@
+-MAKEUD_LBG="E:\e2s_workspace\rx23e_a_coremark\HardwareDebug\\rx23e_a_coremark_lbg.ud" 
+-isa=rxv2 
+-lang=c99 
+-head=runtime,stdio,stdlib,string,new 
+-output="rx23e_a_coremark.lib" 
+-nologo
