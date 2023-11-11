@@ -3,10 +3,10 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.7\crossnote\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.10\crossnote\dependencies\katex\katex.min.css">
       
       
-      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.7\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      <script type="text/javascript" src="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.10\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
       
       
       <style>
@@ -690,18 +690,56 @@ fwUpgradeFlg=255
 </code></pre><h4 id="723-app源码">7.2.3 app源码 </h4>
 <h5 id="7231-app源码分析">7.2.3.1 app源码分析 </h5>
 <p><img src="./images/appsrc1.png" alt=""></p>
-<p>| app线程 | 说明 |<br>
-|------|--------|-------|<br>
-| 线程0 start_thread0_entry  | 日志和监控   |<br>
-| 线程1 tcp_thread1_entry  | 云端通讯   |<br>
-| 线程2 uart_thread2_entry  | 本地通讯   |</p>
-<p>| 线程0 start_thread0_entry | 说明 |<br>
-|------|--------|-------|<br>
-| 移植easylogger  | 日志分级别   |<br>
-| fsp littlefs  | dataflash保存经常变化数据   |<br>
-| 移植shell  | 监控系统状态   |<br>
-| 移植ring buffer  | shell串口数据依赖   |<br>
-流程图：</p>
+<table>
+<thead>
+<tr>
+<th>app线程</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>线程0 start_thread0_entry</td>
+<td>日志和监控</td>
+</tr>
+<tr>
+<td>线程1 tcp_thread1_entry</td>
+<td>云端通讯</td>
+</tr>
+<tr>
+<td>线程2 uart_thread2_entry</td>
+<td>本地通讯</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>线程0 start_thread0_entry</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>移植easylogger</td>
+<td>日志分级别</td>
+</tr>
+<tr>
+<td>fsp littlefs</td>
+<td>dataflash保存经常变化数据</td>
+</tr>
+<tr>
+<td>移植shell</td>
+<td>监控系统状态</td>
+</tr>
+<tr>
+<td>移植ring buffer</td>
+<td>shell串口数据依赖</td>
+</tr>
+</tbody>
+</table>
+<pre class="language-text">流程图：
+</pre>
 <div class="mermaid">graph TD;
     A1[线程0&lt;br/&gt;start_thread0_entry]--&gt;A[一 日志串口初始化&lt;br/&gt;g_uart9.p_api-&gt;open];
     A[一 日志串口初始化&lt;br/&gt;g_uart9.p_api-&gt;open]--&gt;B[测试打印&lt;br/&gt;g_uart9.p_api-&gt;write];

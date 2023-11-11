@@ -292,13 +292,13 @@ fwUpgradeFlg=255
 ![](./images/appsrc1.png)
 
 | app线程 | 说明 | 
-|------|--------|-------|
+|------|--------|
 | 线程0 start_thread0_entry  | 日志和监控   | 
 | 线程1 tcp_thread1_entry  | 云端通讯   |
 | 线程2 uart_thread2_entry  | 本地通讯   | 
 
 | 线程0 start_thread0_entry | 说明 | 
-|------|--------|-------|
+|------|--------|
 | 移植easylogger  | 日志分级别   | 
 | fsp littlefs  | dataflash保存经常变化数据   |
 | 移植shell  | 监控系统状态   | 
