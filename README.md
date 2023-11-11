@@ -8,14 +8,14 @@ RA2L1官方文档和例程、软件打包下载
 链接：https://pan.baidu.com/s/1SbEbdG1g8sx4PwC8b0RMMA 
 提取码：jfrm
 
-bilibili：多卡酱fllpll
+bilibili：嵌入式科普
 https://space.bilibili.com/417060922/video
 
-公众号：多卡酱fllpll
+公众号：嵌入式科普
 
 Qqun：33718742
 
-西瓜shipin：多卡酱fllpll
+西瓜shipin：嵌入式科普
 https://www.ixigua.com/home/818516314816996
 
 gitee：
