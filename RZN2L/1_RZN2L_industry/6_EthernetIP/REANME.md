@@ -1,5 +1,5 @@
 瑞萨RZN2L工业以太网MPU视频笔记 
-五、瑞萨RZN2L Ethernet/IP通讯
+六、瑞萨RZN2L Ethernet/IP通讯
 [TOC]
 
 # 一、概述/目的
