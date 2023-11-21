@@ -1,0 +1,1885 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<smc>
+    <general version="2.0.0.0">
+        <configuration active="true" id="com.renesas.smc.toolchain.rxc.configuration.release">
+            <property id="com.renesas.smc.service.project.buildArtefactType" values="com.renesas.smc.service.project.buildArtefactType.exe"/>
+            <toolchain id="com.renesas.smc.toolchain.rxc.toolchain.rxc">
+                <option id="com.renesas.smc.toolchain.option.language" key="com.renesas.smc.toolchain.option.language.c"/>
+                <option id="com.renesas.smc.toolchain.option.buildArtefactType" key="com.renesas.smc.toolchain.option.buildArtefactType.exe"/>
+                <option id="com.renesas.smc.toolchain.option.rtos" key="com.renesas.smc.toolchain.option.rtos.none"/>
+                <option id="com.renesas.smc.toolchain.option.dual" key="com.renesas.smc.toolchain.option.dual.false"/>
+            </toolchain>
+        </configuration>
+        <platform id="R5F523E6AxFL"/>
+        <option id="board" value="user_board"/>
+    </general>
+    <tool id="Clock">
+        <option enabled="true" id="vccinput" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="5" value="5.000"/>
+        </option>
+        <option enabled="true" id="mainclockenable" selection="check">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="true" id="mainsourcebox" selection="srcR">
+            <item enabled="true" id="srcR"/>
+            <item enabled="true" id="srcEOI"/>
+        </option>
+        <option enabled="true" id="mainfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="8" value="8.000000"/>
+        </option>
+        <option enabled="true" id="mainwaitcycle" selection="sBox8192">
+            <item enabled="true" id="sBox2"/>
+            <item enabled="true" id="sBox1024"/>
+            <item enabled="true" id="sBox2048"/>
+            <item enabled="true" id="sBox4096"/>
+            <item enabled="true" id="sBox8192"/>
+            <item enabled="true" id="sBox16384"/>
+            <item enabled="true" id="sBox32768"/>
+            <item enabled="true" id="sBox65536"/>
+        </option>
+        <option enabled="true" id="mainwaittime" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="2048"/>
+        </option>
+        <option enabled="true" id="hococlockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="hocofrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="32"/>
+        </option>
+        <option enabled="false" id="hocooscenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="true" id="lococlockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="locofrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="4"/>
+        </option>
+        <option enabled="true" id="iwdtclockenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="iwdtfrequency" selection="textinputitem">
+            <item enabled="true" id="textinputitem" input="" value="15"/>
+        </option>
+        <option enabled="true" id="plldivider" selection="div1-2">
+            <item enabled="true" id="div1-1"/>
+            <item enabled="true" id="div1-2"/>
+            <item enabled="false" id="div1-4"/>
+        </option>
+        <option enabled="true" id="pllmul" selection="mul8-1">
+            <item enabled="false" id="mul4-1"/>
+            <item enabled="false" id="mul4_5-1"/>
+            <item enabled="false" id="mul5-1"/>
+            <item enabled="false" id="mul5_5-1"/>
+            <item enabled="true" id="mul6-1"/>
+            <item enabled="true" id="mul6_5-1"/>
+            <item enabled="true" id="mul7-1"/>
+            <item enabled="true" id="mul7_5-1"/>
+            <item enabled="true" id="mul8-1"/>
+        </option>
+        <option enabled="true" id="sckswitcher" selection="pll">
+            <item enabled="true" id="pll" input="" value="3.2E7"/>
+            <item enabled="true" id="main" input="" value="8000000.0"/>
+            <item enabled="false" id="hoco" input="" value="32000000"/>
+            <item enabled="false" id="loco" input="" value="4000000"/>
+        </option>
+        <option enabled="true" id="ckoswitcher" selection="ckomain">
+            <item enabled="true" id="ckopll" input="" value="3.2E7"/>
+            <item enabled="true" id="ckomain" input="" value="8000000.0"/>
+            <item enabled="false" id="ckohoco" input="" value="32000000"/>
+            <item enabled="false" id="ckoloco" input="" value="4000000"/>
+        </option>
+        <option enabled="true" id="fclkdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="iclkdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="pclkadivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="pclkbdivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+            <item enabled="true" id="comboBox1-32"/>
+            <item enabled="true" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="pclkddivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="false" id="comboBox1-16"/>
+            <item enabled="false" id="comboBox1-32"/>
+            <item enabled="false" id="comboBox1-64"/>
+        </option>
+        <option enabled="true" id="ckodivider" selection="comboBox1-1">
+            <item enabled="true" id="comboBox1-1"/>
+            <item enabled="true" id="comboBox1-2"/>
+            <item enabled="true" id="comboBox1-4"/>
+            <item enabled="true" id="comboBox1-8"/>
+            <item enabled="true" id="comboBox1-16"/>
+        </option>
+        <option enabled="true" id="fclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.0"/>
+        </option>
+        <option enabled="true" id="iclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.0"/>
+        </option>
+        <option enabled="true" id="pclka" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.0"/>
+        </option>
+        <option enabled="true" id="pclkb" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.0"/>
+        </option>
+        <option enabled="true" id="pclkd" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32.0"/>
+        </option>
+        <option enabled="true" id="clkoutenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="clkout" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="8.0"/>
+        </option>
+        <option enabled="false" id="cachclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="32"/>
+        </option>
+        <option enabled="true" id="cacmclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="8.0"/>
+        </option>
+        <option enabled="false" id="caclclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="4"/>
+        </option>
+        <option enabled="false" id="lptenable" selection="uncheck">
+            <item enabled="true" id="check"/>
+            <item enabled="true" id="uncheck"/>
+        </option>
+        <option enabled="false" id="lptclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="15"/>
+        </option>
+        <option enabled="false" id="cacilclk" selection="textoutputitem">
+            <item enabled="true" id="textoutputitem" input="" value="15"/>
+        </option>
+    </tool>
+    <tool id="Interrupt">
+        <Item currentVect="16" id="BSC_BUSERR" priority="15" usedState="Not Use"/>
+        <Item currentVect="23" id="FCU_FRDYI" priority="15" usedState="Not Use"/>
+        <Item currentVect="27" id="ICU_SWINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="28" id="CMT0_CMI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="29" id="CMT1_CMI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="32" id="CAC_FERRF" priority="15" usedState="Not Use"/>
+        <Item currentVect="33" id="CAC_MENDF" priority="15" usedState="Not Use"/>
+        <Item currentVect="34" id="CAC_OVFF" priority="15" usedState="Not Use"/>
+        <Item currentVect="44" id="RSPI0_SPEI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="45" id="RSPI0_SPRI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="46" id="RSPI0_SPTI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="47" id="RSPI0_SPII0" priority="15" usedState="Not Use"/>
+        <Item currentVect="52" id="RSCAN_COMFRXINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="53" id="RSCAN_RXFINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="54" id="RSCAN_TXINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="55" id="RSCAN_CHERRINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="56" id="RSCAN_GLERRINT" priority="15" usedState="Not Use"/>
+        <Item currentVect="57" id="DOC_DOPCF" priority="15" usedState="Not Use"/>
+        <Item currentVect="64" id="ICU_IRQ0" priority="15" usedState="Not Use"/>
+        <Item currentVect="65" id="ICU_IRQ1" priority="15" usedState="Not Use"/>
+        <Item currentVect="66" id="ICU_IRQ2" priority="15" usedState="Not Use"/>
+        <Item currentVect="67" id="ICU_IRQ3" priority="15" usedState="Not Use"/>
+        <Item currentVect="68" id="ICU_IRQ4" priority="15" usedState="Not Use"/>
+        <Item currentVect="69" id="ICU_IRQ5" priority="15" usedState="Not Use"/>
+        <Item currentVect="70" id="ICU_IRQ6" priority="15" usedState="Not Use"/>
+        <Item currentVect="71" id="ICU_IRQ7" priority="15" usedState="Not Use"/>
+        <Item currentVect="80" id="ELC_ELSR8I" priority="15" usedState="Not Use"/>
+        <Item currentVect="88" id="LVD_LVD1" priority="15" usedState="Not Use"/>
+        <Item currentVect="89" id="LVD_LVD2" priority="15" usedState="Not Use"/>
+        <Item currentVect="102" id="S12AD_S12ADI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="103" id="S12AD_GBADI" priority="15" usedState="Not Use"/>
+        <Item currentVect="106" id="ELC_ELSR18I" priority="15" usedState="Not Use"/>
+        <Item currentVect="107" id="ELC_ELSR19I" priority="15" usedState="Not Use"/>
+        <Item currentVect="114" id="MTU0_TGIA0" priority="15" usedState="Not Use"/>
+        <Item currentVect="115" id="MTU0_TGIB0" priority="15" usedState="Not Use"/>
+        <Item currentVect="116" id="MTU0_TGIC0" priority="15" usedState="Not Use"/>
+        <Item currentVect="117" id="MTU0_TGID0" priority="15" usedState="Not Use"/>
+        <Item currentVect="118" id="MTU0_TCIV0" priority="15" usedState="Not Use"/>
+        <Item currentVect="119" id="MTU0_TGIE0" priority="15" usedState="Not Use"/>
+        <Item currentVect="120" id="MTU0_TGIF0" priority="15" usedState="Not Use"/>
+        <Item currentVect="121" id="MTU1_TGIA1" priority="15" usedState="Not Use"/>
+        <Item currentVect="122" id="MTU1_TGIB1" priority="15" usedState="Not Use"/>
+        <Item currentVect="123" id="MTU1_TCIV1" priority="15" usedState="Not Use"/>
+        <Item currentVect="124" id="MTU1_TCIU1" priority="15" usedState="Not Use"/>
+        <Item currentVect="125" id="MTU2_TGIA2" priority="15" usedState="Not Use"/>
+        <Item currentVect="126" id="MTU2_TGIB2" priority="15" usedState="Not Use"/>
+        <Item currentVect="127" id="MTU2_TCIV2" priority="15" usedState="Not Use"/>
+        <Item currentVect="128" id="MTU2_TCIU2" priority="15" usedState="Not Use"/>
+        <Item currentVect="129" id="MTU3_TGIA3" priority="15" usedState="Not Use"/>
+        <Item currentVect="130" id="MTU3_TGIB3" priority="15" usedState="Not Use"/>
+        <Item currentVect="131" id="MTU3_TGIC3" priority="15" usedState="Not Use"/>
+        <Item currentVect="132" id="MTU3_TGID3" priority="15" usedState="Not Use"/>
+        <Item currentVect="133" id="MTU3_TCIV3" priority="15" usedState="Not Use"/>
+        <Item currentVect="134" id="MTU4_TGIA4" priority="15" usedState="Not Use"/>
+        <Item currentVect="135" id="MTU4_TGIB4" priority="15" usedState="Not Use"/>
+        <Item currentVect="136" id="MTU4_TGIC4" priority="15" usedState="Not Use"/>
+        <Item currentVect="137" id="MTU4_TGID4" priority="15" usedState="Not Use"/>
+        <Item currentVect="138" id="MTU4_TCIV4" priority="15" usedState="Not Use"/>
+        <Item currentVect="139" id="MTU5_TGIU5" priority="15" usedState="Not Use"/>
+        <Item currentVect="140" id="MTU5_TGIV5" priority="15" usedState="Not Use"/>
+        <Item currentVect="141" id="MTU5_TGIW5" priority="15" usedState="Not Use"/>
+        <Item currentVect="170" id="POE_OEI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="171" id="POE_OEI2" priority="15" usedState="Not Use"/>
+        <Item currentVect="174" id="TMR0_CMIA0" priority="15" usedState="Used"/>
+        <Item currentVect="175" id="TMR0_CMIB0" priority="15" usedState="Not Use"/>
+        <Item currentVect="176" id="TMR0_OVI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="177" id="TMR1_CMIA1" priority="15" usedState="Not Use"/>
+        <Item currentVect="178" id="TMR1_CMIB1" priority="15" usedState="Not Use"/>
+        <Item currentVect="179" id="TMR1_OVI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="180" id="TMR2_CMIA2" priority="15" usedState="Not Use"/>
+        <Item currentVect="181" id="TMR2_CMIB2" priority="15" usedState="Not Use"/>
+        <Item currentVect="182" id="TMR2_OVI2" priority="15" usedState="Not Use"/>
+        <Item currentVect="183" id="TMR3_CMIA3" priority="15" usedState="Not Use"/>
+        <Item currentVect="184" id="TMR3_CMIB3" priority="15" usedState="Not Use"/>
+        <Item currentVect="185" id="TMR3_OVI3" priority="15" usedState="Not Use"/>
+        <Item currentVect="198" id="DMAC_DMAC0I" priority="15" usedState="Not Use"/>
+        <Item currentVect="199" id="DMAC_DMAC1I" priority="15" usedState="Not Use"/>
+        <Item currentVect="200" id="DMAC_DMAC2I" priority="15" usedState="Not Use"/>
+        <Item currentVect="201" id="DMAC_DMAC3I" priority="15" usedState="Not Use"/>
+        <Item currentVect="206" id="DSAD0_ADI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="207" id="DSAD0_SCANEND0" priority="15" usedState="Not Use"/>
+        <Item currentVect="209" id="DSAD1_ADI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="210" id="DSAD1_SCANEND1" priority="15" usedState="Not Use"/>
+        <Item currentVect="218" id="SCI1_ERI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="219" id="SCI1_RXI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="220" id="SCI1_TXI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="221" id="SCI1_TEI1" priority="15" usedState="Not Use"/>
+        <Item currentVect="222" id="SCI5_ERI5" priority="15" usedState="Not Use"/>
+        <Item currentVect="223" id="SCI5_RXI5" priority="15" usedState="Not Use"/>
+        <Item currentVect="224" id="SCI5_TXI5" priority="15" usedState="Not Use"/>
+        <Item currentVect="225" id="SCI5_TEI5" priority="15" usedState="Not Use"/>
+        <Item currentVect="226" id="SCI6_ERI6" priority="15" usedState="Not Use"/>
+        <Item currentVect="227" id="SCI6_RXI6" priority="15" usedState="Not Use"/>
+        <Item currentVect="228" id="SCI6_TXI6" priority="15" usedState="Not Use"/>
+        <Item currentVect="229" id="SCI6_TEI6" priority="15" usedState="Not Use"/>
+        <Item currentVect="238" id="SCI12_ERI12" priority="15" usedState="Not Use"/>
+        <Item currentVect="239" id="SCI12_RXI12" priority="15" usedState="Not Use"/>
+        <Item currentVect="240" id="SCI12_TXI12" priority="15" usedState="Not Use"/>
+        <Item currentVect="241" id="SCI12_TEI12" priority="15" usedState="Not Use"/>
+        <Item currentVect="242" id="SCI12_SCIX0" priority="15" usedState="Not Use"/>
+        <Item currentVect="243" id="SCI12_SCIX1" priority="15" usedState="Not Use"/>
+        <Item currentVect="244" id="SCI12_SCIX2" priority="15" usedState="Not Use"/>
+        <Item currentVect="245" id="SCI12_SCIX3" priority="15" usedState="Not Use"/>
+        <Item currentVect="246" id="RIIC0_EEI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="247" id="RIIC0_RXI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="248" id="RIIC0_TXI0" priority="15" usedState="Not Use"/>
+        <Item currentVect="249" id="RIIC0_TEI0" priority="15" usedState="Not Use"/>
+    </tool>
+    <tool id="Pins" version="1.0.1.0">
+        <pinItem allocation="6" comments="" direction="None" id="XTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="8" comments="" direction="None" id="EXTAL" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="11" comments="" direction="None" id="FINED" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="44" comments="" direction="None" id="REF1P" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="43" comments="" direction="None" id="REF1N" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="47" comments="" direction="None" id="AIN8" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="48" comments="" direction="None" id="AIN9" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="45" comments="" direction="None" id="AIN6" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+        <pinItem allocation="46" comments="" direction="None" id="AIN7" isUsedBySoftware="true" locked="false" operationMode="" status="0"/>
+    </tool>
+    <tool id="Summary" version="1.0.0.0">
+        <option id="com.renesas.smc.code.path" value="src\smc_gen"/>
+        <option id="com.renesas.smc.code.type" value="Normal Folder"/>
+    </tool>
+    <tool id="SWComponent" version="1.0.0.0">
+        <configuration inuse="true" name="r_bsp">
+            <component description="Dependencies : None&#10;The r_bsp package provides a foundation for code to be built on top of. It provides startup code, iodefines, and MCU information for different boards. There are 2 folders that make up the r_bsp package. The 'mcu' folder contains files that are common to a MCU group. These files provide functionality such as easy register access, CPU functions, and a file named 'mcu_info.h' for each MCU group. The 'mcu_info.h' file has information about the MCU on the board and is configured based on the information given in r_bsp_config.h. The information in 'mcu_info.h' is used to help configure Renesas middleware that uses the r_bsp package. The 'board' folder has a folder with startup code for each supported board.  Which MCU and board is chosen is decided by the settings in 'platform.h'. The user can choose which board they are using by uncommenting the include path that applies to their board. For example, if you are using the RSK+RX64M then you would uncomment the #include &quot;./board/generic_rx64m/r_bsp.h&quot; include path. Users are encouraged to add their own boards to the 'board' directory. BSPs are configured by using the r_bsp_config.h file. Each board will have a reference configuration file named r_bsp_config_reference.h. The user should copy this file to their project, rename it to r_bsp_config.h, and use the options inside the file to configure the BSP for their project." detailDescription="Board Support Packages." display="r_bsp" id="r_bsp7.41" version="7.41">
+                <gridItem id="BSP_CFG_USER_STACK_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_USTACK_BYTES" selectedIndex="0x1000"/>
+                <gridItem id="BSP_CFG_ISTACK_BYTES" selectedIndex="0x400"/>
+                <gridItem id="BSP_CFG_HEAP_BYTES" selectedIndex="0x400"/>
+                <gridItem id="BSP_CFG_IO_LIB_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_USER_CHARGET_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_CHARGET_FUNCTION" selectedIndex="my_sw_charget_function"/>
+                <gridItem id="BSP_CFG_USER_CHARPUT_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_CHARPUT_FUNCTION" selectedIndex="my_sw_charput_function"/>
+                <gridItem id="BSP_CFG_RUN_IN_USER_MODE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_1" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_2" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_3" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_ID_CODE_LONG_4" selectedIndex="0xFFFFFFFF"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_TYPE" selectedIndex="bsp_lock_t"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_HW_LOCK_FUNCTION" selectedIndex="my_hw_locking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_HW_UNLOCK_FUNCTION" selectedIndex="my_hw_unlocking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_SW_LOCK_FUNCTION" selectedIndex="my_sw_locking_function"/>
+                <gridItem id="BSP_CFG_USER_LOCKING_SW_UNLOCK_FUNCTION" selectedIndex="my_sw_unlocking_function"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_PRE_INITC_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_PRE_C_FUNCTION" selectedIndex="my_sw_warmstart_prec_function"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_CALLBACK_POST_INITC_ENABLED" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_USER_WARM_START_POST_C_FUNCTION" selectedIndex="my_sw_warmstart_postc_function"/>
+                <gridItem id="BSP_CFG_PARAM_CHECKING_ENABLE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_FIT_IPL_MAX" selectedIndex="15"/>
+                <gridItem id="BSP_CFG_SWINT_UNIT1_ENABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_SWINT_TASK_BUFFER_NUMBER" selectedIndex="8"/>
+                <gridItem id="BSP_CFG_SWINT_IPR_INITIAL_VALUE" selectedIndex="1"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_BITRATE" selectedIndex="115200"/>
+                <gridItem id="BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY" selectedIndex="15"/>
+                <gridItem id="BSP_CFG_HOCO_TRIMMING_ENABLE" selectedIndex="0"/>
+                <gridItem id="BSP_CFG_HOCO_TRIMMING_REG_VALUE" selectedIndex="0"/>
+            </component>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+            <source description="Components supporting Firmware Integration Technology" display="Firmware Integration Technology" id="com.renesas.smc.tools.swcomponent.fit.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="80a29ca0-2cae-49b9-9504-fc5f259d048b" inuse="true" name="Config_TMR0_TMR1">
+            <allocatable id="TMR0">
+                <isocket id="CountingClock" selection="Clock.tool_clock_pclkb" value="3.2E7"/>
+                <option enabled="true" id="CountMode" selection="16bitMode">
+                    <item id="8bitMode" input="" vlaue="0"/>
+                    <item id="16bitMode" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="ClockSourceOption" selection="PCLK">
+                    <item id="PCLK" input="" vlaue="0"/>
+                    <item id="PCLK2" input="" vlaue="0"/>
+                    <item id="PCLK8" input="" vlaue="0"/>
+                    <item id="PCLK32" input="" vlaue="0"/>
+                    <item id="PCLK64" input="" vlaue="0"/>
+                    <item id="PCLK1024" input="" vlaue="0"/>
+                    <item id="PCLK8192" input="" vlaue="0"/>
+                    <item id="ExternalClockRising" input="" vlaue="0"/>
+                    <item id="ExternalClockFalling" input="" vlaue="0"/>
+                    <item id="ExternalClockBoth" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="CounterClearOption" selection="Disabled">
+                    <item id="Disabled" input="" vlaue="0"/>
+                    <item id="ClearedMatchA" input="" vlaue="0"/>
+                    <item id="ClearedMatchB" input="" vlaue="0"/>
+                    <item id="ClearedRisingReset" input="" vlaue="0"/>
+                    <item id="ClearedResetHigh" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="CompareMatchAValue" selection="CompareMatchAValue">
+                    <item id="CompareMatchAValue" input="1000" vlaue="31999"/>
+                </option>
+                <option enabled="true" id="MatchValueOptionA" selection="us">
+                    <item id="ms" input="" vlaue="0"/>
+                    <item id="us" input="" vlaue="0"/>
+                    <item id="ns" input="" vlaue="0"/>
+                    <item id="count" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="CompareMatchBValue" selection="CompareMatchBValue">
+                    <item id="CompareMatchBValue" input="2" vlaue="63"/>
+                </option>
+                <option enabled="true" id="TMO0OutputEnable" selection="Disable">
+                    <item id="Disable" input="" vlaue="0"/>
+                    <item id="Enable" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OutputMatchA" selection="Nochange">
+                    <item id="Nochange" input="" vlaue="0"/>
+                    <item id="Output0" input="" vlaue="0"/>
+                    <item id="Output1" input="" vlaue="0"/>
+                    <item id="ToggleOutput" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OutputMatchB" selection="Nochange">
+                    <item id="Nochange" input="" vlaue="0"/>
+                    <item id="Output0" input="" vlaue="0"/>
+                    <item id="Output1" input="" vlaue="0"/>
+                    <item id="ToggleOutput" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="TCORAEnable" selection="Enable">
+                    <item id="Disable" input="" vlaue="0"/>
+                    <item id="Enable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="TCORBEnable" selection="Disable">
+                    <item id="Disable" input="" vlaue="0"/>
+                    <item id="Enable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="TCNTEnable" selection="Disable">
+                    <item id="Disable" input="" vlaue="0"/>
+                    <item id="Enable" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="130InterruptOption" selection="Level15">
+                    <item id="Level0" input="" vlaue="0"/>
+                    <item id="Level1" input="" vlaue="0"/>
+                    <item id="Level2" input="" vlaue="0"/>
+                    <item id="Level3" input="" vlaue="0"/>
+                    <item id="Level4" input="" vlaue="0"/>
+                    <item id="Level5" input="" vlaue="0"/>
+                    <item id="Level6" input="" vlaue="0"/>
+                    <item id="Level7" input="" vlaue="0"/>
+                    <item id="Level8" input="" vlaue="0"/>
+                    <item id="Level9" input="" vlaue="0"/>
+                    <item id="Level10" input="" vlaue="0"/>
+                    <item id="Level11" input="" vlaue="0"/>
+                    <item id="Level12" input="" vlaue="0"/>
+                    <item id="Level13" input="" vlaue="0"/>
+                    <item id="Level14" input="" vlaue="0"/>
+                    <item id="Level15" input="" vlaue="0"/>
+                </option>
+            </allocatable>
+            <component description="This software component generates two units (unit 0, unit 1) of an on-chip 8-bit timer (TMR) module that comprise two 8-bit counter channels, totaling four channels." detailDescription="" display="8-Bit Timer" id="com.renesas.smc.tools.swcomponent.codegenerator.tmr" version="1.10.0"/>
+            <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="16-Bit Timer 0" display="TMR0_TMR1" id="com.renesas.smc.tools.swcomponent.codegenerator.tmr.rx23ea.tmr0_tmr1" type="TMR01">
+                <context>
+                    <option enabled="true" id="CountMode" selection="16bitMode">
+                        <item enabled="true" id="8bitMode"/>
+                        <item enabled="true" id="16bitMode"/>
+                    </option>
+                </context>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="7ff12ce0-177a-4c4b-a9f3-3f4f431ebd07" inuse="true" name="Config_AFE">
+            <allocatable id="AFE">
+                <isocket id="CountClockI" selection="Clock.tool_clock_iclk" value="3.2E7"/>
+                <isocket id="PCLKB" selection="Clock.tool_clock_pclkb" value="3.2E7"/>
+                <option enabled="true" id="EnVBIAS" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN0" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN1" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN2" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN3" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN4" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN5" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN6" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN7" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN8" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN9" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN10" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnAIN11" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnIEXC" selection="Use">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptMode" selection="2Chan">
+                    <item id="2Chan" input="" vlaue="0"/>
+                    <item id="4Chan" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptCurrent" selection="250">
+                    <item id="50" input="" vlaue="0"/>
+                    <item id="100" input="" vlaue="0"/>
+                    <item id="250" input="" vlaue="0"/>
+                    <item id="500" input="" vlaue="0"/>
+                    <item id="750" input="" vlaue="0"/>
+                    <item id="1000" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptIEXC0" selection="AIN9">
+                    <item id="AIN0" input="" vlaue="0"/>
+                    <item id="AIN1" input="" vlaue="0"/>
+                    <item id="AIN2" input="" vlaue="0"/>
+                    <item id="AIN3" input="" vlaue="0"/>
+                    <item id="AIN4" input="" vlaue="0"/>
+                    <item id="AIN5" input="" vlaue="0"/>
+                    <item id="AIN6" input="" vlaue="0"/>
+                    <item id="AIN7" input="" vlaue="0"/>
+                    <item id="AIN8" input="" vlaue="0"/>
+                    <item id="AIN9" input="" vlaue="0"/>
+                    <item id="AIN10" input="" vlaue="0"/>
+                    <item id="AIN11" input="" vlaue="0"/>
+                    <item id="OutDis" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnIEXC0DET" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptIEXC1" selection="AIN8">
+                    <item id="AIN0" input="" vlaue="0"/>
+                    <item id="AIN1" input="" vlaue="0"/>
+                    <item id="AIN2" input="" vlaue="0"/>
+                    <item id="AIN3" input="" vlaue="0"/>
+                    <item id="AIN4" input="" vlaue="0"/>
+                    <item id="AIN5" input="" vlaue="0"/>
+                    <item id="AIN6" input="" vlaue="0"/>
+                    <item id="AIN7" input="" vlaue="0"/>
+                    <item id="AIN8" input="" vlaue="0"/>
+                    <item id="AIN9" input="" vlaue="0"/>
+                    <item id="AIN10" input="" vlaue="0"/>
+                    <item id="AIN11" input="" vlaue="0"/>
+                    <item id="OutDis" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnIEXC1DET" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OptIEXC2" selection="OutDis">
+                    <item id="AIN0" input="" vlaue="0"/>
+                    <item id="AIN1" input="" vlaue="0"/>
+                    <item id="AIN2" input="" vlaue="0"/>
+                    <item id="AIN3" input="" vlaue="0"/>
+                    <item id="AIN4" input="" vlaue="0"/>
+                    <item id="AIN5" input="" vlaue="0"/>
+                    <item id="AIN6" input="" vlaue="0"/>
+                    <item id="AIN7" input="" vlaue="0"/>
+                    <item id="AIN8" input="" vlaue="0"/>
+                    <item id="AIN9" input="" vlaue="0"/>
+                    <item id="AIN10" input="" vlaue="0"/>
+                    <item id="AIN11" input="" vlaue="0"/>
+                    <item id="OutDis" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnIEXC2DET" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OptIEXC3" selection="OutDis">
+                    <item id="AIN0" input="" vlaue="0"/>
+                    <item id="AIN1" input="" vlaue="0"/>
+                    <item id="AIN2" input="" vlaue="0"/>
+                    <item id="AIN3" input="" vlaue="0"/>
+                    <item id="AIN4" input="" vlaue="0"/>
+                    <item id="AIN5" input="" vlaue="0"/>
+                    <item id="AIN6" input="" vlaue="0"/>
+                    <item id="AIN7" input="" vlaue="0"/>
+                    <item id="AIN8" input="" vlaue="0"/>
+                    <item id="AIN9" input="" vlaue="0"/>
+                    <item id="AIN10" input="" vlaue="0"/>
+                    <item id="AIN11" input="" vlaue="0"/>
+                    <item id="OutDis" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnIEXC3DET" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnLVDET0" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OptVolLev0" selection="1_86V">
+                    <item id="2V" input="" vlaue="0"/>
+                    <item id="1_86V" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnLVDET1" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="OptVolLev1" selection="2_82V">
+                    <item id="2_91V" input="" vlaue="0"/>
+                    <item id="2_82V" input="" vlaue="0"/>
+                    <item id="3_80V" input="" vlaue="0"/>
+                    <item id="3_70V" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnLSW" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+            </allocatable>
+            <component description="This software component provides Analog Front End configurations" detailDescription="" display="Analog Front End" id="com.renesas.smc.tools.swcomponent.codegenerator.afe" version="1.1.0"/>
+            <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="Analog Front End" display="AFE" id="com.renesas.smc.swc.cg.rx.afe.rx23ea.afe" type="">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+        <configuration apiMode="FULL_API" id="eba886bf-aa0a-4180-b0fb-3527ffbcbb98" inuse="true" name="Config_DSAD0">
+            <allocatable id="DSAD0">
+                <allocatable id="DSADChan0">
+                    <osocket id="NegInSig" value="AIN6"/>
+                    <osocket id="PosInSig" value="AIN7"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="true" id="PosInSig" selection="AIN7">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="NegInSig" selection="AIN6">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="RefInSig" selection="REF1P">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="PosRefBuf" selection="Use">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="NegRefBuf" selection="Use">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="AmpSel" selection="PGA">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="PgaGain" selection="16">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="AdConvNum" selection="ImmValMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="true" id="OvSmpRatio" selection="OtherRat">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="3124" vlaue="3124"/>
+                    </option>
+                    <option enabled="true" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="true" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="true" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="DSADChan1">
+                    <osocket id="NegInSig" value="NoCon"/>
+                    <osocket id="PosInSig" value="NoCon"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="false" id="PosInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="RefInSig" selection="AVCC">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AmpSel" selection="Unuse">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PgaGain" selection="1">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AdConvNum" selection="ExponMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="false" id="OvSmpRatio" selection="256">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="false" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="DSADChan2">
+                    <osocket id="NegInSig" value="NoCon"/>
+                    <osocket id="PosInSig" value="NoCon"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="false" id="PosInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="RefInSig" selection="AVCC">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AmpSel" selection="Unuse">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PgaGain" selection="1">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AdConvNum" selection="ExponMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="false" id="OvSmpRatio" selection="256">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="false" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="DSADChan3">
+                    <osocket id="NegInSig" value="NoCon"/>
+                    <osocket id="PosInSig" value="NoCon"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="false" id="PosInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="RefInSig" selection="AVCC">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AmpSel" selection="Unuse">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PgaGain" selection="1">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AdConvNum" selection="ExponMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="false" id="OvSmpRatio" selection="256">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="false" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="DSADChan4">
+                    <osocket id="NegInSig" value="NoCon"/>
+                    <osocket id="PosInSig" value="NoCon"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="false" id="PosInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="RefInSig" selection="AVCC">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AmpSel" selection="Unuse">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PgaGain" selection="1">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AdConvNum" selection="ExponMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="false" id="OvSmpRatio" selection="256">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="false" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <allocatable id="DSADChan5">
+                    <osocket id="NegInSig" value="NoCon"/>
+                    <osocket id="PosInSig" value="NoCon"/>
+                    <osocket id="TEMPS" value="true"/>
+                    <option enabled="false" id="PosInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                        <item id="offErrMeas" input="" vlaue="0"/>
+                        <item id="TempSensor" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInSig" selection="NoCon">
+                        <item id="NoCon" input="" vlaue="0"/>
+                        <item id="AIN0" input="" vlaue="0"/>
+                        <item id="AIN1" input="" vlaue="0"/>
+                        <item id="AIN2" input="" vlaue="0"/>
+                        <item id="AIN3" input="" vlaue="0"/>
+                        <item id="AIN4" input="" vlaue="0"/>
+                        <item id="AIN5" input="" vlaue="0"/>
+                        <item id="AIN6" input="" vlaue="0"/>
+                        <item id="AIN7" input="" vlaue="0"/>
+                        <item id="AIN8" input="" vlaue="0"/>
+                        <item id="AIN9" input="" vlaue="0"/>
+                        <item id="AIN10" input="" vlaue="0"/>
+                        <item id="AIN11" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="RefInSig" selection="AVCC">
+                        <item id="AVCC" input="" vlaue="0"/>
+                        <item id="REFOUT" input="" vlaue="0"/>
+                        <item id="REF0P" input="" vlaue="0"/>
+                        <item id="REF1P" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegRefBuf" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AmpSel" selection="Unuse">
+                        <item id="Unuse" input="" vlaue="0"/>
+                        <item id="BufAmp" input="" vlaue="0"/>
+                        <item id="PGA" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="BufAmp" selection="PosBufAmp">
+                        <item id="PosBufAmp" input="" vlaue="0"/>
+                        <item id="NegBufAmp" input="" vlaue="0"/>
+                        <item id="BothBufAmp" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PgaGain" selection="1">
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvMode" selection="NormOpt">
+                        <item id="NormOpt" input="" vlaue="0"/>
+                        <item id="SingCyl" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DataFmt" selection="Twos">
+                        <item id="Twos" input="" vlaue="0"/>
+                        <item id="Binary" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AdConvNum" selection="ExponMode">
+                        <item id="ExponMode" input="" vlaue="0"/>
+                        <item id="ImmValMode" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvX" selection="0">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADConvY" selection="1">
+                        <item id="0" input="" vlaue="0"/>
+                        <item id="1" input="" vlaue="0"/>
+                        <item id="2" input="" vlaue="0"/>
+                        <item id="3" input="" vlaue="0"/>
+                        <item id="4" input="" vlaue="0"/>
+                        <item id="5" input="" vlaue="0"/>
+                        <item id="6" input="" vlaue="0"/>
+                        <item id="7" input="" vlaue="0"/>
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="9" input="" vlaue="0"/>
+                        <item id="10" input="" vlaue="0"/>
+                        <item id="11" input="" vlaue="0"/>
+                        <item id="12" input="" vlaue="0"/>
+                        <item id="13" input="" vlaue="0"/>
+                        <item id="14" input="" vlaue="0"/>
+                        <item id="15" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="17" input="" vlaue="0"/>
+                        <item id="18" input="" vlaue="0"/>
+                        <item id="19" input="" vlaue="0"/>
+                        <item id="20" input="" vlaue="0"/>
+                        <item id="21" input="" vlaue="0"/>
+                        <item id="22" input="" vlaue="0"/>
+                        <item id="23" input="" vlaue="0"/>
+                        <item id="24" input="" vlaue="0"/>
+                        <item id="25" input="" vlaue="0"/>
+                        <item id="26" input="" vlaue="0"/>
+                        <item id="27" input="" vlaue="0"/>
+                        <item id="28" input="" vlaue="0"/>
+                        <item id="29" input="" vlaue="0"/>
+                        <item id="30" input="" vlaue="0"/>
+                        <item id="31" input="" vlaue="31"/>
+                    </option>
+                    <option enabled="false" id="OvSmpRatio" selection="256">
+                        <item id="64" input="" vlaue="0"/>
+                        <item id="128" input="" vlaue="0"/>
+                        <item id="256" input="" vlaue="0"/>
+                        <item id="512" input="" vlaue="0"/>
+                        <item id="1024" input="" vlaue="0"/>
+                        <item id="2048" input="" vlaue="0"/>
+                        <item id="OtherRat" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OSRmRatio" selection="OSRmRatio">
+                        <item id="OSRmRatio" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnOffCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal_sign" selection="pos">
+                        <item id="pos" input="" vlaue="0"/>
+                        <item id="neg" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="OffSetCal" selection="OffSetCal">
+                        <item id="OffSetCal" input="0" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="EnGainCal" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="GainCal" selection="GainCal">
+                        <item id="GainCal" input="1" vlaue="4194304"/>
+                    </option>
+                    <option enabled="false" id="EnAvData" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="ADIntTm" selection="EachADCmpl">
+                        <item id="EachADCmpl" input="" vlaue="0"/>
+                        <item id="AvgSelect" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="AvDataNum" selection="8">
+                        <item id="8" input="" vlaue="0"/>
+                        <item id="16" input="" vlaue="0"/>
+                        <item id="32" input="" vlaue="0"/>
+                        <item id="64" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="PosInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="NegInDDS" selection="Unuse">
+                        <item id="Use" input="" vlaue="0"/>
+                        <item id="Unuse" input="" vlaue="0"/>
+                    </option>
+                    <option enabled="false" id="DDSCurent" selection="0_5ua">
+                        <item id="0_5ua" input="" vlaue="0"/>
+                        <item id="2ua" input="" vlaue="0"/>
+                        <item id="4ua" input="" vlaue="0"/>
+                        <item id="20ua" input="" vlaue="0"/>
+                    </option>
+                </allocatable>
+                <osocket id="AVCC0" value="true"/>
+                <osocket id="AVSS0" value="true"/>
+                <isocket id="CountClockI" selection="Clock.tool_clock_iclk" value="3.2E7"/>
+                <isocket id="CountClockB" selection="Clock.tool_clock_pclkb" value="3.2E7"/>
+                <option enabled="true" id="Ch0" selection="Use">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="Ch1" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="Ch2" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="Ch3" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="Ch4" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="Ch5" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptVoltage" selection="Vlt36to55">
+                    <item id="Vlt36to55" input="" vlaue="0"/>
+                    <item id="Vlt27to55" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptMode" selection="Normal">
+                    <item id="Normal" input="" vlaue="0"/>
+                    <item id="LowPower" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="OptClk" selection="PCLKB_8">
+                    <item id="PCLKB" input="" vlaue="0"/>
+                    <item id="PCLKB_low" input="" vlaue="0"/>
+                    <item id="PCLKB_2" input="" vlaue="0"/>
+                    <item id="PCLKB_2_low" input="" vlaue="0"/>
+                    <item id="PCLKB_3" input="" vlaue="0"/>
+                    <item id="PCLKB_4" input="" vlaue="0"/>
+                    <item id="PCLKB_5" input="" vlaue="0"/>
+                    <item id="PCLKB_6" input="" vlaue="0"/>
+                    <item id="PCLKB_7_5" input="" vlaue="0"/>
+                    <item id="PCLKB_8" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="SrtTrgg" selection="SoftWare">
+                    <item id="SoftWare" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnADI" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="ADIPrty" selection="Level15">
+                    <item id="Level0" input="" vlaue="0"/>
+                    <item id="Level1" input="" vlaue="0"/>
+                    <item id="Level2" input="" vlaue="0"/>
+                    <item id="Level3" input="" vlaue="0"/>
+                    <item id="Level4" input="" vlaue="0"/>
+                    <item id="Level5" input="" vlaue="0"/>
+                    <item id="Level6" input="" vlaue="0"/>
+                    <item id="Level7" input="" vlaue="0"/>
+                    <item id="Level8" input="" vlaue="0"/>
+                    <item id="Level9" input="" vlaue="0"/>
+                    <item id="Level10" input="" vlaue="0"/>
+                    <item id="Level11" input="" vlaue="0"/>
+                    <item id="Level12" input="" vlaue="0"/>
+                    <item id="Level13" input="" vlaue="0"/>
+                    <item id="Level14" input="" vlaue="0"/>
+                    <item id="Level15" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnSCANEND" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="SCANENDPrty" selection="Level15">
+                    <item id="Level0" input="" vlaue="0"/>
+                    <item id="Level1" input="" vlaue="0"/>
+                    <item id="Level2" input="" vlaue="0"/>
+                    <item id="Level3" input="" vlaue="0"/>
+                    <item id="Level4" input="" vlaue="0"/>
+                    <item id="Level5" input="" vlaue="0"/>
+                    <item id="Level6" input="" vlaue="0"/>
+                    <item id="Level7" input="" vlaue="0"/>
+                    <item id="Level8" input="" vlaue="0"/>
+                    <item id="Level9" input="" vlaue="0"/>
+                    <item id="Level10" input="" vlaue="0"/>
+                    <item id="Level11" input="" vlaue="0"/>
+                    <item id="Level12" input="" vlaue="0"/>
+                    <item id="Level13" input="" vlaue="0"/>
+                    <item id="Level14" input="" vlaue="0"/>
+                    <item id="Level15" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnSync" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnVolDetRef" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnDisDetRefPos" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="ChargeRefPos" selection="Discharge">
+                    <item id="Discharge" input="" vlaue="0"/>
+                    <item id="Charge" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="EnDisDetRefNeg" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="false" id="ChargeRefNeg" selection="Discharge">
+                    <item id="Discharge" input="" vlaue="0"/>
+                    <item id="Charge" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnVolDetInPos" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+                <option enabled="true" id="EnVolDetInNeg" selection="Unuse">
+                    <item id="Use" input="" vlaue="0"/>
+                    <item id="Unuse" input="" vlaue="0"/>
+                </option>
+            </allocatable>
+            <component description="This software component provides continuous scan mode configurations for 24-bit delta-sigma A/D Converter which the analog inputs channels arbitrarily selected are converted repeatedly." detailDescription="" display="Continuous Scan Mode DSAD" id="com.renesas.smc.tools.swcomponent.codegenerator.csmdsad" version="1.3.2"/>
+            <allocator channelLevel0="0" channelLevel1="" channelLevel2="" channelLevel3="" channelLevel4="" channelLevel5="" description="DSAD0 Continuous Scan Mode" display="DSAD0" id="com.renesas.smc.swc.cg.rx.csmdsad.rx23ea.dsad0" type="">
+                <context/>
+            </allocator>
+            <source description="Code generator components provide peripheral drivers with customized generated source geared towards small code size" display="Code Generator" id="com.renesas.smc.tools.swcomponent.codegenerator.source"/>
+        </configuration>
+    </tool>
+    <tool id="System">
+        <section id="ocd">
+            <option enabled="true" id="debugIF" selection="fine">
+                <item enabled="true" id="unused"/>
+                <item enabled="true" id="fine"/>
+            </option>
+        </section>
+    </tool>
+</smc>

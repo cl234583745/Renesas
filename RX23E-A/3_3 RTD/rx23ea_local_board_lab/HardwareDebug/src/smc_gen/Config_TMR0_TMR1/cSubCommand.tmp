@@ -1,0 +1,22 @@
+-isa=rxv2
+-MAKEUD="E:\e2s_workspace\rx23ea_local_board_lab\HardwareDebug\src\smc_gen\Config_TMR0_TMR1"
+-include="C:\Program Files (x86)\Renesas\RX\3_5_0\/include"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\r_pincfg"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\general"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\r_bsp"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\r_config"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\Config_TMR0_TMR1"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\Config_AFE"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\smc_gen\Config_DSAD0"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\dsplib-rxv2"
+-include="E:\e2s_workspace\rx23ea_local_board_lab\src\r_dsp"
+-lang=c99
+-utf8
+-nomessage
+-output=obj
+-obj_path="src/smc_gen/Config_TMR0_TMR1"
+-debug
+-outcode=utf8
+-optimize=0
+-nologo

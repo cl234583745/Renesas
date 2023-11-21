@@ -1,0 +1,108 @@
+Renesas Optimizing Linker (W3.05.00 )             19-Nov-2023 16:29:20
+
+*** Options ***
+
+-subcommand=Linkerrx23ea_local_board_lab.tmp
+-MAKEUD="E:\e2s_workspace\rx23ea_local_board_lab\HardwareDebug/rx23ea_local_board_lab_l.ud" 
+-library="E:\e2s_workspace\rx23ea_local_board_lab\dsplib-rxv2\RX_DSP_FPU_LE_Check.lib" 
+-noprelink 
+-input=".\src/r_dsp\r_dsp_iirbiquad.obj"
+-input=".\src\r_rtd_api.obj"
+-input=".\src\r_sensor_common_api.obj"
+-input=".\src\rx23ea_local_board_lab.obj"
+-input=".\src/smc_gen/Config_AFE\Config_AFE.obj"
+-input=".\src/smc_gen/Config_AFE\Config_AFE_user.obj"
+-input=".\src/smc_gen/Config_DSAD0\Config_DSAD0.obj"
+-input=".\src/smc_gen/Config_DSAD0\Config_DSAD0_user.obj"
+-input=".\src/smc_gen/Config_TMR0_TMR1\Config_TMR0_TMR1.obj"
+-input=".\src/smc_gen/Config_TMR0_TMR1\Config_TMR0_TMR1_user.obj"
+-input=".\src/smc_gen/general\r_cg_hardware_setup.obj"
+-input=".\src/smc_gen/general\r_smc_cgc.obj"
+-input=".\src/smc_gen/general\r_smc_cgc_user.obj"
+-input=".\src/smc_gen/general\r_smc_interrupt.obj"
+-input=".\src/smc_gen/r_bsp/board/generic_rx23e-a\hwsetup.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\dbsct.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\lowlvl.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\lowsrc.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\mcu_locks.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_common.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_cpu.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_interrupts.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_locking.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_mcu_startup.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_bsp_software_interrupt.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\r_rx_intrinsic_functions.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\resetprg.obj"
+-input=".\src/smc_gen/r_bsp/mcu/all\sbrk.obj"
+-input=".\src/smc_gen/r_bsp/mcu/rx23e-a\mcu_clocks.obj"
+-input=".\src/smc_gen/r_bsp/mcu/rx23e-a\mcu_init.obj"
+-input=".\src/smc_gen/r_bsp/mcu/rx23e-a\mcu_interrupts.obj"
+-input=".\src/smc_gen/r_bsp/mcu/rx23e-a\vecttbl.obj"
+-input=".\src/smc_gen/r_pincfg\Pin.obj"
+-library=".\rx23ea_local_board_lab.lib"
+-start=SU,SI,B_1,R_1,B_2,R_2,B,R/04,PResetPRG,C_1,C_2,C,C$*,D*,W*,L,P/0FFFC0000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC
+-output="rx23ea_local_board_lab.abs" 
+-form=absolute 
+-nomessage 
+-vect=_undefined_interrupt_source_isr 
+-list 
+-nooptimize 
+-rom=D=R,D_1=R_1,D_2=R_2 
+-cpu=RAM=00000000-00007fff,FIX=00080000-00083fff,FIX=00086000-00087fff,FIX=00088000-0008dfff,FIX=00090000-0009ffff,FIX=000a0000-000bffff,FIX=000c0000-000fffff,ROM=00100000-00101fff,FIX=007fc000-007fc4ff,FIX=007ffc00-007fffff,ROM=fffc0000-ffffffff 
+-nologo
+
+*** Error information ***
+
+*** Mapping List ***
+
+SECTION                            START      END         SIZE   ALIGN
+SU
+                                  00000004  00001003      1000   4
+SI
+                                  00001004  00001403       400   4
+B_1
+                                  00001404  0000142c        29   1
+R_1
+                                  0000142d  0000147d        51   1
+B_2
+                                  0000147e  00001487         a   2
+R_2
+                                  00001488  00001488         0   1
+B
+                                  00001488  0000423b      2db4   4
+R
+                                  0000423c  00004347       10c   4
+PResetPRG
+                                  fffc0000  fffc0063        64   1
+C_1
+                                  fffc0064  fffc0064         0   1
+C_2
+                                  fffc0064  fffc006b         8   2
+C
+                                  fffc006c  fffc15d7      156c   4
+C$DSEC
+                                  fffc15d8  fffc15fb        24   4
+C$BSEC
+                                  fffc15fc  fffc1613        18   4
+C$VECT
+                                  fffc1614  fffc1a13       400   4
+D
+                                  fffc1a14  fffc1b1f       10c   4
+D_1
+                                  fffc1b20  fffc1b70        51   1
+D_2
+                                  fffc1b71  fffc1b71         0   1
+W
+                                  fffc1b74  fffc1b74         0   4
+W_1
+                                  fffc1b74  fffc1b83        10   1
+W_2
+                                  fffc1b84  fffc1b84         0   2
+L
+                                  fffc1b84  fffc1bc9        46   4
+P
+                                  fffc1bca  fffc6d7e      51b5   1
+EXCEPTVECT
+                                  ffffff80  fffffffb        7c   4
+RESETVECT
+                                  fffffffc  ffffffff         4   4
