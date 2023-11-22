@@ -1,0 +1,24 @@
+-isa=rxv2
+-MAKEUD="E:\e2s_workspace\rx23ea_loadcell\HardwareDebug\src\smc_gen\general"
+-include="C:\Program Files (x86)\Renesas\RX\3_5_0\/include"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_DMAC0"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_SCI1"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_CMT0"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_PORT"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_DSAD0"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\Config_DMAC3"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\r_bsp"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\r_config"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\general"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen\r_pincfg"
+-include="E:\e2s_workspace\rx23ea_loadcell\src\smc_gen"
+-define=D_PRV_PC_TOOL_USE=1
+-lang=c99
+-utf8
+-nomessage
+-output=obj
+-obj_path="src/smc_gen/general"
+-debug
+-outcode=utf8
+-optimize=0
+-nologo

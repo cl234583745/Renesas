@@ -1,0 +1,193 @@
+<!DOCTYPE html><html><head>
+      <title>README</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.10\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<p><strong>万语始于HelloWorld，万物基于点灯之瑞萨RX23E-A采集称重传感器</strong></p>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述目的" class="md-toc-link">
+            <p>一、概述/目的</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#二-rx23e-a称重实验" class="md-toc-link"><p>二、RX23E-A称重实验</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-资料来源" class="md-toc-link">
+            <p>2.1 资料来源</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#22-官方例程" class="md-toc-link"><p>2.2 官方例程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#221-计算" class="md-toc-link">
+            <p>2.2.1 计算</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#221-校准重要" class="md-toc-link">
+            <p>2.2.1 校准(重要)</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#23-实际测试" class="md-toc-link"><p>2.3 实际测试</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#231-1kg称重传感器" class="md-toc-link">
+            <p>2.3.1 1kg称重传感器</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#232-校准后实测" class="md-toc-link">
+            <p>2.3.2 校准后实测</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#三-扩展提问" class="md-toc-link">
+            <p>三、扩展&amp;提问</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述目的">一、概述/目的 </h1>
+<p>使用瑞萨RX23E-A采集称重传感器得到重量数据，展示其便捷性和注意事项，得以快速上手。</p>
+<h1 id="二-rx23e-a称重实验">二、RX23E-A称重实验 </h1>
+<h2 id="21-资料来源">2.1 资料来源 </h2>
+<ul>
+<li>
+<p><a href="https://www.renesas.cn/cn/zh/products/microcontrollers-microprocessors/rx-32-bit-performance-efficiency-mcus/rx23e-analog-front-end-mounted-32-bit-microcontroller-ideal-high-precision-sensing-test-and-measurement#design_development">官方资料-开发板+例程</a></p>
+</li>
+<li>
+<p><a href="./DOC/RX%20MCU%20RX23E-A%20%E9%AB%98%E7%B2%BE%E5%BA%A6%E6%B5%8B%E9%87%8F%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86%E4%B8%8E%E5%BA%94%E7%94%A8%E5%AE%9E%E6%88%98%E5%9F%B9%E8%AE%AD%202023-09_v1.0.pdf">RX MCU RX23E-A 高精度测量基础知识与应用实战培训 2023-09_v1.0.pdf</a></p>
+</li>
+<li>
+<p><a href="./DOC/RX23E_A_Local_Board_SCH.pdf">RX23E_A_Local_Board_SCH.pdf</a></p>
+</li>
+<li>
+<p><a href="./DOC/r01an4789ej0110-rx23e-a.pdf">RX23E-A Group Weight Measurement Example Using a Load Cell</a></p>
+</li>
+</ul>
+<h2 id="22-官方例程">2.2 官方例程 </h2>
+<p>给出了非常详细的测试过程和结果分析。我们按照可以调试硬件、导入工程、分析计算和校准。<br>
+<img src="./images/block.png" alt=""><br>
+<img src="./images/loadcell.png" alt=""><br>
+<img src="./images/loadcell1.png" alt=""><br>
+<img src="./images/loadcell2.png" alt=""><br>
+<img src="./images/loadcell3.png" alt=""></p>
+<h3 id="221-计算">2.2.1 计算 </h3>
+<p><img src="./images/loadcell4.png" alt=""><br>
+<img src="./images/loadcell5.png" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>#define D_LC_PGA_GAIN           (128.0F)
+#define D_LC_CODE_FS            (16777216)//(16777216)//16762400
+#define D_LC_VREF               (5.0F)
+#define D_LC_VCC                (5.0F)
+#define D_LC_RO                 (0.001F)//(0.0009F)
+#define D_LC_MMAX               (1000.0F)//(600.0F)
+#define D_LC_DF_GAIN            (0.677626F) /** Oversampling ratio 50000                            */
+
+#define D_LC_COEFFICIENT_A      ((D_LC_MMAX * D_LC_VREF * 2) / \
+                                    (D_LC_RO * D_LC_VCC * D_LC_PGA_GAIN * D_LC_CODE_FS * D_LC_DF_GAIN))
+#define D_LC_COEFFICIENT_B      (0.0F)
+
+
+R_Config_DSAD0_Get_ValueResult( &amp;dsad0_reg);
+
+/** Flag mask, Sign extension */
+dsad0_value = (int32_t) ((dsad0_reg &amp; 0x00FFFFFFU) &lt;&lt; 8) &gt;&gt; 8;
+
+/** Calculate moving average of Load cell A/D conversion value[LSB] */
+dsad0_ave = R_CALC_MovingAverage((float)dsad0_value, s_ad_array, (size_t) D_PRV_SAMPLE_NUM, &amp;data_index);
+
+weight_value = R_LC_DsadToWeight(dsad0_ave, s_coef_a, s_coef_b);
+
+float R_LC_DsadToWeight (float dsad, float coef_a, float coef_b)
+{
+    return ((dsad * coef_a) + coef_b);
+}
+
+</code></pre><h3 id="221-校准重要">2.2.1 校准(重要) </h3>
+<ul>
+<li>官方只是文档介绍了，但例程代码没有实现<br>
+<img src="./images/loadcell6.png" alt=""><br>
+<img src="./images/loadcell7.png" alt=""></li>
+</ul>
+<h2 id="23-实际测试">2.3 实际测试 </h2>
+<h3 id="231-1kg称重传感器">2.3.1 1kg称重传感器 </h3>
+<p><img src="./images/tb1.png" alt=""><br>
+<img src="./images/tb2.png" alt=""><br>
+<img src="./images/tb3.png" alt=""><br>
+<img src="./images/tb4.png" alt=""></p>
+<h3 id="232-校准后实测">2.3.2 校准后实测 </h3>
+<p>我没有实现校准的代码，在调试中记录了M1M2对应的adc数值，代入公式就是校准参数ab的过程了</p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>//s_coef_a = (M2-M1)/(dsad2-dsad1)
+//s_coef_b = M1-s_coef_a*dsad1 =  M2-s_coef_a*dsad2
+//s_coef_a = (900-10)/(0x8b950-0xffffddd0)
+//s_coef_b = 10-s_coef_a*dsad1 =  900-s_coef_a*dsad2
+s_coef_a = (900.0F-10.0F)/(0x8b950-0xffffddd0);
+//s_coef_b = 10.0F-s_coef_a * 0xffffddd0;
+s_coef_b = 900.0F-s_coef_a * 0x8b950;
+/** Calculate weight [g] from A/D conversion value[LSB] of Load cell */
+weight_value = R_LC_DsadToWeight(dsad0_ave, s_coef_a, s_coef_b);
+</code></pre><p><img src="./images/ui1.png" alt=""><br>
+<img src="./images/ui2.png" alt=""></p>
+<h1 id="三-扩展提问">三、扩展&amp;提问 </h1>
+<ul>
+<li>
+<p>10元的电子秤是如何实现的呢？<br>
+<img src="./images/ui3.png" alt=""></p>
+</li>
+<li>
+<p>高精度测量的经验，例如，称重传感器内应变片的形变误差？</p>
+</li>
+<li>
+<p>应变片的其他应用相似性？<br>
+<img src="./images/ui4.png" alt=""></p>
+</li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
