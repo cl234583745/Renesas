@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<MicomToolCommonProjectFile Version="1.00">
+  <CreatorType Name="e2studio" Version=""/>
+  <Placeholders>
+    <PlaceholderPrefix>${</PlaceholderPrefix>
+    <PlaceholderPostfix>}</PlaceholderPostfix>
+  </Placeholders>
+  <Project Name="rx23ea_thermocouple" Type="Application">
+    <Files>
+      <Category Name="src">
+        <Path>src\main.c</Path>
+        <Path>src\r_communication_control_api.c</Path>
+        <Path>src\r_communication_control_api.h</Path>
+        <Path>src\r_ring_buffer_control_api.c</Path>
+        <Path>src\r_ring_buffer_control_api.h</Path>
+        <Path>src\r_rtd_api.c</Path>
+        <Path>src\r_rtd_api.h</Path>
+        <Path>src\r_sensor_common_api.c</Path>
+        <Path>src\r_sensor_common_api.h</Path>
+        <Path>src\r_thermocouple_api.c</Path>
+        <Path>src\r_thermocouple_api.h</Path>
+        <Category Name="smc_gen">
+          <Category Name="Config_AFE">
+            <Path>src\smc_gen\Config_AFE\Config_AFE.c</Path>
+            <Path>src\smc_gen\Config_AFE\Config_AFE.h</Path>
+            <Path>src\smc_gen\Config_AFE\Config_AFE_user.c</Path>
+          </Category>
+          <Category Name="Config_CMT0">
+            <Path>src\smc_gen\Config_CMT0\Config_CMT0.c</Path>
+            <Path>src\smc_gen\Config_CMT0\Config_CMT0.h</Path>
+            <Path>src\smc_gen\Config_CMT0\Config_CMT0_user.c</Path>
+          </Category>
+          <Category Name="Config_DMAC0">
+            <Path>src\smc_gen\Config_DMAC0\Config_DMAC0.c</Path>
+            <Path>src\smc_gen\Config_DMAC0\Config_DMAC0.h</Path>
+            <Path>src\smc_gen\Config_DMAC0\Config_DMAC0_user.c</Path>
+          </Category>
+          <Category Name="Config_DMAC3">
+            <Path>src\smc_gen\Config_DMAC3\Config_DMAC3.c</Path>
+            <Path>src\smc_gen\Config_DMAC3\Config_DMAC3.h</Path>
+            <Path>src\smc_gen\Config_DMAC3\Config_DMAC3_user.c</Path>
+          </Category>
+          <Category Name="Config_DSAD0">
+            <Path>src\smc_gen\Config_DSAD0\Config_DSAD0.c</Path>
+            <Path>src\smc_gen\Config_DSAD0\Config_DSAD0.h</Path>
+            <Path>src\smc_gen\Config_DSAD0\Config_DSAD0_user.c</Path>
+          </Category>
+          <Category Name="Config_DSAD1">
+            <Path>src\smc_gen\Config_DSAD1\Config_DSAD1.c</Path>
+            <Path>src\smc_gen\Config_DSAD1\Config_DSAD1.h</Path>
+            <Path>src\smc_gen\Config_DSAD1\Config_DSAD1_user.c</Path>
+          </Category>
+          <Category Name="Config_PORT">
+            <Path>src\smc_gen\Config_PORT\Config_PORT.c</Path>
+            <Path>src\smc_gen\Config_PORT\Config_PORT.h</Path>
+            <Path>src\smc_gen\Config_PORT\Config_PORT_user.c</Path>
+          </Category>
+          <Category Name="Config_SCI1">
+            <Path>src\smc_gen\Config_SCI1\Config_SCI1.c</Path>
+            <Path>src\smc_gen\Config_SCI1\Config_SCI1.h</Path>
+            <Path>src\smc_gen\Config_SCI1\Config_SCI1_user.c</Path>
+          </Category>
+          <Category Name="general">
+            <Path>src\smc_gen\general\r_cg_afe.h</Path>
+            <Path>src\smc_gen\general\r_cg_cmt.h</Path>
+            <Path>src\smc_gen\general\r_cg_dmac.h</Path>
+            <Path>src\smc_gen\general\r_cg_dsad.h</Path>
+            <Path>src\smc_gen\general\r_cg_hardware_setup.c</Path>
+            <Path>src\smc_gen\general\r_cg_macrodriver.h</Path>
+            <Path>src\smc_gen\general\r_cg_port.h</Path>
+            <Path>src\smc_gen\general\r_cg_sci.h</Path>
+            <Path>src\smc_gen\general\r_cg_userdefine.h</Path>
+            <Path>src\smc_gen\general\r_smc_cgc.c</Path>
+            <Path>src\smc_gen\general\r_smc_cgc.h</Path>
+            <Path>src\smc_gen\general\r_smc_cgc_user.c</Path>
+            <Path>src\smc_gen\general\r_smc_entry.h</Path>
+            <Path>src\smc_gen\general\r_smc_interrupt.c</Path>
+            <Path>src\smc_gen\general\r_smc_interrupt.h</Path>
+          </Category>
+          <Category Name="r_bsp">
+            <Path>src\smc_gen\r_bsp\platform.h</Path>
+            <Path>src\smc_gen\r_bsp\readme.txt</Path>
+            <Category Name="board">
+              <Category Name="generic_rx23e-a">
+                <Path>src\smc_gen\r_bsp\board\generic_rx23e-a\hwsetup.c</Path>
+                <Path>src\smc_gen\r_bsp\board\generic_rx23e-a\hwsetup.h</Path>
+                <Path>src\smc_gen\r_bsp\board\generic_rx23e-a\r_bsp.h</Path>
+                <Path>src\smc_gen\r_bsp\board\generic_rx23e-a\r_bsp_config_reference.h</Path>
+              </Category>
+              <Category Name="user">
+                <Path>src\smc_gen\r_bsp\board\user\r_bsp.h</Path>
+              </Category>
+            </Category>
+            <Category Name="mcu">
+              <Category Name="all">
+                <Path>src\smc_gen\r_bsp\mcu\all\dbsct.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\lowlvl.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\lowlvl.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\lowsrc.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\lowsrc.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\mcu_locks.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_common.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_common.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_cpu.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_interrupts.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_interrupts.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_locking.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_mcu_startup.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_mcu_startup.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_software_interrupt.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_bsp_software_interrupt.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_rtos.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_rx_compiler.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_rx_intrinsic_functions.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_rx_intrinsic_functions.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\r_typedefs.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\resetprg.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\sbrk.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\all\sbrk.h</Path>
+              </Category>
+              <Category Name="rx23e-a">
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_clocks.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_clocks.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_info.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_init.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_init.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_interrupts.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_interrupts.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\mcu_locks.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\r_bsp_cpu.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\r_bsp_locking.h</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\vecttbl.c</Path>
+                <Path>src\smc_gen\r_bsp\mcu\rx23e-a\vecttbl.h</Path>
+                <Category Name="register_access">
+                  <Category Name="ccrx">
+                    <Path>src\smc_gen\r_bsp\mcu\rx23e-a\register_access\ccrx\iodefine.h</Path>
+                  </Category>
+                </Category>
+              </Category>
+            </Category>
+          </Category>
+          <Category Name="r_config">
+            <Path>src\smc_gen\r_config\r_bsp_config.h</Path>
+            <Path>src\smc_gen\r_config\r_bsp_config_readme.txt</Path>
+          </Category>
+          <Category Name="r_pincfg">
+            <Path>src\smc_gen\r_pincfg\Pin.c</Path>
+            <Path>src\smc_gen\r_pincfg\Pin.h</Path>
+          </Category>
+        </Category>
+      </Category>
+    </Files>
+    <Device Category="com.renesas.cdt.managedbuild.renesas.ccrx.common.option.cpu.rx200" Series="RX">R5F523E6AxFL</Device>
+    <BuildOptions Name="CC-RX" Version="v3.02.00">
+      <BuildMode Active="True" Name="HardwareDebug">
+        <GeneralOptions/>
+        <CompileOptions>
+          <Option>-isa=rxv2</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DSAD0"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DSAD1"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DMAC0"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DMAC3"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_CMT0"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_PORT"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_SCI1"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_AFE"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\r_bsp"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\r_config"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\general"</Option>
+          <Option>-include="${ProjDirPath}\..\${ProjName}\src\smc_gen\r_pincfg"</Option>
+          <Option>-define=D_PRV_PC_TOOL_USE=1</Option>
+          <Option>-utf8</Option>
+          <Option>-nomessage</Option>
+          <Option>-debug</Option>
+          <Option>-outcode=utf8</Option>
+          <Option>-nologo</Option>
+          <Option>-lang=c99</Option>
+          <Option>-lang=cpp</Option>
+          <Option>-output=obj=${CONFIGDIR}\${FILELEAF}.obj</Option>
+          <Option>-obj_path=${CONFIGDIR}</Option>
+        </CompileOptions>
+        <AssembleOptions>
+          <Option>-isa=rxv2</Option>
+          <Option>-utf8</Option>
+          <Option>-debug</Option>
+          <Option>-nologo</Option>
+          <Option>-output=${CONFIGDIR}</Option>
+        </AssembleOptions>
+        <LinkOptions>
+          <Option>-output="${ProjName}.abs"</Option>
+          <Option>-form=absolute</Option>
+          <Option>-nomessage</Option>
+          <Option>-vect=_undefined_interrupt_source_isr</Option>
+          <Option>-list=${ProjName}.map</Option>
+          <Option>-nooptimize</Option>
+          <Option>-rom=D=R,D_1=R_1,D_2=R_2</Option>
+          <Option>-nologo</Option>
+          <Option>-start=SU,SI,B_1,R_1,B_2,R_2,B,R/04,B_DMAC_REPEAT_AREA_1/02000,C_1,C_2,C,C$*,D*,W*,L,P*/0FFFC0000,EXCEPTVECT/0FFFFFF80,RESETVECT/0FFFFFFFC</Option>
+          <PreLinker>Auto</PreLinker>
+        </LinkOptions>
+        <LibraryGenerateOptions>
+          <Option>-isa=rxv2</Option>
+          <Option>-lang=c99</Option>
+          <Option>-head=runtime,stdio,stdlib,string,new</Option>
+          <Option>-output="${ProjName}.lib"</Option>
+          <Option>-nologo</Option>
+          <GenerateMode>BuildOptionChanged</GenerateMode>
+        </LibraryGenerateOptions>
+        <LinkOrder>
+          <Path>HardwareDebug\main.obj</Path>
+          <Path>HardwareDebug\r_communication_control_api.obj</Path>
+          <Path>HardwareDebug\r_ring_buffer_control_api.obj</Path>
+          <Path>HardwareDebug\r_rtd_api.obj</Path>
+          <Path>HardwareDebug\r_sensor_common_api.obj</Path>
+          <Path>HardwareDebug\r_thermocouple_api.obj</Path>
+          <Path>HardwareDebug\Config_AFE.obj</Path>
+          <Path>HardwareDebug\Config_AFE_user.obj</Path>
+          <Path>HardwareDebug\Config_CMT0.obj</Path>
+          <Path>HardwareDebug\Config_CMT0_user.obj</Path>
+          <Path>HardwareDebug\Config_DMAC0.obj</Path>
+          <Path>HardwareDebug\Config_DMAC0_user.obj</Path>
+          <Path>HardwareDebug\Config_DMAC3.obj</Path>
+          <Path>HardwareDebug\Config_DMAC3_user.obj</Path>
+          <Path>HardwareDebug\Config_DSAD0.obj</Path>
+          <Path>HardwareDebug\Config_DSAD0_user.obj</Path>
+          <Path>HardwareDebug\Config_DSAD1.obj</Path>
+          <Path>HardwareDebug\Config_DSAD1_user.obj</Path>
+          <Path>HardwareDebug\Config_PORT.obj</Path>
+          <Path>HardwareDebug\Config_PORT_user.obj</Path>
+          <Path>HardwareDebug\Config_SCI1.obj</Path>
+          <Path>HardwareDebug\Config_SCI1_user.obj</Path>
+          <Path>HardwareDebug\r_cg_hardware_setup.obj</Path>
+          <Path>HardwareDebug\r_smc_cgc.obj</Path>
+          <Path>HardwareDebug\r_smc_cgc_user.obj</Path>
+          <Path>HardwareDebug\r_smc_interrupt.obj</Path>
+          <Path>HardwareDebug\hwsetup.obj</Path>
+          <Path>HardwareDebug\dbsct.obj</Path>
+          <Path>HardwareDebug\lowlvl.obj</Path>
+          <Path>HardwareDebug\lowsrc.obj</Path>
+          <Path>HardwareDebug\mcu_locks.obj</Path>
+          <Path>HardwareDebug\r_bsp_common.obj</Path>
+          <Path>HardwareDebug\r_bsp_cpu.obj</Path>
+          <Path>HardwareDebug\r_bsp_interrupts.obj</Path>
+          <Path>HardwareDebug\r_bsp_locking.obj</Path>
+          <Path>HardwareDebug\r_bsp_mcu_startup.obj</Path>
+          <Path>HardwareDebug\r_bsp_software_interrupt.obj</Path>
+          <Path>HardwareDebug\r_rx_intrinsic_functions.obj</Path>
+          <Path>HardwareDebug\resetprg.obj</Path>
+          <Path>HardwareDebug\sbrk.obj</Path>
+          <Path>HardwareDebug\mcu_clocks.obj</Path>
+          <Path>HardwareDebug\mcu_init.obj</Path>
+          <Path>HardwareDebug\mcu_interrupts.obj</Path>
+          <Path>HardwareDebug\vecttbl.obj</Path>
+          <Path>HardwareDebug\Pin.obj</Path>
+          <Path>HardwareDebug\rx23ea_thermocouple.lib</Path>
+        </LinkOrder>
+        <CommonOptions>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DSAD0"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DSAD1"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DMAC0"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_DMAC3"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_CMT0"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_PORT"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_SCI1"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\Config_AFE"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\r_bsp"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\r_config"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\general"</IncludePathForC>
+          <IncludePathForC>"${ProjDirPath}\..\${ProjName}\src\smc_gen\r_pincfg"</IncludePathForC>
+          <MacroForC>D_PRV_PC_TOOL_USE=1</MacroForC>
+        </CommonOptions>
+      </BuildMode>
+    </BuildOptions>
+  </Project>
+</MicomToolCommonProjectFile>
