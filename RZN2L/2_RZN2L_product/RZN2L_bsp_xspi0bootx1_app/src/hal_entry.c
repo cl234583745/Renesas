@@ -23,6 +23,7 @@
 void R_BSP_WarmStart(bsp_warm_start_event_t event) BSP_PLACE_IN_SECTION(".warm_start");
 
 bsp_io_level_t pin_level = BSP_IO_LEVEL_LOW;
+volatile bool uartTxCompleteFlg = 0;
 
 extern bsp_leds_t g_bsp_leds;
 
@@ -61,6 +62,13 @@ void hal_entry (void)
     /* Enable interrupt. */
     __asm volatile ("cpsie i");
 
+
+    g_uart0.p_api->open(g_uart0.p_ctrl, g_uart0.p_cfg);
+    g_uart0.p_api->write(g_uart0.p_ctrl, (uint8_t const *)"App start!\n", strlen("App start!\n"));
+    while(!uartTxCompleteFlg);
+    uartTxCompleteFlg = 0;
+
+
     while (1)
     {
         /* Generate INTCPU0. */
@@ -68,6 +76,10 @@ void hal_entry (void)
 
         /* Delay */
         R_BSP_SoftwareDelay(delay, bsp_delay_units);
+
+        g_uart0.p_api->write(g_uart0.p_ctrl, (uint8_t const *)"App running!\n", strlen("App running!\n"));
+        while(!uartTxCompleteFlg);
+        uartTxCompleteFlg = 0;
     }
 }
 
@@ -118,4 +130,12 @@ void intcpu0_handler(void) {
         {
             pin_level = BSP_IO_LEVEL_LOW;
         }
+}
+
+void user_uart_callback(uart_callback_args_t *p_args)
+{
+    if(p_args->event == UART_EVENT_TX_COMPLETE)
+    {
+        uartTxCompleteFlg = 1;
+    }
 }

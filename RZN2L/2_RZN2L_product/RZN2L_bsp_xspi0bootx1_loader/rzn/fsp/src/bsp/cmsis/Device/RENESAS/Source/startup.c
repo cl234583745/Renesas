@@ -986,7 +986,7 @@ BSP_TARGET_ARM BSP_ATTRIBUTE_STACKLESS void mpu_cache_init (void)
 /* Invalid these settings for loader project.
  * These settings are done in the application program.
  * Settings can also be made in the loader program if necessary. */
-#if 0 // Original program
+#if 1 // Original program
     /* Jump to bsp_m_mpu_init */
     __asm volatile (
         "m_mpu_init:                       \n"

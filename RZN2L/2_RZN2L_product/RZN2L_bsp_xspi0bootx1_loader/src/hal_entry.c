@@ -28,6 +28,8 @@ void R_BSP_WarmStart(bsp_warm_start_event_t event) BSP_PLACE_IN_SECTION(".warm_s
 void bsp_sdram_init(void);
 #endif
 
+volatile bool uartTxCompleteFlg = 0;
+
 extern bsp_leds_t g_bsp_leds;
 extern void bsp_copy_4byte(uint32_t *src, uint32_t *dst, uint32_t bytesize);
 extern const loader_table table[TABLE_ENTRY_NUM];
@@ -88,6 +90,23 @@ void hal_entry (void)
 
     /* Protect I/O port registers */
     R_BSP_PinAccessDisable();
+
+//正确完整的编译loader+app
+// 1: 必须首先clean loader，构建前增加make -r -j8 clean
+// 2: 使能startu的初始化mpu代码 #if 1 // Original program
+    /* Invalid these settings for loader project.
+    * These settings are done in the application program.
+    * Settings can also be made in the loader program if necessary. */
+
+#if 1
+    __enable_irq();
+    g_uart0.p_api->open(g_uart0.p_ctrl, g_uart0.p_cfg);
+    g_uart0.p_api->write(g_uart0.p_ctrl, (uint8_t const *)"Loader start!\n*****\nReady to Jump to the app!\n\n", strlen("Loader start!\n*****\nReady to Jump to the app!\n\n"));
+    while(!uartTxCompleteFlg);
+    uartTxCompleteFlg = 0;
+    g_uart0.p_api->close(g_uart0.p_ctrl);
+    __disable_irq();
+#endif
 
     /* Delay */
     R_BSP_SoftwareDelay(1000, BSP_DELAY_UNITS_MILLISECONDS);
@@ -200,3 +219,11 @@ void bsp_sdram_init(void)
     R_BSP_SoftwareDelay(1, BSP_DELAY_UNITS_MICROSECONDS);
 }
 #endif
+
+void user_uart_callback(uart_callback_args_t *p_args)
+{
+    if(p_args->event == UART_EVENT_TX_COMPLETE)
+    {
+        uartTxCompleteFlg = 1;
+    }
+}

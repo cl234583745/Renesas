@@ -529,3 +529,62 @@ Support : https://www.renesas.com/support
 
 ![](./images/xxx_prj.png)
 
+
+# 五、 RZ/T2L-基于官方开发套件的BaseProject-coremark移植
+
+[跳转](./coremark%20for%20T2L/Baseproject%20for%20RZT2L.md)
+
+# 六、loader app分离工程
+## 6.1 概述
+ 对比“3.2 base project构建”中的单个工程，本章节介绍loader app分离的双工程。可以实现更为灵活和复杂的功能，例如多协议支持、固件升级等等。
+
+## 6.2 官方资料与不足
+![](./images/loaderapp9.png)
+ - 例程源码
+    RZN2L_bsp_xspi0bootx1_app
+    RZN2L_bsp_xspi0bootx1_loader
+ - 文档
+ [r01an6737ej0110-rzn2l-separating-loader-and-application.pdf](./DOC/r01an6737ej0110-rzn2l-separating-loader-and-application.pdf)
+ - 仅展示
+![](./images/loaderapp0.png) 
+ 以官方loader app双工程为base去移植应用代码，会碰到很多问题
+
+## 6.3 loader app分离工程的优化
+### 6.3.1 自动调节合并appsection
+![](./images/loaderapp3.png)
+![](./images/loaderapp1.png)
+![](./images/loaderapp4.png)
+![](./images/loaderapp7.png)
+
+### 6.3.2 loader中使用外设
+![](./images/loaderapp5.png)
+![](./images/loaderapp6.png)
+![](./images/loaderapp2.png)
+![](./images/loaderapp8.png)
+
+```
+//正确完整的编译loader+app
+// 1: 必须首先clean loader，构建前增加make -r -j8 clean
+// 2: 使能startu的初始化mpu代码 #if 1 // Original program
+    /* Invalid these settings for loader project.
+    * These settings are done in the application program.
+    * Settings can also be made in the loader program if necessary. */
+
+#if 1
+    __enable_irq();
+    g_uart0.p_api->open(g_uart0.p_ctrl, g_uart0.p_cfg);
+    g_uart0.p_api->write(g_uart0.p_ctrl, (uint8_t const *)"Loader start!\n*****\nReady to Jump to the app!\n\n", strlen("Loader start!\n*****\nReady to Jump to the app!\n\n"));
+    while(!uartTxCompleteFlg);
+    uartTxCompleteFlg = 0;
+    g_uart0.p_api->close(g_uart0.p_ctrl);
+    __disable_irq();
+#endif
+```
+
+### 6.3.3 app使用sram mirror
+参考[fsp_xspi0_boot_SRAM_ATCM.ld](./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld)
+### 6.3.4 sram atcm同时使用
+- 参考[fsp_xspi0_boot_SRAM_ATCM.ld](./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld)
+- 在loader中复制atcm和sram
+
+

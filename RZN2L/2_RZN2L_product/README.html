@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.10\crossnote\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.11\crossnote\dependencies\katex\katex.min.css">
       
       
       
@@ -287,6 +287,52 @@
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#342-fsp工程目录结构简介" class="md-toc-link">
             <p>3.4.2 fsp工程目录结构简介</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#五--rzt2l-基于官方开发套件的baseproject-coremark移植" class="md-toc-link">
+            <p>五、 RZ/T2L-基于官方开发套件的BaseProject-coremark移植</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#六-loader-app分离工程" class="md-toc-link"><p>六、loader app分离工程</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#61-概述" class="md-toc-link">
+            <p>6.1 概述</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#62-官方资料与不足" class="md-toc-link">
+            <p>6.2 官方资料与不足</p>
+
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#63-loader-app分离工程的优化" class="md-toc-link"><p>6.3 loader app分离工程的优化</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#631-自动调节合并appsection" class="md-toc-link">
+            <p>6.3.1 自动调节合并appsection</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#632-loader中使用外设" class="md-toc-link">
+            <p>6.3.2 loader中使用外设</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#633-app使用sram-mirror" class="md-toc-link">
+            <p>6.3.3 app使用sram mirror</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#634-sram-atcm同时使用" class="md-toc-link">
+            <p>6.3.4 sram atcm同时使用</p>
 
           </a></div>
         </div>
@@ -851,6 +897,57 @@ FSP Releases : <a href="https://github.com/renesas/rzn-fsp/releases">https://git
 <p><img src="./images/help.png" alt=""></p>
 <h3 id="342-fsp工程目录结构简介">3.4.2 fsp工程目录结构简介 </h3>
 <p><img src="./images/xxx_prj.png" alt=""></p>
+<h1 id="五--rzt2l-基于官方开发套件的baseproject-coremark移植">五、 RZ/T2L-基于官方开发套件的BaseProject-coremark移植 </h1>
+<p><a href="./coremark%20for%20T2L/Baseproject%20for%20RZT2L.md">跳转</a></p>
+<h1 id="六-loader-app分离工程">六、loader app分离工程 </h1>
+<h2 id="61-概述">6.1 概述 </h2>
+<p>对比“3.2 base project构建”中的单个工程，本章节介绍loader app分离的双工程。可以实现更为灵活和复杂的功能，例如多协议支持、固件升级等等。</p>
+<h2 id="62-官方资料与不足">6.2 官方资料与不足 </h2>
+<p><img src="./images/loaderapp9.png" alt=""></p>
+<ul>
+<li>例程源码<br>
+RZN2L_bsp_xspi0bootx1_app<br>
+RZN2L_bsp_xspi0bootx1_loader</li>
+<li>文档<br>
+<a href="./DOC/r01an6737ej0110-rzn2l-separating-loader-and-application.pdf">r01an6737ej0110-rzn2l-separating-loader-and-application.pdf</a></li>
+<li>仅展示<br>
+<img src="./images/loaderapp0.png" alt=""><br>
+以官方loader app双工程为base去移植应用代码，会碰到很多问题</li>
+</ul>
+<h2 id="63-loader-app分离工程的优化">6.3 loader app分离工程的优化 </h2>
+<h3 id="631-自动调节合并appsection">6.3.1 自动调节合并appsection </h3>
+<p><img src="./images/loaderapp3.png" alt=""><br>
+<img src="./images/loaderapp1.png" alt=""><br>
+<img src="./images/loaderapp4.png" alt=""><br>
+<img src="./images/loaderapp7.png" alt=""></p>
+<h3 id="632-loader中使用外设">6.3.2 loader中使用外设 </h3>
+<p><img src="./images/loaderapp5.png" alt=""><br>
+<img src="./images/loaderapp6.png" alt=""><br>
+<img src="./images/loaderapp2.png" alt=""><br>
+<img src="./images/loaderapp8.png" alt=""></p>
+<pre data-role="codeBlock" data-info="" class="language-text text"><code>//正确完整的编译loader+app
+// 1: 必须首先clean loader，构建前增加make -r -j8 clean
+// 2: 使能startu的初始化mpu代码 #if 1 // Original program
+    /* Invalid these settings for loader project.
+    * These settings are done in the application program.
+    * Settings can also be made in the loader program if necessary. */
+
+#if 1
+    __enable_irq();
+    g_uart0.p_api-&gt;open(g_uart0.p_ctrl, g_uart0.p_cfg);
+    g_uart0.p_api-&gt;write(g_uart0.p_ctrl, (uint8_t const *)"Loader start!\n*****\nReady to Jump to the app!\n\n", strlen("Loader start!\n*****\nReady to Jump to the app!\n\n"));
+    while(!uartTxCompleteFlg);
+    uartTxCompleteFlg = 0;
+    g_uart0.p_api-&gt;close(g_uart0.p_ctrl);
+    __disable_irq();
+#endif
+</code></pre><h3 id="633-app使用sram-mirror">6.3.3 app使用sram mirror </h3>
+<p>参考<a href="./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld">fsp_xspi0_boot_SRAM_ATCM.ld</a></p>
+<h3 id="634-sram-atcm同时使用">6.3.4 sram atcm同时使用 </h3>
+<ul>
+<li>参考<a href="./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld">fsp_xspi0_boot_SRAM_ATCM.ld</a></li>
+<li>在loader中复制atcm和sram</li>
+</ul>
 
       </div>
       
