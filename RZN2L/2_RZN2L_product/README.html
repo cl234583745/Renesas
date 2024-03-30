@@ -3,7 +3,7 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       
-      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.11\crossnote\dependencies\katex\katex.min.css">
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
       
       
       
@@ -131,11 +131,36 @@
           <a href="#221-电源和复位" class="md-toc-link">
             <p>2.2.1 电源和复位</p>
 
-          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#222-启动模式和flash" class="md-toc-link">
-            <p>2.2.2 启动模式和flash</p>
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#222-启动模式和flash" class="md-toc-link"><p>2.2.2 启动模式和flash</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2221-主要模式软硬件一致" class="md-toc-link">
+            <p>2.2.2.1 主要模式（软硬件一致）</p>
 
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2222-硬件拨码" class="md-toc-link">
+            <p>2.2.2.2 硬件拨码</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2223-软件设置" class="md-toc-link">
+            <p>2.2.2.3 软件设置</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2224-flash选项和硬件设计" class="md-toc-link">
+            <p>2.2.2.4 flash选项和硬件设计</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#2225-flash保存参数功能" class="md-toc-link">
+            <p>2.2.2.5 flash保存参数功能</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
           <a href="#223-以太网和phy" class="md-toc-link">
             <p>2.2.3 以太网和phy</p>
 
@@ -441,24 +466,77 @@
 <p><img src="./images/power4.png" alt=""><br>
 <img src="./images/power5.png" alt=""></p>
 <h3 id="222-启动模式和flash">2.2.2 启动模式和flash </h3>
+<h4 id="2221-主要模式软硬件一致">2.2.2.1 主要模式（软硬件一致） </h4>
 <ul>
-<li>
-<p>xspi boot---qspi---000</p>
-</li>
-<li>
-<p>sci（uart）boot</p>
-</li>
-<li>
-<p>usb boot<br>
-<img src="./images/boot%20mode.png" alt=""><br>
-<img src="./images/boot1.png" alt=""></p>
-</li>
-<li>
-<p>flash qspi：AT25，W25，mx25<br>
-<img src="./images/qspi.png" alt=""></p>
-</li>
+<li>ram boot</li>
+<li>xspi boot---qspi---000</li>
+<li>sci（uart）boot</li>
+<li>usb boot</li>
 </ul>
-<h3 id="223-以太网和phy">2.2.3 以太网和phy </h3>
+<h4 id="2222-硬件拨码">2.2.2.2 硬件拨码 </h4>
+<p><img src="./images/boot1.png" alt=""></p>
+<h4 id="2223-软件设置">2.2.2.3 软件设置 </h4>
+<p><img src="./images/flash-fsp.png" alt=""></p>
+<h4 id="2224-flash选项和硬件设计">2.2.2.4 flash选项和硬件设计 </h4>
+<ul>
+<li>flash qspi：AT25，W25，mx25</li>
+<li>电源1.8v/3.3v，软硬件要一致</li>
+<li>不同flash的寄存器要检查，iar boot是否支持<br>
+<img src="./images/flash-rsk.png" alt=""><br>
+<img src="./images/qspi.png" alt=""><br>
+<img src="./images/boot%20mode.png" alt=""></li>
+</ul>
+<h4 id="2225-flash保存参数功能">2.2.2.5 flash保存参数功能 </h4>
+<ul>
+<li>确认xspi的真正协议（spi、dspi、qspi、ospi....）</li>
+<li>核对flash的寄存器地址</li>
+<li>优化的xspi_qspi例程（如何验证参数100%保存成功了）</li>
+<li>给出优化的例程和测试日志<br>
+<img src="./images/flash-xspipins.png" alt=""><br>
+<img src="./images/flash-addr.png" alt=""><br>
+<img src="./images/flash-qspidemo.png" alt=""></li>
+<li>原例程ram启动；优化为xspi flash启动断电验证保存参数</li>
+<li>原例程参数地址会被固件覆盖，无法连续测试；优化为固件后安全底座</li>
+<li>原例程ram debug测试；优化为串口日志，方便理解整个流程，保证断电保存参数</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Hello World
+========================FLASH===========================
+0x6000 0000*********************************************
+0x6000 1000*************Frameware***********************
+0x6000 2000*********************************************
+********************************************************
+********************************************************
+********************************************************
+0x6001 0000*************Test Addr***********************
+0x6001 1000*************Test Addr***********************
+********************************************************
+********************************************************
+********************************************************
+========================================================
+[QSPI_Open]:successed!
+[Quad_Mode_enable]:successed!
+--------------------------------------------------------
+Power On Read!
+[Pointer Read]:0x4000 0000 + 0x10234
+12
+[Pointer Read]:0x4000 0000 + 0x10000
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F 
+--------------------------------------------------------
+[Erase] successed!: addr:0x60010000, len:4096
+[DirectTransfe WRITE] successed!: cmd:0x06
+[DirectTransfe WRITE] successed!: cmd:0x02, addr:0x10234, data:0x12
+[DirectTransfe READ] successed!: cmd:0xEB, addr:0x10234, data:0x12
+[Verify-1] successed! line:154
+--------------------------------------------------------
+[Read] successed!: addr:0x6000 0000-0x2000 0000+0x10234, read_buffer:0x12
+[Verify-2] successed! line:168
+--------------------------------------------------------
+[QSPI_Write] addr:0x6000 0000-0x2000 0000+0x10000:
+00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F 10 11 12 13 14 15 16 17 18 19 1A 1B 1C 1D 1E 1F 20 21 22 23 24 25 26 27 28 29 2A 2B 2C 2D 2E 2F 30 31 32 33 34 35 36 37 38 39 3A 3B 3C 3D 3E 3F 
+[QSPI_Write] successed!
+[QSPI_Read] addr:0x6000 0000-0x2000 0000+0x10000:
+00 01 02 03 0
+</code></pre><h3 id="223-以太网和phy">2.2.3 以太网和phy </h3>
 <ul>
 <li>RGMII</li>
 <li>MII 兼容</li>
@@ -620,11 +698,11 @@ MTIOC7B, and MTIOC7D</p>
 <li>printf重定向一样</li>
 <li>coremark结果只用于理解芯片和对比ATCM SRAM</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>//void SysTick_Handler(void)
+<pre data-role="codeBlock" data-info="" class="language-text"><code>//void SysTick_Handler(void)
 //{
 //    cnt++;
 //}
-</code></pre><pre data-role="codeBlock" data-info="" class="language-text text"><code>/*
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>/*
 * g_timer0CB
 * rzn2l core R52 havenot systick, so init g_timer0 cnt
 */
@@ -642,7 +720,7 @@ void g_timer0CB(timer_callback_args_t *p_args)
 <img src="./images/stack1.png" alt=""><br>
 <img src="./images/stack2.png" alt=""></li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>[16:09:06.088]收←◆2K performance run parameters for coremark.
+<pre data-role="codeBlock" data-info="" class="language-text"><code>[16:09:06.088]收←◆2K performance run parameters for coremark.
 [0]ERROR! list crc 0x7271 - should be 0xe714
 [0]ERROR! matrix crc 0x7fc1 - should be 0x1fd7
 [0]ERROR! state crc 0x44f1 - should be 0x8e3a
@@ -660,7 +738,7 @@ seedcrc          : 0xe9f5
 [0]crcstate      : 0x44f1
 [0]crcfinal      : 0xf1c1
 Errors detected
-</code></pre><pre data-role="codeBlock" data-info="" class="language-text text"><code>[12:37:01.637]收←◆hello word!
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>[12:37:01.637]收←◆hello word!
 date:Oct 17 2023
 time:12:36:15
 file:../src/hal_entry.c
@@ -702,7 +780,7 @@ running!!!
 <img src="./images/boot%20process.png" alt=""><br>
 <img src="./images/boot%20process1.png" alt=""></li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>hello word!
+<pre data-role="codeBlock" data-info="" class="language-text"><code>hello word!
 date:Oct 17 2023
 time:12:38:17
 file:../src/hal_entry.c
@@ -733,7 +811,7 @@ running!!!
 <ul>
 <li>修改ld文件和startup.c文件</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>.atcm_text  : AT (_matcm_text)
+<pre data-role="codeBlock" data-info="" class="language-text"><code>.atcm_text  : AT (_matcm_text)
     {
         _atcm_text_start = .;
         ./src/coremark/*.o(.text*)
@@ -755,7 +833,7 @@ running!!!
         
         _atcm_data_end = .;   
     } &gt; ATCM
-</code></pre><pre data-role="codeBlock" data-info="" class="language-text text"><code>#if FSP_XSPI0_BOOT_SRAM_ATCM//fsp_xspi0_boot_SRAM_ATCM.ld
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>#if FSP_XSPI0_BOOT_SRAM_ATCM//fsp_xspi0_boot_SRAM_ATCM.ld
             "    ldr  r0, =_matcm_text                      \n"
             "    ldr  r1, =_atcm_text_start                 \n"
             "    ldr  r2, =_atcm_text_end                   \n"
@@ -788,7 +866,7 @@ running!!!
             "copy_ATCM_APP_DATA_end:                        \n"
             "    dsb                                   \n" /* Ensuring data-changing */
 #endif
-</code></pre><pre data-role="codeBlock" data-info="" class="language-text text"><code>hello word!
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>hello word!
 date:Oct 17 2023
 time:12:40:42
 file:../src/hal_entry.c
@@ -823,7 +901,7 @@ running!!!
 <img src="./images/safety2.png" alt=""></p>
 <h3 id="327-bus-master">3.2.7 bus master </h3>
 <p><img src="./images/bus1.png" alt=""></p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>/* region 0 (ATCM) */
+<pre data-role="codeBlock" data-info="" class="language-text"><code>/* region 0 (ATCM) */
 #define EL1_MPU_REGION00_BASE_L     (0x0000 &amp; 0xFFC0) + OUTER_SHAREABLE + EL1RW_EL0RW + EXECUTE_ENABLE
 #define EL1_MPU_REGION00_BASE_H     (0x0000 &amp; 0xFFFF)
 #define EL1_MPU_REGION00_LIMIT_L    (0xFFFF &amp; 0xFFC0) + ATTRINDEX3 + REGION_ENABLE
@@ -850,7 +928,7 @@ running!!!
 <ul>
 <li>INIT()失败，不支持rtt？</li>
 </ul>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>#define INIT()  {                                                                                    \
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#define INIT()  {                                                                                    \
                   volatile SEGGER_RTT_CB* pRTTCBInit;                                                \
                   pRTTCBInit = (volatile SEGGER_RTT_CB*)((char*)&amp;_SEGGER_RTT + SEGGER_RTT_UNCACHED_OFF); \
                   do {                                                                               \
@@ -925,7 +1003,7 @@ RZN2L_bsp_xspi0bootx1_loader</li>
 <img src="./images/loaderapp6.png" alt=""><br>
 <img src="./images/loaderapp2.png" alt=""><br>
 <img src="./images/loaderapp8.png" alt=""></p>
-<pre data-role="codeBlock" data-info="" class="language-text text"><code>//正确完整的编译loader+app
+<pre data-role="codeBlock" data-info="" class="language-text"><code>//正确完整的编译loader+app
 // 1: 必须首先clean loader，构建前增加make -r -j8 clean
 // 2: 使能startu的初始化mpu代码 #if 1 // Original program
     /* Invalid these settings for loader project.

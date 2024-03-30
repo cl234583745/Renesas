@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<v1:pinSettings xmlns:v1="http://www.tasking.com/schema/pinsettings/v1.1">
+  <v1:pinMappingsRef file="" version="2"/>
+  <v1:deviceSetting id="renesas.rzt2m_bga320_28g" pattern="">
+    <v1:packageSetting id="renesas.320bga"/>
+  </v1:deviceSetting>
+  <v1:configSetting altId="p02_4.gpio_mode.gpio_mode_peripheral" configurationId="p02_4.gpio_mode"/>
+  <v1:configSetting altId="p02_4.gpio_speed.gpio_speed_high" configurationId="p02_4.gpio_drivecapacity"/>
+  <v1:configSetting altId="p02_4.sr.sr.fast" configurationId="p02_4.sr"/>
+  <v1:configSetting altId="p02_4.jtag_fslash_swd.tdo" configurationId="p02_4">
+    <v1:connectionSetting altId="jtag_fslash_swd.tdo.p02_4"/>
+  </v1:configSetting>
+  <v1:configSetting altId="p02_5.gpio_mode.gpio_mode_peripheral" configurationId="p02_5.gpio_mode"/>
+  <v1:configSetting altId="p02_5.gpio_speed.gpio_speed_high" configurationId="p02_5.gpio_drivecapacity"/>
+  <v1:configSetting altId="p02_5.sr.sr.fast" configurationId="p02_5.sr"/>
+  <v1:configSetting altId="p02_5.jtag_fslash_swd.tdi" configurationId="p02_5">
+    <v1:connectionSetting altId="jtag_fslash_swd.tdi.p02_5"/>
+  </v1:configSetting>
+  <v1:configSetting altId="p02_6.gpio_mode.gpio_mode_peripheral" configurationId="p02_6.gpio_mode"/>
+  <v1:configSetting altId="p02_6.gpio_speed.gpio_speed_high" configurationId="p02_6.gpio_drivecapacity"/>
+  <v1:configSetting altId="p02_6.sr.sr.fast" configurationId="p02_6.sr"/>
+  <v1:configSetting altId="p02_6.jtag_fslash_swd.tms_swdio" configurationId="p02_6">
+    <v1:connectionSetting altId="jtag_fslash_swd.tms_swdio.p02_6"/>
+  </v1:configSetting>
+  <v1:configSetting altId="p02_7.gpio_mode.gpio_mode_peripheral" configurationId="p02_7.gpio_mode"/>
+  <v1:configSetting altId="p02_7.gpio_speed.gpio_speed_high" configurationId="p02_7.gpio_drivecapacity"/>
+  <v1:configSetting altId="p02_7.sr.sr.fast" configurationId="p02_7.sr"/>
+  <v1:configSetting altId="p02_7.jtag_fslash_swd.tck_swclk" configurationId="p02_7">
+    <v1:connectionSetting altId="jtag_fslash_swd.tck_swclk.p02_7"/>
+  </v1:configSetting>
+  <v1:configSetting altId="jtag_fslash_swd.mode.jtag.free" configurationId="jtag_fslash_swd.mode"/>
+  <v1:configSetting altId="jtag_fslash_swd.tck_swclk.p02_7" configurationId="jtag_fslash_swd.tck_swclk">
+    <v1:connectionSetting altId="p02_7.jtag_fslash_swd.tck_swclk"/>
+  </v1:configSetting>
+  <v1:configSetting altId="jtag_fslash_swd.tdi.p02_5" configurationId="jtag_fslash_swd.tdi">
+    <v1:connectionSetting altId="p02_5.jtag_fslash_swd.tdi"/>
+  </v1:configSetting>
+  <v1:configSetting altId="jtag_fslash_swd.tdo.p02_4" configurationId="jtag_fslash_swd.tdo">
+    <v1:connectionSetting altId="p02_4.jtag_fslash_swd.tdo"/>
+  </v1:configSetting>
+  <v1:configSetting altId="jtag_fslash_swd.tms_swdio.p02_6" configurationId="jtag_fslash_swd.tms_swdio">
+    <v1:connectionSetting altId="p02_6.jtag_fslash_swd.tms_swdio"/>
+  </v1:configSetting>
+</v1:pinSettings>
