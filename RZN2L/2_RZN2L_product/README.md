@@ -275,9 +275,35 @@ MTU67
 - 多个工厂文件夹（可能需要复制到工作空间下）
 ![](./images/import1.png)
 ### 3.1.7 debug调试和下载
+#### 3.1.7.1 官方介绍
+- 官网：
+![](./images/debug-official%20website%20doc.png)
+- datasheet：
+![](./images/debug-datasheet.png)
+- user manual：
+![](./images/debug-usermanual.png)
+- coresight：
+  1.coresight---source insight
+2.[arm_cortex_r52_processor_trm_100026_0104_00_en.pdf](./DOC/arm_cortex_r52_processor_trm_100026_0104_00_en.pdf)
+3.https://developer.arm.com/Processors/Cortex-R52#Technical-Specifications
+4.https://wiki.segger.com/DCC
+![](./images/debug-coresight.png)
+5.https://zhuanlan.zhihu.com/p/149519501
+- 快速开始指南
+[rzt2rzn2-getting-started-flexible-software-package.pdf](./DOC/rzt2rzn2-getting-started-flexible-software-package.pdf)
+![](./images/debug-startguide1.png)
+![](./images/debug-xspi-systeminit.png)
 - debug configuration修改cpsr
-- debug startup添加脚本
 ![](./images/install13.png)
+
+#### 3.1.7.2 e2studio debug变量实时监控
+![](./images/debug-e2s.png)
+
+#### 3.1.7.3 Iar debug变量实时监控
+- 瑞萨嵌入式小百科[如何在IAR IDE中使用基于Cortex-R52的RZ/T&N MPU的变量实时监控](https://mp.weixin.qq.com/s/GPN6CGonTs6Cy75KHg_wPg)
+- https://www.bilibili.com/video/BV1MN4y1D7WP/?spm_id_from=333.999.0.0&vd_source=21efa952a2d53fd4f04dc76ba0278b18
+#### 3.1.7.4 debug经验总结
+![](./images/debug-tool.png)
 
 ## 3.2 base project构建
 - 目标：构建一个通用的、排除各种“小毛刺”的、TCM SRAM可同时使用的、可用于产品开发级的base project。以备后续移植日志系统、中间层、公司平台产品。这里只是分享经营，抛砖引玉。

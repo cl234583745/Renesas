@@ -230,11 +230,32 @@
           <a href="#316-导入工程" class="md-toc-link">
             <p>3.1.6 导入工程</p>
 
+          </a></div><details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#317-debug调试和下载" class="md-toc-link"><p>3.1.7 debug调试和下载</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#3171-官方介绍" class="md-toc-link">
+            <p>3.1.7.1 官方介绍</p>
+
           </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
-          <a href="#317-debug调试和下载" class="md-toc-link">
-            <p>3.1.7 debug调试和下载</p>
+          <a href="#3172-e2studio-debug变量实时监控" class="md-toc-link">
+            <p>3.1.7.2 e2studio debug变量实时监控</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#3173-iar-debug变量实时监控" class="md-toc-link">
+            <p>3.1.7.3 Iar debug变量实时监控</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#3174-debug经验总结" class="md-toc-link">
+            <p>3.1.7.4 debug经验总结</p>
 
           </a></div>
+        </div>
+      </details>
+    
         </div>
       </details>
     <details style="padding:0;;padding-left:24px;" open="">
@@ -679,11 +700,37 @@ MTIOC7B, and MTIOC7D</p>
 <img src="./images/import1.png" alt=""></li>
 </ul>
 <h3 id="317-debug调试和下载">3.1.7 debug调试和下载 </h3>
+<h4 id="3171-官方介绍">3.1.7.1 官方介绍 </h4>
 <ul>
-<li>debug configuration修改cpsr</li>
-<li>debug startup添加脚本<br>
+<li>官网：<br>
+<img src="./images/debug-official%20website%20doc.png" alt=""></li>
+<li>datasheet：<br>
+<img src="./images/debug-datasheet.png" alt=""></li>
+<li>user manual：<br>
+<img src="./images/debug-usermanual.png" alt=""></li>
+<li>coresight：<br>
+1.coresight---source insight<br>
+2.<a href="./DOC/arm_cortex_r52_processor_trm_100026_0104_00_en.pdf">arm_cortex_r52_processor_trm_100026_0104_00_en.pdf</a><br>
+3.<a href="https://developer.arm.com/Processors/Cortex-R52#Technical-Specifications">https://developer.arm.com/Processors/Cortex-R52#Technical-Specifications</a><br>
+4.<a href="https://wiki.segger.com/DCC">https://wiki.segger.com/DCC</a><br>
+<img src="./images/debug-coresight.png" alt=""><br>
+5.<a href="https://zhuanlan.zhihu.com/p/149519501">https://zhuanlan.zhihu.com/p/149519501</a></li>
+<li>快速开始指南<br>
+<a href="./DOC/rzt2rzn2-getting-started-flexible-software-package.pdf">rzt2rzn2-getting-started-flexible-software-package.pdf</a><br>
+<img src="./images/debug-startguide1.png" alt=""><br>
+<img src="./images/debug-xspi-systeminit.png" alt=""></li>
+<li>debug configuration修改cpsr<br>
 <img src="./images/install13.png" alt=""></li>
 </ul>
+<h4 id="3172-e2studio-debug变量实时监控">3.1.7.2 e2studio debug变量实时监控 </h4>
+<p><img src="./images/debug-e2s.png" alt=""></p>
+<h4 id="3173-iar-debug变量实时监控">3.1.7.3 Iar debug变量实时监控 </h4>
+<ul>
+<li>瑞萨嵌入式小百科<a href="https://mp.weixin.qq.com/s/GPN6CGonTs6Cy75KHg_wPg">如何在IAR IDE中使用基于Cortex-R52的RZ/T&amp;N MPU的变量实时监控</a></li>
+<li><a href="https://www.bilibili.com/video/BV1MN4y1D7WP/?spm_id_from=333.999.0.0&amp;vd_source=21efa952a2d53fd4f04dc76ba0278b18">https://www.bilibili.com/video/BV1MN4y1D7WP/?spm_id_from=333.999.0.0&amp;vd_source=21efa952a2d53fd4f04dc76ba0278b18</a></li>
+</ul>
+<h4 id="3174-debug经验总结">3.1.7.4 debug经验总结 </h4>
+<p><img src="./images/debug-tool.png" alt=""></p>
 <h2 id="32-base-project构建">3.2 base project构建 </h2>
 <ul>
 <li>目标：构建一个通用的、排除各种“小毛刺”的、TCM SRAM可同时使用的、可用于产品开发级的base project。以备后续移植日志系统、中间层、公司平台产品。这里只是分享经营，抛砖引玉。</li>
