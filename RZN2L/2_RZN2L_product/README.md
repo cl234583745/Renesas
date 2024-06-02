@@ -675,4 +675,20 @@ Support : https://www.renesas.com/support
 - 参考[fsp_xspi0_boot_SRAM_ATCM.ld](./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld)
 - 在loader中复制atcm和sram
 
-
+# 七、生产烧录固件(jflash擦/写/读外挂flash)
+## 7.1 flash母片读写
+略
+## 7.2 jflash擦/写/读外挂flash
+- [rzt2rzn2-getting-started-flexible-software-package.pdf](./DOC/rzt2rzn2-getting-started-flexible-software-package.pdf)只指导使用J-Link Commander擦除flash，并没有提到写/读。
+- [Device Setup Guide for Flash boot](./DOC/Kit/rzt2-and-rzn2-group-device-setup-guide-flash-boot-application-note.pdf)讲解了芯片引导的原理，个人感觉无需这么复杂。
+- 直接使用segger J-Flash擦/写/读外挂flash
+- [J-Flash高本部需要激活](./Tool/Segger_J-Link_keygen.zip)，J-Flash Lite免费但不好用
+  
+![](./images/jlink%20commander.png)
+![](./images/jflash1.png)
+![](./images/jflash2.png)
+![](./images/jflash3.png)
+![](./images/jflash4.png)
+![](./images/jflash5.png)
+![](./images/jflash6.png)
+![](./images/jflash7.png)

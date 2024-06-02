@@ -386,6 +386,23 @@
     
         </div>
       </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#七-生产烧录固件jflash擦写读外挂flash" class="md-toc-link"><p>七、生产烧录固件(jflash擦/写/读外挂flash)</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#71-flash母片读写" class="md-toc-link">
+            <p>7.1 flash母片读写</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#72-jflash擦写读外挂flash" class="md-toc-link">
+            <p>7.2 jflash擦/写/读外挂flash</p>
+
+          </a></div>
+        </div>
+      </details>
     
 </div>
 <h1 id="一-rzn2l和工业以太网介绍">一、RZN2L和工业以太网介绍 </h1>
@@ -1073,6 +1090,24 @@ RZN2L_bsp_xspi0bootx1_loader</li>
 <li>参考<a href="./rzn2l_coremark/script/fsp_xspi0_boot_SRAM_MIRROR.ld">fsp_xspi0_boot_SRAM_ATCM.ld</a></li>
 <li>在loader中复制atcm和sram</li>
 </ul>
+<h1 id="七-生产烧录固件jflash擦写读外挂flash">七、生产烧录固件(jflash擦/写/读外挂flash) </h1>
+<h2 id="71-flash母片读写">7.1 flash母片读写 </h2>
+<p>略</p>
+<h2 id="72-jflash擦写读外挂flash">7.2 jflash擦/写/读外挂flash </h2>
+<ul>
+<li><a href="./DOC/rzt2rzn2-getting-started-flexible-software-package.pdf">rzt2rzn2-getting-started-flexible-software-package.pdf</a>只指导使用J-Link Commander擦除flash，并没有提到写/读。</li>
+<li><a href="./DOC/Kit/rzt2-and-rzn2-group-device-setup-guide-flash-boot-application-note.pdf">Device Setup Guide for Flash boot</a>讲解了芯片引导的原理，个人感觉无需这么复杂。</li>
+<li>直接使用segger J-Flash擦/写/读外挂flash</li>
+<li><a href="./Tool/Segger_J-Link_keygen.zip">J-Flash高本部需要激活</a>，J-Flash Lite免费但不好用</li>
+</ul>
+<p><img src="./images/jlink%20commander.png" alt=""><br>
+<img src="./images/jflash1.png" alt=""><br>
+<img src="./images/jflash2.png" alt=""><br>
+<img src="./images/jflash3.png" alt=""><br>
+<img src="./images/jflash4.png" alt=""><br>
+<img src="./images/jflash5.png" alt=""><br>
+<img src="./images/jflash6.png" alt=""><br>
+<img src="./images/jflash7.png" alt=""></p>
 
       </div>
       
