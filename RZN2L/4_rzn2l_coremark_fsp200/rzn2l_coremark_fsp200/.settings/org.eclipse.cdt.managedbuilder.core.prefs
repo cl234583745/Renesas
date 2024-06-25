@@ -1,0 +1,11 @@
+eclipse.preferences.version=1
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/CPATH/delimiter=;
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/CPATH/operation=remove
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/C_INCLUDE_PATH/delimiter=;
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/C_INCLUDE_PATH/operation=remove
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/append=true
+environment/buildEnvironmentInclude/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/appendContributed=true
+environment/buildEnvironmentLibrary/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/LIBRARY_PATH/delimiter=;
+environment/buildEnvironmentLibrary/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/LIBRARY_PATH/operation=remove
+environment/buildEnvironmentLibrary/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/append=true
+environment/buildEnvironmentLibrary/com.renesas.cdt.managedbuild.gcc.rz.configuration.debug.update.125236963/appendContributed=true
