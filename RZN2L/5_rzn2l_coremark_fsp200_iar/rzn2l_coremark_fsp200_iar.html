@@ -1,0 +1,467 @@
+<!DOCTYPE html><html><head>
+      <title>rzn2l_coremark_fsp200_iar</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.8.13\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h1>十二、从0开始卷出一个新项目之瑞萨RZN2L 基于IAR的coremark fsp200工程构建和iar .icf链接文件的修改方法</h1>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述" class="md-toc-link">
+            <p>一、概述</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#二-rzn2l_fsp200_coremark工程构建" class="md-toc-link"><p>二、rzn2l_fsp2.0.0_coremark工程构建</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#21-目录结构" class="md-toc-link">
+            <p>2.1 目录结构</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#22-项目一览" class="md-toc-link">
+            <p>2.2 项目一览</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#23-iar工程打开报错如何处理" class="md-toc-link">
+            <p>2.3 iar工程打开报错如何处理</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-代码优化的问题" class="md-toc-link"><p>三、代码优化的问题</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-systemc中复制内存" class="md-toc-link">
+            <p>3.1 system.c中复制内存</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-iar代码优化等级与volatile关键字" class="md-toc-link">
+            <p>3.2 iar代码优化等级与volatile关键字</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#33-iar配置优化单个文件与预编译宏的范围" class="md-toc-link">
+            <p>3.3 iar配置优化单个文件与预编译宏的范围</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-iar-icf链接文件修改方法" class="md-toc-link"><p>四、iar .icf链接文件修改方法</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#41-icf文件的构成" class="md-toc-link"><p>4.1 .icf文件的构成</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#411-包含另一个icf文件" class="md-toc-link">
+            <p>4.1.1 包含另一个icf文件</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#412-符号变量symbol" class="md-toc-link">
+            <p>4.1.2 符号/变量symbol</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#413-region-定义内存区域" class="md-toc-link">
+            <p>4.1.3 region 定义内存区域</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#414-定义段到内存的映射" class="md-toc-link">
+            <p>4.1.4 定义段到内存的映射</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#415-initialize" class="md-toc-link">
+            <p>4.1.5 initialize</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-icf文件的重要语法" class="md-toc-link">
+            <p>4.2 .icf文件的重要语法</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-ram执行fsp_ram_executionicf" class="md-toc-link">
+            <p>4.3 ram执行：fsp_ram_execution.icf</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#44-flash启动fsp_xspi0_booticf" class="md-toc-link">
+            <p>4.4 flash启动：fsp_xspi0_boot.icf</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#45-app全部运行在sramfsp_xspi0_boot_sram_allicf" class="md-toc-link">
+            <p>4.5 app全部运行在sram：fsp_xspi0_boot_sram_all.icf</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#46-仅text使用sramfsp_xspi0_boot_sram_texticf" class="md-toc-link">
+            <p>4.6 仅text使用sram：fsp_xspi0_boot_sram_text.icf</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#47-优先使用sram特殊使用atcmfsp_xspi0_boot_sram_atcmicf" class="md-toc-link">
+            <p>4.7 优先使用sram特殊使用atcm：fsp_xspi0_boot_sram_atcm.icf</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#48-参考separating-loader-and-application" class="md-toc-link">
+            <p>4.8 参考separating-loader-and-application</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#49-总结" class="md-toc-link">
+            <p>4.9 总结</p>
+
+          </a></div>
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#五-测试结果" class="md-toc-link">
+            <p>五、测试结果</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述">一、概述 </h1>
+<ul>
+<li>在<a href="https://mp.weixin.qq.com/s?__biz=MzkxNDQyMTU4Mg==&amp;mid=2247485293&amp;idx=1&amp;sn=dab3ac3d4144489e598472ca9ea362d8&amp;chksm=c16fe54cf6186c5aa655143fc9ce6a6ecaf081a5cf89e8c0566595988c5f92bb0d895ac9b512&amp;token=30647263&amp;lang=zh_CN#rd">十一、从0开始卷出一个新项目之瑞萨RZN2L</a>介绍过GCC编译器的工程构建</li>
+<li>基于IAR的coremark fsp200工程构建和iar .icf链接文件的修改方法</li>
+<li>介绍基于IAR的工程构建过程碰到的一些问题（弄了很久）</li>
+<li>借此重点介绍iar .icf文件的几种修改方法（为什么要修改优化等级和链接文件：<a href="https://mp.weixin.qq.com/s?__biz=MzkxNDQyMTU4Mg==&amp;mid=2247485205&amp;idx=1&amp;sn=43ecb1082fda68391c2c907115796c35&amp;chksm=c16fe534f6186c221419e1298e9657d93e9af084e93a63c0a39fa7e27c2bd6899344cfa49434&amp;cur_album_id=3188272463181365248&amp;scene=189#wechat_redirect">嵌入式科普(22)c代码究竟是如何一步步运行的之链接</a>）</li>
+</ul>
+<h1 id="二-rzn2l_fsp200_coremark工程构建">二、rzn2l_fsp2.0.0_coremark工程构建 </h1>
+<h2 id="21-目录结构">2.1 目录结构 </h2>
+<p>详见<a href="https://mp.weixin.qq.com/s?__biz=MzkxNDQyMTU4Mg==&amp;mid=2247485293&amp;idx=1&amp;sn=dab3ac3d4144489e598472ca9ea362d8&amp;chksm=c16fe54cf6186c5aa655143fc9ce6a6ecaf081a5cf89e8c0566595988c5f92bb0d895ac9b512&amp;token=30647263&amp;lang=zh_CN#rd">十一、从0开始卷出一个新项目之瑞萨RZN2L</a></p>
+<h2 id="22-项目一览">2.2 项目一览 </h2>
+<p>略</p>
+<h2 id="23-iar工程打开报错如何处理">2.3 iar工程打开报错如何处理 </h2>
+<ul>
+<li>iar版本不向下兼容，iar9.40.1</li>
+<li>build action中2个cmd可以取消<br>
+<img src="./images/20.png" alt=""></li>
+<li>升级rzsc</li>
+<li>上传临时文件夹，rzsc重新生成代码和配置</li>
+</ul>
+<h1 id="三-代码优化的问题">三、代码优化的问题 </h1>
+<h2 id="31-systemc中复制内存">3.1 system.c中复制内存 </h2>
+<p>问题：内存复制相关代码被优化，导致无法初始化</p>
+<ul>
+<li><strong>iar不支持gcc的“范围单独优化”：</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#pragma GCC optimize ("O1")
+#pragma GCC reset_options
+</code></pre><ul>
+<li>iar只支持“单独优化函数”或通过配置优化单个文件</li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>#pragma optimize=low
+</code></pre><p>深入浅出编译优化选项（上）:<a href="https://www.iar.com/zh/knowledge/learn/programming/compiler-optimization-1">https://www.iar.com/zh/knowledge/learn/programming/compiler-optimization-1</a><br>
+<img src="./images/10.png" alt=""></p>
+<h2 id="32-iar代码优化等级与volatile关键字">3.2 iar代码优化等级与volatile关键字 </h2>
+<p>问题：printf重定向的串口发送标志位，iar9.40.1错误的优化，volatile无效</p>
+<ul>
+<li><strong>IAR：</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>volatile bool uart_send_complete_flag = false;
+void user_uart_callback (uart_callback_args_t * p_args)
+{
+    if(p_args-&gt;event == UART_EVENT_TX_COMPLETE)
+    {
+        uart_send_complete_flag = true;
+    }
+}
+void IoPutchar (int32_t buffer)
+{
+      R_SCI_UART_Write(&amp;g_uart0_ctrl, (uint8_t*) &amp;buffer, TRANSFER_LENGTH);
+      while (!g_transfer_complete)
+      {
+      }
+      g_transfer_complete = 0;
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>IAR优化等级</th>
+<th>不使用 <code>volatile</code></th>
+<th>使用 <code>volatile</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Low</code></td>
+<td><img src="./images/6.png" alt=""></td>
+<td><img src="./images/6.png" alt=""></td>
+</tr>
+<tr>
+<td><code>Medium</code></td>
+<td><img src="./images/5.png" alt=""></td>
+<td><img src="./images/5.png" alt=""></td>
+</tr>
+<tr>
+<td><code>DataTable1_2</code></td>
+<td><img src="./images/7.png" alt=""></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>GCC：</strong></li>
+</ul>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>volatile bool uart_send_complete_flag = false;
+void user_uart_callback (uart_callback_args_t * p_args)
+{
+    if(p_args-&gt;event == UART_EVENT_TX_COMPLETE)
+    {
+        uart_send_complete_flag = true;
+    }
+}
+
+_write(int fd, char *pBuffer, int size)
+{
+    (void)fd;
+    fsp_err_t err = R_SCI_UART_Write(&amp;g_uart0_ctrl, (uint8_t *)pBuffer, (uint32_t)size);
+    if(FSP_SUCCESS != err) __BKPT();
+
+    while(uart_send_complete_flag == false);
+    uart_send_complete_flag = false;
+    
+    return size;
+}
+</code></pre><table>
+<thead>
+<tr>
+<th>gcc优化等级</th>
+<th>不使用 <code>volatile</code></th>
+<th>使用 <code>volatile</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-O1</code></td>
+<td><img src="./images/1.png" alt=""></td>
+<td><img src="./images/4.png" alt=""></td>
+</tr>
+<tr>
+<td><code>-Ofast</code></td>
+<td><img src="./images/2.png" alt=""></td>
+<td><img src="./images/3.png" alt=""></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>iar9.40.1测试cubemx生成的103c8t6正常</strong><br>
+略</li>
+</ul>
+<h2 id="33-iar配置优化单个文件与预编译宏的范围">3.3 iar配置优化单个文件与预编译宏的范围 </h2>
+<p>需要单独优化的文件，需要预编译宏控制的文件，是同一个文件。那么预编译宏也要单独定义<br>
+<img src="./images/11.png" alt=""></p>
+<h1 id="四-iar-icf链接文件修改方法">四、iar .icf链接文件修改方法 </h1>
+<pre class="language-text">iar icf与gcc ld文件对比：
+    语法较为复杂，整体逻辑不清晰；
+    不能自动递增地址，需要手动设置各个内存地址；
+    只支持文件的通配符，不支持文件夹目录的通配符；
+    工具生成的icf文件中符号命名不便于理解
+</pre>
+<h2 id="41-icf文件的构成">4.1 .icf文件的构成 </h2>
+<h3 id="411-包含另一个icf文件">4.1.1 包含另一个icf文件 </h3>
+<pre class="language-text">例如：
+</pre>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>    include "memory_regions.icf"
+</code></pre><h3 id="412-符号变量symbol">4.1.2 符号/变量symbol </h3>
+<pre class="language-text">例如：
+</pre>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>define symbol SYSTEM_RAM_END_OFFSET        = 0x00048000;
+define symbol FLASH_ADDRESS                = xSPI0_CS0_SPACE_PRV_START;
+</code></pre><h3 id="413-region-定义内存区域">4.1.3 region 定义内存区域 </h3>
+<pre class="language-text">例如：
+</pre>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>define region ATCM_region              = mem:[from __region_ATCM_start__  to __region_ATCM_end__ ];
+define region BTCM_region              = mem:[from __region_BTCM_start__  to __region_BTCM_end__ ];
+</code></pre><h3 id="414-定义段到内存的映射">4.1.4 定义段到内存的映射 </h3>
+<pre class="language-text">例如：
+</pre>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>place in ROM_region   { block USER_PRG_RBLOCK, readonly };
+place in S_RAM_region { block USER_DATA_RBLOCK, block USER_DATA_NONCACHE_RBLOCK };
+
+define block USER_PRG_RBLOCK with alignment = 4 { ro code };
+define block USER_PRG_WBLOCK with alignment = 4 { rw code };
+define block USER_DATA_ZBLOCK with alignment = 4 { section .bss };
+</code></pre><h3 id="415-initialize">4.1.5 initialize </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>initialize manually
+
+do not initialize
+</code></pre><h2 id="42-icf文件的重要语法">4.2 .icf文件的重要语法 </h2>
+<p><a href="https://mp.weixin.qq.com/s?__biz=MzkxNDQyMTU4Mg==&amp;mid=2247485205&amp;idx=1&amp;sn=43ecb1082fda68391c2c907115796c35&amp;chksm=c16fe534f6186c221419e1298e9657d93e9af084e93a63c0a39fa7e27c2bd6899344cfa49434&amp;token=30647263&amp;lang=zh_CN#rd">嵌入式科普(22)c代码究竟是如何一步步运行的之链接---4.2 IAR .icf</a><br>
+略</p>
+<h2 id="43-ram执行fsp_ram_executionicf">4.3 ram执行：fsp_ram_execution.icf </h2>
+<ul>
+<li>fsp-BSP-Board-(RAM execution without flash memory)</li>
+<li>未下载到flash，掉电/复位无法继续执行；boot+app</li>
+<li>btcm(loader&amp;stack)+atcm(text&amp;data&amp;stack&amp;heap)</li>
+</ul>
+<h2 id="44-flash启动fsp_xspi0_booticf">4.4 flash启动：fsp_xspi0_boot.icf </h2>
+<ul>
+<li>fsp-BSP-Board-(xSPI0 x1 boot mode)</li>
+<li>下载到flash，掉电/复位可执行，需等待写flash</li>
+<li>btcm(loader&amp;stack)+atcm(text&amp;data&amp;stack&amp;heap)</li>
+</ul>
+<h2 id="45-app全部运行在sramfsp_xspi0_boot_sram_allicf">4.5 app全部运行在sram：fsp_xspi0_boot_sram_all.icf </h2>
+<ul>
+<li>fsp-BSP-Board-(xSPI0 x1 boot mode)</li>
+<li>下载到flash，掉电/复位可执行，需等待写flash</li>
+<li>btcm(loader&amp;stack)+sram(text&amp;data&amp;stack&amp;heap)</li>
+<li>dma、usb等需要注意处理，使用nocache</li>
+</ul>
+<h2 id="46-仅text使用sramfsp_xspi0_boot_sram_texticf">4.6 仅text使用sram：fsp_xspi0_boot_sram_text.icf </h2>
+<ul>
+<li>fsp-BSP-Board-(xSPI0 x1 boot mode)</li>
+<li>下载到flash，掉电/复位可执行，需等待写flash</li>
+<li>btcm(loader&amp;stack)+sram(text)+atcm(data、stack、heap)</li>
+</ul>
+<h2 id="47-优先使用sram特殊使用atcmfsp_xspi0_boot_sram_atcmicf">4.7 优先使用sram特殊使用atcm：fsp_xspi0_boot_sram_atcm.icf </h2>
+<ul>
+<li>fsp-BSP-Board-(xSPI0 x1 boot mode)</li>
+<li>下载到flash，掉电/复位可执行，需等待写flash</li>
+<li>btcm(loader&amp;stack)+sram(优先使用-text&amp;data&amp;stack&amp;heap)+atcm(*/coremark文件夹-text&amp;data)</li>
+<li>不改变原有分区结构，只增加单独文件夹使用atcm</li>
+<li>需要修改system.c，增加复制过程。通过宏控制FSP_XSPI0_BOOT_SRAM_ATCM</li>
+</ul>
+<h2 id="48-参考separating-loader-and-application">4.8 参考separating-loader-and-application </h2>
+<p>略</p>
+<h2 id="49-总结">4.9 总结 </h2>
+<p>\rzn2l_coremark_fsp200_iar\script\readme.txt</p>
+<p>block PRG_RBLOCK    ro code<br>
+block PRG_WBLOCK    rw code</p>
+<p>block DATA_ZBLOCK   bss<br>
+block DATA_RBLOCK   data<br>
+block DATA_WBLOCK   data_init</p>
+<p>initialize manually<br>
+do not initialize</p>
+<h1 id="五-测试结果">五、测试结果 </h1>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>hello word!
+date:Jul  9 2024
+time:10:12:22
+file:C:\Users\jerry.chen\RASmartConfigurator\rzn2l_coremark_fsp200_iar\src\hal_entry.c
+func:hal_entry,line:37
+hello world!
+PI=3.141593
+check script ld first!!!
+start coremain!!!
+
+[10:16:25.284]收←◆2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 18050
+Total time (secs): 18.050000
+Iterations/Sec   : 1108.033241
+Iterations       : 20000
+Compiler version : Please put compiler version here (e.g. gcc 4.1)
+Compiler flags   : Please put compiler flags here (e.g. -o3)
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x382f
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 1108.033241 / Please put compiler version here (e.g. gcc 4.1) Please put compiler flags here (e.g. -o3) / STACK
+FSP_PRIV_CLOCK_CPU0=400000000
+running!!!
+
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>[10:20:18.593]收←◆hello word!
+date:Jul  9 2024
+time:10:17:53
+file:C:\Users\jerry.chen\RASmartConfigurator\rzn2l_coremark_fsp200_iar\src\hal_entry.c
+func:hal_entry,line:37
+hello world!
+PI=3.141593
+check script ld first!!!
+start coremain!!!
+
+[10:20:45.072]收←◆2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 26459
+Total time (secs): 26.459000
+Iterations/Sec   : 755.886466
+Iterations       : 20000
+Compiler version : Please put compiler version here (e.g. gcc 4.1)
+Compiler flags   : Please put compiler flags here (e.g. -o3)
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x382f
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 755.886466 / Please put compiler version here (e.g. gcc 4.1) Please put compiler flags here (e.g. -o3) / STACK
+FSP_PRIV_CLOCK_CPU0=400000000
+running!!!
+
+</code></pre><pre data-role="codeBlock" data-info="" class="language-text"><code>[10:23:06.511]收←◆hello word!
+date:Jul  9 2024
+time:10:21:49
+file:C:\Users\jerry.chen\RASmartConfigurator\rzn2l_coremark_fsp200_iar\src\hal_entry.c
+func:hal_entry,line:37
+hello world!
+PI=3.141593
+check script ld first!!!
+start coremain!!!
+
+[10:23:40.199]收←◆2K performance run parameters for coremark.
+CoreMark Size    : 666
+Total ticks      : 33667
+Total time (secs): 33.667000
+Iterations/Sec   : 594.053524
+Iterations       : 20000
+Compiler version : Please put compiler version here (e.g. gcc 4.1)
+Compiler flags   : Please put compiler flags here (e.g. -o3)
+Memory location  : STACK
+seedcrc          : 0xe9f5
+[0]crclist       : 0xe714
+[0]crcmatrix     : 0x1fd7
+[0]crcstate      : 0x8e3a
+[0]crcfinal      : 0x382f
+Correct operation validated. See README.md for run and reporting rules.
+CoreMark 1.0 : 594.053524 / Please put compiler version here (e.g. gcc 4.1) Please put compiler flags here (e.g. -o3) / STACK
+FSP_PRIV_CLOCK_CPU0=400000000
+running!!!
+
+
+
+</code></pre>
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
