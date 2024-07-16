@@ -1,24 +1,25 @@
-# 从0开始卷出一个新项目之瑞萨RA6M5
+从0开始卷出一个新项目之瑞萨RA6M5
+===
 [toc]
 
-## 一、范围
-##### 1.1 初次在项目中使用瑞萨RA
-##### 1.2 用过ST等但不熟悉瑞萨环境
-##### 1.3 对嵌入式开发感兴趣
+# 一、范围
+#### 1.1 初次在项目中使用瑞萨RA
+#### 1.2 用过ST等但不熟悉瑞萨环境
+#### 1.3 对嵌入式开发感兴趣
 
-## 二、目的
+# 二、目的
 通过boot+app两个工程源码和开发环境的分享，使得瑞萨RA6M5快速用于项目开发。
 
-## 三、瑞萨RA6M5简介
+# 三、瑞萨RA6M5简介
 ![](./images/ra6m5-blockdiagram.png)
 ![](./images/RA.png)
 ![](./images/fsp-block-diagram_10.png)
 ![](./images/ek-ra6m5-board.png)
-## 四、瑞萨RA6M5应用
-##### 新能源
-##### 充电桩
-##### BMS
-##### DTU RTU
+# 四、瑞萨RA6M5应用
+#### 新能源
+#### 充电桩
+#### BMS
+#### DTU RTU
 蜂窝云连接系统
 交流变频器/GP 逆变器解决方案
 语音识别和智能控制
@@ -36,56 +37,56 @@ Remote Predictive Maintenance Solution
 工业应用（机器人、开门器、缝纫机、自动售货机、UPS）
 HVAC（供暖、空调、锅炉控制）
 
-## 五、分享内容
-##### 5.1 工程框图
+# 五、分享内容
+#### 5.1 工程框图
 ![](./images/kuangtu.png)
-##### 5.1 flash分区
+#### 5.1 flash分区
 ![](./images/flash%20fenqv.png)
-##### 5.1 软件资源
+#### 5.1 软件资源
 ![](./images/gongchen%20ruanjian.png)
 
-## 六、硬件设计
+# 六、硬件设计
 
-#### 6.1 资料来源
+### 6.1 资料来源
 ![](./images/doc.png)
-##### 6.1.1 官方：RA6 快速设计指南、datasheet、User’s Manual、ek-designpackage
+#### 6.1.1 官方：RA6 快速设计指南、datasheet、User’s Manual、ek-designpackage
 ![](./images/ek.png)
-##### 6.1.2 第三方：野火启明6M5开发板 https://doc.embedfire.com/mcu/renesas/fsp_ra/zh/latest/index.html
+#### 6.1.2 第三方：野火启明6M5开发板 https://doc.embedfire.com/mcu/renesas/fsp_ra/zh/latest/index.html
 ![](./images/fire.png)
 ![](./images/firedoc.png)
-##### 6.1.3 嘉立创、b站等
+#### 6.1.3 嘉立创、b站等
 ![](./images/lcsc.png)
 
-#### 6.2 各部分设计
-##### 6.2.1 电源
+### 6.2 各部分设计
+#### 6.2.1 电源
     VSS VSS **VCL** AVCC AVSS VREF VBAT
 ![](./images/power.png)   
-##### 6.2.2 时钟
+#### 6.2.2 时钟
     24M 32.768K(**注意未使用**) 25M 
 ![](./images/clock.png)     
-##### 6.2.3 调试接口
+#### 6.2.3 调试接口
     建议预留JTAG，非单SWD，上拉
 ![](./images/debug.png)     
-##### 6.2.4  复位
+#### 6.2.4  复位
 ![](./images/M33%20reset.png)
-##### 6.2.5  串口、CAN、以太网
+#### 6.2.5  串口、CAN、以太网
     上拉
-##### 6.2.6 引脚分配
+#### 6.2.6 引脚分配
     datasheet
 ![](./images/pin%20list.png)
 
     rasc分配导出表格
 ![](./images/rasc%20pins.png)     
-##### 6.2.7  未使用引脚
+#### 6.2.7  未使用引脚
 ![](./images/unused%20pins.png)
 
-##### 6.2.8 原理图 PCB
+#### 6.2.8 原理图 PCB
     库文件
 
-## 七、软件设计
+# 七、软件设计
 
-### 7.1 配置分析
-#### 7.1.1 IDE等开发环境
+## 7.1 配置分析
+### 7.1.1 IDE等开发环境
 
 | 集成开发环境<br>IDE | [e2studio](https://www2.renesas.cn/cn/zh/software-tool/e-studio) | [fsp_v4_0_0_e2s](https://www2.renesas.cn/cn/zh/software-tool/flexible-software-package-fsp#overview) | MDK:<br>5.31 | IAR:<br>8.50.6 |
 |:-:|:-:|:-:|:-:|:-:|
@@ -96,12 +97,12 @@ HVAC（供暖、空调、锅炉控制）
 |**[Renesas烧写软件](https://www2.renesas.cn/us/zh/software-tool/renesas-flash-programmer-programming-gui#overview)**|Renesas Flash Programme（RFP）|RFP|RFP|RFP|
 |Renesas仿真硬件|[E2 emulator Lite](https://www2.renesas.cn/us/zh/software-tool/e2-emulator-lite-rte0t0002lkce00000r#overview)<br>[E2 emulator](https://www2.renesas.cn/us/zh/software-tool/e2-emulator-rte0t00020kce00000r#overview)|[E2 emulator Lite](https://www2.renesas.cn/us/zh/software-tool/e2-emulator-lite-rte0t0002lkce00000r#overview)<br>[E2 emulator](https://www2.renesas.cn/us/zh/software-tool/e2-emulator-rte0t00020kce00000r#overview)| | |
 
-#### 7.1.2 创建两个工程
+### 7.1.2 创建两个工程
     使用e2sstudio创建boot+app两个带rtos的工程
     注意芯片型号和编译工具
     创建成功后debug运行测试
 
-#### 7.1.3 修改link文件
+### 7.1.3 修改link文件
 /script
 fsp_boot.ld
 memory_regions_boot.ld
@@ -150,13 +151,13 @@ printf("this message cant print!\n");
     flash分区
 ![](./images/flash%20fenqv.png)
 
-#### 7.1.4 链接elf
+### 7.1.4 链接elf
 ![](./images/linkelf.png)
 
     增加jump函数
     测试debug和跳转功能
 
-#### 7.1.5 用FSP添加外设
+### 7.1.5 用FSP添加外设
     boot
 ![](./images/bootstack.png)
 
@@ -165,7 +166,7 @@ printf("this message cant print!\n");
 
 ![](./images/gongchen%20ruanjian.png)
 
-#### 7.1.6 输出文件格式
+### 7.1.6 输出文件格式
 
 ![](./images/outputmotorola.png)
 
@@ -173,12 +174,12 @@ printf("this message cant print!\n");
 
     ${cross_prefix}${cross_objcopy}${cross_suffix} -O binary  -j .text -j .data  "${ProjName}.elf" "${ProjName}.bin"  ;${cross_prefix}${cross_objcopy}${cross_suffix} -O ihex -j .text -j .data  "${ProjName}.elf"  "${ProjName}.hex"
 
-### 7.2 源码分析    
-#### 7.2.1 框图
+## 7.2 源码分析    
+### 7.2.1 框图
 ![](./images/kuangtu.png)
 
-#### 7.2.2 boot源码
-##### 7.2.2.1 boot源码分析
+### 7.2.2 boot源码
+#### 7.2.2.1 boot源码分析
 ![](./images/bootsrc1.png)
 
     boot中只有一个线程
@@ -265,7 +266,7 @@ freertos对比lwip：https://www.freertos.org/FreeRTOS_Support_Forum_Archive/Nov
 | Nanostack        | [ARM](https://www.arm.com/)                        | 2014     | 3.6.0      | 是           | Apache               | 可靠性高，提供了易于使用的 API，并支持 IPv6。                   | 50KB      | 10KB     |
 | uIP              | [Adam Dunkels](https://dunkels.com/adam/)          | 2002     | 1.0        | 是           | BSD                  | 轻量级、支持 IPv4 和 TCP/IP，占用资源非常少。            | 4KB       | 1.5KB    |
 
-##### 7.2.2.12 boot测试效果
+#### 7.2.2.2 boot测试效果
     串口日志
 ```
 boot log uart init successed!!!
@@ -286,8 +287,8 @@ fwUpgradeFlg=255
 **************************************
 ```
 
-#### 7.2.3 app源码
-##### 7.2.3.1 app源码分析
+### 7.2.3 app源码
+#### 7.2.3.1 app源码分析
 
 ![](./images/appsrc1.png)
 
@@ -530,7 +531,7 @@ void start_thread0_entry(void *pvParameters)
 }
 ```  
 
-##### 7.2.3.12 boot+app测试效果
+#### 7.2.3.2 boot+app测试效果
 
 ```
 boot log uart init successed!!!
@@ -615,14 +616,14 @@ I/UART_TAG [2391490] uart_thread2_thread
 ```
 
 
-## 八、生成库和使用库
-### 8.1 方法
+# 八、生成库和使用库
+## 8.1 方法
     e2s帮助功能:生成库+创建CDT
 ![](./images/helplib.png)
 ![](./images/creatlib.png)
 ![](./images/uselib.png)
 
-### 8.2 过程
+## 8.2 过程
     生成库
 ![](./images/clickstaticlib.png)
 ![](./images/setstaticlib.png)
@@ -635,7 +636,7 @@ I/UART_TAG [2391490] uart_thread2_thread
 
     链接库
 
-### 8.3 测试结果
+## 8.3 测试结果
 ```
 #include "tcp_thread1.h"
 
@@ -739,10 +740,10 @@ I/UART_TAG [15070] uart_thread2_thread in app test
 ```
 
 
-## 九、RA6M5“工厂生产流程”
+# 九、RA6M5“工厂生产流程”
 
 抛砖引玉。这里把工厂烧写固件、设置读保护、产测流程统称为“**工厂生产流程**”。主要介绍工厂烧写、产测流程的做法和注意事项。引出简介瑞萨DLM芯片生命周期管理、Arm® （CM33）的TrustZone® 。
-### 9.1 框图
+## 9.1 框图
 这是最常见MCU工厂烧录方式：
 
     a、使用治具，通过segger jlink或瑞萨RFP Jlink/串口烧写bin/hex等固件文件
@@ -752,17 +753,17 @@ I/UART_TAG [15070] uart_thread2_thread in app test
 **框图：**
 ![](./images/factory%20test.png)
 
-### 9.2 瑞萨Renesas Flash Programmer（RFP）
+## 9.2 瑞萨Renesas Flash Programmer（RFP）
     正常模式：RFP可以读写RA6M5固件（同segger j-flash）
     引导模式：RFP可以读写RA6M5固件、读写配置、DLM关联相关功能等等
 
-#### 9.2.1 RFP下载
+### 9.2.1 RFP下载
 ![](./images/rfp%20download.png)
 ![](./images/rfp%20download1.png)
 ![](./images/rfp%20gui.png)
 
 
-#### 9.2.2 相关文档
+### 9.2.2 相关文档
 1、[Renesas Flash Programmer V3.12](https://www.renesas.cn/cn/zh/document/mat/renesas-flash-programmer-v312-flash-memory-programming-software-users-manual?r=488871)
 2、[Renesas RA Family Standard Boot Firmware for the RA family MCUs Based on Arm® Cortex®-M33](https://www.renesas.cn/cn/zh/document/apn/standard-boot-firmware-ra-family-mcus-based-arm-cortex-m33?language=en&r=1333976)
 3、[Renesas RA Family Device Lifecycle Management Key Injection](https://www.renesas.com/us/en/document/apn/renesas-ra-family-device-lifecycle-management-key-installation?language=en&r=1333976)
@@ -773,53 +774,53 @@ RA Cortex-M33 with Device Lifecycle Management](https://www.renesas.cn/cn/zh/doc
 
 
 
-### 9.3 RA启动模式
+## 9.3 RA启动模式
 ![](./images/MD%20startup.png)
 
-#### 9.3.1 boot硬件接口
+### 9.3.1 boot硬件接口
 
 ![](./images/boot%20interface1.png)
 ![](./images/boot%20interface2.png)
 ![](./images/boot%20interface3.png)
 硬件设计建议预留MD引脚和jtag接口，而非单独swd接口。
-#### 9.3.2 boot软件接口
+### 9.3.2 boot软件接口
 
 1、uart/usb boot协议
 2、RFPV3.exe、rfp-cli.exe、
 3、rpe.exe
 ![](./images/rfp%20tool.png)
 
-### 9.4 RA DLM（生命周期管理）
+## 9.4 RA DLM（生命周期管理）
 
 **1、写入.rpd分区文件**
 **2、读保护就是使用RFP切换CM/SSD模式切换到DPL模式**
 
 
 
-#### 9.4.1 .rpd分区文件
+### 9.4.1 .rpd分区文件
 **rpd文件会根据应用大小自动修改，只需用RFP烧写即可**
 ![](./images/rpd.png)
 
-#### 9.4.2 DLM介绍
-##### 9.4.2.1 DLM模式转换图
+### 9.4.2 DLM介绍
+#### 9.4.2.1 DLM模式转换图
 ![](./images/RA%20DLM%20lifecycles.png)
 
-##### 9.4.2.2 DLM模式说明图
+#### 9.4.2.2 DLM模式说明图
 
 ![](./images/RA%20DLM%20list.png)
 ![](./images/RA%20DLM%20list1.png)
 ![](./images/RA%20DLM%20list2.png)
 
 
-##### 9.4.2.3 DLM-DPL部署到客户现场说明图
+#### 9.4.2.3 DLM-DPL部署到客户现场说明图
 ![](./images/RA%20DLM%20DPL8.png)
 
-##### 9.4.2.4 DLM写入秘钥（略）
+#### 9.4.2.4 DLM写入秘钥（略）
 1、秘钥用于从DPL部署模式返回到SSD安全软件开发模式，即可以读写flash和相关配置。
 2、未写入秘钥则无法返回SSD模式，只能擦除整片flash（Initialize命令）
 3、非明文写入秘钥，需要使用瑞萨相关工具，不详细介绍了
 
-#### 9.4.2.5 DLM结合公司项目开发
+### 9.4.2.5 DLM结合公司项目开发
 
 | DLM模式| DLM备注| 公司项目阶段 | 权限 |
 | -- | -- | -- | --- | --- |
@@ -829,7 +830,7 @@ RA Cortex-M33 with Device Lifecycle Management](https://www.renesas.cn/cn/zh/doc
 |DPL<br>LCK_DBG<br>LCK_BOOT<br>用户现场|工厂生产流程<br>保护公司IP| PVT/MP | 一般用户 |
 |RMA_REQ<br>RMA_ACK<br>退货给瑞萨|故障分析|-| 瑞萨 |
 
-#### 9.4.2.6 演示RFP的使用
+### 9.4.2.6 演示RFP的使用
 1、RFP GUI
 RFPV3.exe和RFPV3.Console.exe
 2、rfp-cli.exe
@@ -839,7 +840,7 @@ RFPV3.exe和RFPV3.Console.exe
 4、RFP boot模式串口通讯协议
 [Renesas RA Family Standard Boot Firmware for the RA family MCUs Based on Arm® Cortex®-M33](https://www.renesas.cn/cn/zh/document/apn/standard-boot-firmware-ra-family-mcus-based-arm-cortex-m33?language=en&r=1333976)
 
-#### 9.4.2.7 例程打印DLM模式和分区
+### 9.4.2.7 例程打印DLM模式和分区
 debug下载时候可以在console可以看见flash、sram分区的大小
 ![](./images/rpd%20trust%20zone.png)
 ![](./images/rpd%20trust%20zone1.png)
