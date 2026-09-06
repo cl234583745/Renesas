@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<QE>
+    <Segment id="Project">
+        <Setting id="SrcGeneratedPath" value="src/smc_gen"/>
+    </Segment>
+    <Segment id="Pin">
+        <Setting id="P36" value="EXTAL"/>
+        <Setting id="P16" value="SCL"/>
+        <Setting id="P37" value="XTAL"/>
+        <Setting id="MD" value="FINED"/>
+        <Setting id="P17" value="SDA"/>
+        <Setting id="PH1" value="TXD5"/>
+        <Setting id="PH0" value="RXD5"/>
+    </Segment>
+    <Segment id="Device">
+        <Setting id="Series" value="RX200"/>
+        <Setting id="Group" value="RX23E-A"/>
+        <Setting id="Board" value="Custom User Board"/>
+        <Setting id="PartNo" value="R5F523E6AxFL"/>
+        <Setting id="PinCount" value="48"/>
+    </Segment>
+    <Segment id="Clock">
+        <Setting id="PCLKD" value="32000.0"/>
+        <Setting id="CacMCLK" value="8000.0"/>
+        <Setting id="PLLCLK" value="32000.0"/>
+        <Setting id="PCLKB" value="32000.0"/>
+        <Setting id="VCC" value="3.3"/>
+        <Setting id="PCLKA" value="32000.0"/>
+        <Setting id="ICLK" value="32000.0"/>
+        <Setting id="FCLK" value="32000.0"/>
+        <Setting id="SysCLKSrc" value="4.0"/>
+        <Setting id="ExtCLK" value="8000.0"/>
+    </Segment>
+    <Segment id="Component">
+        <Setting id="r_bsp" value="FIT"/>
+        <Setting id="r_riic_rx" value="FIT"/>
+        <Setting id="Config_SCI5" value="CG"/>
+        <Segment component="r_bsp7.70" id="r_bsp" source="com.renesas.smc.tools.swcomponent.fit.source">
+            <Setting id="BSP_CFG_SWINT_UNIT1_ENABLE" value="0"/>
+            <Setting id="BSP_CFG_LOW_LEVEL_INTERFACE_STDIO_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_LOW_LEVEL_INTERFACE_REENTRANT_LIB_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_USER_ENTER_CRITICAL_FUNCTION" value="my_enter_critical_function"/>
+            <Setting id="BSP_CFG_USER_WARM_START_POST_C_FUNCTION" value="my_sw_warmstart_postc_function"/>
+            <Setting id="BSP_CFG_INTERNAL_PERIPHERAL_BUS2_3_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_USER_WARM_START_PRE_C_FUNCTION" value="my_sw_warmstart_prec_function"/>
+            <Setting id="BSP_CFG_PARAM_CHECKING_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_SCI_UART_TERMINAL_INTERRUPT_PRIORITY" value="15"/>
+            <Setting id="BSP_CFG_INTERNAL_PERIPHERAL_BUS1_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_USER_WARM_START_CALLBACK_PRE_INITC_ENABLED" value="0"/>
+            <Setting id="BSP_CFG_LOW_LEVEL_INTERFACE_SBRK_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_USTACK_BYTES" value="0x1000"/>
+            <Setting id="BSP_CFG_MEMORY_BUS2_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_IO_LIB_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_BUS_PRIORITY_INITIALIZE_ENABLE" value="0"/>
+            <Setting id="BSP_CFG_ID_CODE_LONG_4" value="0xFFFFFFFF"/>
+            <Setting id="BSP_CFG_ID_CODE_LONG_2" value="0xFFFFFFFF"/>
+            <Setting id="BSP_CFG_ID_CODE_LONG_3" value="0xFFFFFFFF"/>
+            <Setting id="BSP_CFG_USER_CHARPUT_FUNCTION" value="my_sw_charput_function"/>
+            <Setting id="BSP_CFG_SCI_UART_TERMINAL_BITRATE" value="115200"/>
+            <Setting id="BSP_CFG_SWINT_TASK_BUFFER_NUMBER" value="8"/>
+            <Setting id="BSP_CFG_USER_LOCKING_HW_UNLOCK_FUNCTION" value="my_hw_unlocking_function"/>
+            <Setting id="BSP_CFG_ID_CODE_LONG_1" value="0xFFFFFFFF"/>
+            <Setting id="BSP_CFG_USER_STACK_ENABLE" value="1"/>
+            <Setting id="BSP_CFG_SCI_UART_TERMINAL_ENABLE" value="0"/>
+            <Setting id="BSP_CFG_HOCO_TRIMMING_REG_VALUE" value="0"/>
+            <Setting id="BSP_CFG_INTERNAL_PERIPHERAL_BUS6_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_USER_LOCKING_SW_UNLOCK_FUNCTION" value="my_sw_unlocking_function"/>
+            <Setting id="BSP_CFG_MEMORY_BUS1_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_USER_CHARPUT_ENABLED" value="1"/>
+            <Setting id="BSP_CFG_SWINT_IPR_INITIAL_VALUE" value="0x1"/>
+            <Setting id="BSP_CFG_RUN_IN_USER_MODE" value="0"/>
+            <Setting id="BSP_CFG_USER_LOCKING_HW_LOCK_FUNCTION" value="my_hw_locking_function"/>
+            <Setting id="BSP_CFG_USER_EXIT_CRITICAL_FUNCTION" value="my_exit_critical_function"/>
+            <Setting id="BSP_CFG_USER_LOCKING_TYPE" value="bsp_lock_t"/>
+            <Setting id="BSP_CFG_HEAP_BYTES" value="0x400"/>
+            <Setting id="BSP_CFG_HOCO_TRIMMING_ENABLE" value="0"/>
+            <Setting id="BSP_CFG_FIT_IPL_MAX" value="0xF"/>
+            <Setting id="BSP_CFG_BOOTLOADER_PROJECT" value="0"/>
+            <Setting id="BSP_CFG_USER_LOCKING_SW_LOCK_FUNCTION" value="my_sw_locking_function"/>
+            <Setting id="BSP_CFG_ISTACK_BYTES" value="0x400"/>
+            <Setting id="BSP_CFG_SCI_UART_TERMINAL_CHANNEL" value="1"/>
+            <Setting id="BSP_CFG_USER_LOCKING_ENABLED" value="0"/>
+            <Setting id="BSP_CFG_USER_CHARGET_ENABLED" value="0"/>
+            <Setting id="BSP_CFG_USER_CHARGET_FUNCTION" value="my_sw_charget_function"/>
+            <Setting id="BSP_CFG_INTERNAL_PERIPHERAL_BUS4_PRIORITY" value="0"/>
+            <Setting id="BSP_CFG_USER_WARM_START_CALLBACK_POST_INITC_ENABLED" value="0"/>
+            <Setting id="BSP_CFG_USER_EXCLUSIVE_CONTROL_ENABLE" value="0"/>
+        </Segment>
+        <Segment component="r_riic_rx3.11" id="r_riic_rx" source="com.renesas.smc.tools.swcomponent.fit.source">
+            <Setting id="RIIC_CFG_CH2_TXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH2_INCLUDED" value="0"/>
+            <Setting id="RIIC_CFG_CH0_TMO_LCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH2_TEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH0_SLV_GCA_ENABLE" value="0"/>
+            <Setting id="RIIC_CFG_CH0_TMO_DET_TIME" value="0"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR1" value="0x0000"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR2" value="0x0000"/>
+            <Setting id="RIIC_CFG_CH2_TMO_DET_TIME" value="0"/>
+            <Setting id="RIIC_CFG_CH2_DIGITAL_FILTER" value="2"/>
+            <Setting id="RIIC_CFG_CH0_TMO_HCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR0" value="0x0025"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR2_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR1_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH2_EEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH0_TMO_ENABLE" value="1"/>
+            <Setting id="RIIC_CFG_BUS_CHECK_COUNTER" value="1000"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR0_FORMAT" value="1"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR1_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR2_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH1_TXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_SCL100K_DOWN_TIME" value="300E-9"/>
+            <Setting id="RIIC_CFG_CH2_MASTER_MODE" value="1"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR1_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH0_TEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH1_MASTER_MODE" value="1"/>
+            <Setting id="RIIC_CFG_SCL400K_DOWN_TIME" value="300E-9"/>
+            <Setting id="RIIC_CFG_CH0_EEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH1_TMO_ENABLE" value="1"/>
+            <Setting id="RIIC_CFG_CH1_SLV_ADDR0_FORMAT" value="1"/>
+            <Setting id="RIIC_CFG_PORT_SET_PROCESSING" value="1"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR1" value="0x0000"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR0" value="0x0025"/>
+            <Setting id="RIIC_CFG_CH2_TMO_ENABLE" value="1"/>
+            <Setting id="RIIC_CFG_CH1_INCLUDED" value="0"/>
+            <Setting id="RIIC_CFG_CH1_kBPS" value="400"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR2" value="0x0000"/>
+            <Setting id="RIIC_CFG_SCL100K_UP_TIME" value="1000E-9"/>
+            <Setting id="RIIC_CFG_CH1_RXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_SCL1M_UP_TIME" value="120E-9"/>
+            <Setting id="RIIC_CFG_SCL1M_DOWN_TIME" value="120E-9"/>
+            <Setting id="RIIC_CFG_SCL400K_UP_TIME" value="300E-9"/>
+            <Setting id="RIIC_CFG_CH0_RXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH1_TMO_DET_TIME" value="0"/>
+            <Setting id="RIIC_CFG_CH1_SLV_GCA_ENABLE" value="0"/>
+            <Setting id="RIIC_CFG_CH2_TMO_HCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH0_INCLUDED" value="1"/>
+            <Setting id="RIIC_CFG_CH0_kBPS" value="100"/>
+            <Setting id="RIIC_CFG_CH0_MASTER_MODE" value="1"/>
+            <Setting id="RIIC_CFG_CH2_TMO_LCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH2_SLV_GCA_ENABLE" value="0"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR2_FORMAT" value="0"/>
+            <Setting id="RIIC_CFG_CH2_kBPS" value="400"/>
+            <Setting id="RIIC_CFG_CH2_SLV_ADDR0_FORMAT" value="1"/>
+            <Setting id="RIIC_CFG_CH1_EEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR1" value="0x0000"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR0" value="0x004a"/>
+            <Setting id="RIIC_CFG_CH0_SLV_ADDR2" value="0x0000"/>
+            <Setting id="RIIC_CFG_CH0_DIGITAL_FILTER" value="2"/>
+            <Setting id="RIIC_CFG_CH0_TXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH2_RXI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_CH1_TMO_HCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH1_TMO_LCNT" value="1"/>
+            <Setting id="RIIC_CFG_CH1_DIGITAL_FILTER" value="2"/>
+            <Setting id="RIIC_CFG_CH1_TEI_INT_PRIORITY" value="1"/>
+            <Setting id="RIIC_CFG_PARAM_CHECKING_ENABLE" value="1"/>
+        </Segment>
+        <Segment component="com.renesas.smc.tools.swcomponent.codegenerator.sciasyncmode" id="Config_SCI5" source="com.renesas.smc.tools.swcomponent.codegenerator.source">
+            <Setting id="TransEnd" value="Enable"/>
+            <Setting id="DutyCorrection" value="Disable"/>
+            <Setting id="FlowControl" value="None"/>
+            <Setting id="StopBit" value="1Bit"/>
+            <Setting id="Bitrate" value="115200"/>
+            <Setting id="TransDataHandle" value="ISR"/>
+            <Setting id="MultiIntTEIEnable" value="UnCheck"/>
+            <Setting id="ERIPriority" value="Level13"/>
+            <Setting id="TransInstant" value="Disable"/>
+            <Setting id="MultiIntTXIEnable" value="UnCheck"/>
+            <Setting id="TransClock" value="Internal"/>
+            <Setting id="BaseClk" value="16Cyl"/>
+            <Setting id="SCKPinFun" value="SckUnuse"/>
+            <Setting id="TransDir" value="LSB"/>
+            <Setting id="DataLength" value="8Bits"/>
+            <Setting id="Parity" value="None"/>
+        </Segment>
+    </Segment>
+</QE>

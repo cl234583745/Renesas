@@ -3,3 +3,13 @@ RTE
 Objects
 Listings
 RZN2L/1_Overview/README.html
+video/
+**/video/node_modules/
+**/video/out/
+**/video/dist/
+.arts/
+.codeartsdoer/
+.codegraph/
+**/.arts/
+**/.codeartsdoer/
+**/.codegraph/
