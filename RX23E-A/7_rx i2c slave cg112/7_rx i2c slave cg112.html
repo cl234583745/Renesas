@@ -1,0 +1,489 @@
+<!DOCTYPE html><html><head>
+      <title>7_rx i2c slave cg112</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\jerry\.codearts-doer-for-coding\extensions\shd101wyy.markdown-preview-enhanced-0.8.21\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script>
+    </head>
+    <body for="html-export">
+      <div class="crossnote markdown-preview  ">
+      
+<p><strong>七、RX23E-A I2C Slave驱动调试记录——SMC代码生成器的坑与中断配置详解</strong></p>
+
+<div class="md-toc">
+<div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#一-概述目的" class="md-toc-link">
+            <p>一、概述/目的</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#二-硬件环境" class="md-toc-link">
+            <p>二、硬件环境</p>
+
+          </a></div><details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#三-smart-configurator配置要点" class="md-toc-link"><p>三、Smart Configurator配置要点</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#31-icier中断使能配置" class="md-toc-link">
+            <p>3.1 ICIER中断使能配置</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#32-r_config_riic0_create调用" class="md-toc-link">
+            <p>3.2 R_Config_RIIC0_Create()调用</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#四-slave收发模式切换要点" class="md-toc-link"><p>四、Slave收发模式切换要点</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#41-smc驱动的核心限制" class="md-toc-link">
+            <p>4.1 SMC驱动的核心限制</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#42-状态机流程" class="md-toc-link">
+            <p>4.2 状态机流程</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#43-模式切换策略" class="md-toc-link">
+            <p>4.3 模式切换策略</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#44-中断回调设计原则" class="md-toc-link">
+            <p>4.4 中断回调设计原则</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#五-riic中断详解eei0相关5个中断" class="md-toc-link"><p>五、RIIC中断详解（EEI0相关5个中断）</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#51-中断总览" class="md-toc-link">
+            <p>5.1 中断总览</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#52-stie--start条件检测中断" class="md-toc-link">
+            <p>5.2 STIE — START条件检测中断</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#53-spie--stop条件检测中断" class="md-toc-link">
+            <p>5.3 SPIE — STOP条件检测中断</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#54-tmoie--超时检测中断" class="md-toc-link">
+            <p>5.4 TMOIE — 超时检测中断</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#55-alie--仲裁丢失中断" class="md-toc-link">
+            <p>5.5 ALIE — 仲裁丢失中断</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#56-nakie--nack接收中断" class="md-toc-link">
+            <p>5.6 NAKIE — NACK接收中断</p>
+
+          </a></div>
+        </div>
+      </details>
+    <details style="padding:0;;padding-left:0px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#六-实验测试结果" class="md-toc-link"><p>六、实验测试结果</p>
+</a>
+          </summary>
+        <div>
+          <details style="padding:0;;padding-left:24px;" open="">
+        <summary class="md-toc-link-wrapper">
+          <a href="#61-测试master-write--read交替通信" class="md-toc-link"><p>6.1 测试：Master Write + Read交替通信</p>
+</a>
+          </summary>
+        <div>
+          <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#slave串口输出" class="md-toc-link">
+            <p>Slave串口输出</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#master串口输出" class="md-toc-link">
+            <p>Master串口输出</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:42px">
+          <a href="#通信流程分析" class="md-toc-link">
+            <p>通信流程分析</p>
+
+          </a></div>
+        </div>
+      </details>
+    
+        </div>
+      </details>
+    <div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#七-关键代码文件说明" class="md-toc-link">
+            <p>七、关键代码文件说明</p>
+
+          </a></div><div class="md-toc-link-wrapper" style="padding:0;;display:list-item;list-style:square;margin-left:18px">
+          <a href="#八-总结" class="md-toc-link">
+            <p>八、总结</p>
+
+          </a></div>
+</div>
+<h1 id="一-概述目的">一、概述/目的 </h1>
+<ul>
+<li>使用瑞萨RX23E-A的RIIC0作为I2C Slave，配合STM32 I2C Master进行收发通信。记录使用Smart Configurator（SMC）生成的RIIC Slave驱动过程中遇到的问题、解决方案，以及RIIC中断配置的详细分析。</li>
+<li>本节使用i2c slave驱动类型是Code Generator 1.12.0,该驱动只是寄存器方式，与上一节使用的FIT的中间件方式不同，驱动会代码会更简洁。但是我们看见Zephyr使用的FIT驱动。</li>
+<li>瑞萨的i2c slave只能选择riic/r_i2c,不能选择sci，因为sci只支持master模式</li>
+</ul>
+<h1 id="二-硬件环境">二、硬件环境 </h1>
+<ul>
+<li><strong>Slave</strong>: RX23E-A (R5F523E6AxFL)</li>
+<li><strong>Master</strong>: STM32 (HAL_I2C)</li>
+<li><strong>I2C地址</strong>: 0x4A (7-bit), 寄存器写入0x94 (8-bit)</li>
+<li><strong>通信速率</strong>: 标准模式</li>
+<li><strong>接线</strong>: SCL=P16, SDA=P17 (已接上拉电阻)</li>
+</ul>
+<h1 id="三-smart-configurator配置要点">三、Smart Configurator配置要点 </h1>
+<h2 id="31-icier中断使能配置">3.1 ICIER中断使能配置 </h2>
+<p>使用Smart Configurator生成RIIC0代码时，<strong>必须在配置界面中勾选START和STOP中断使能</strong>。</p>
+<p>ICIER寄存器中与Slave相关的位：</p>
+<table>
+<thead>
+<tr>
+<th>位</th>
+<th>名称</th>
+<th>说明</th>
+<th>Slave必须?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bit0</td>
+<td>TMOIE</td>
+<td>超时中断</td>
+<td>建议开</td>
+</tr>
+<tr>
+<td>bit1</td>
+<td>ALIE</td>
+<td>仲裁丢失中断</td>
+<td>不需要</td>
+</tr>
+<tr>
+<td>bit2</td>
+<td><strong>STIE</strong></td>
+<td><strong>START条件检测</strong></td>
+<td><strong>必须开</strong></td>
+</tr>
+<tr>
+<td>bit3</td>
+<td><strong>SPIE</strong></td>
+<td><strong>STOP条件检测</strong></td>
+<td><strong>必须开</strong></td>
+</tr>
+<tr>
+<td>bit4</td>
+<td>NAKIE</td>
+<td>NACK接收中断</td>
+<td>可选</td>
+</tr>
+</tbody>
+</table>
+<p>如果未勾选STIE和SPIE，生成的代码如下：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token comment">// 未勾选STIE/SPIE时的生成结果</span>
+RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BYTE <span class="token operator">=</span> _01_IIC_TIMEOUT_INTERRUPT_ENABLE
+                 <span class="token operator">|</span> _02_IIC_ARBITRATION_LOST_INTERRUPT_ENABLE
+                 <span class="token operator">|</span> _00_IIC_START_CONDITION_INTERRUPT_DISABLE  <span class="token comment">// ← 未勾选</span>
+                 <span class="token operator">|</span> _00_IIC_STOP_CONDITION_INTERRUPT_DISABLE  <span class="token comment">// ← 未勾选</span>
+                 <span class="token operator">|</span> _10_IIC_NACK_INTERRUPT_ENABLE
+                 <span class="token operator">|</span> _20_IIC_RECEIVE_DATA_INTERRUPT_ENABLE
+                 <span class="token operator">|</span> _40_IIC_TRANSMIT_END_INTERRUPT_ENABLE
+                 <span class="token operator">|</span> _80_IIC_TRANSMIT_EMPTY_INTERRUPT_ENABLE<span class="token punctuation">;</span>
+</code></pre><p><strong>不勾选的后果</strong>：EEI0中断处理函数依赖STIE和SPIE来检测START/STOP条件，禁用后slave无法正常通信。</p>
+<h2 id="32-r_config_riic0_create调用">3.2 R_Config_RIIC0_Create()调用 </h2>
+<p><code>R_Config_RIIC0_Create()</code> 负责RIIC0模块的完整初始化：</p>
+<ul>
+<li>取消RIIC0模块停止状态（<code>MSTP(RIIC0) = 0</code>）</li>
+<li>配置从机地址（<code>SARL0 = 0x94</code>）</li>
+<li>配置ICIER中断使能寄存器</li>
+<li>配置中断优先级</li>
+<li>配置SCL/SDA引脚功能</li>
+</ul>
+<p><strong>注意</strong>：此函数在SystemInit中已调用，用户 <code>main()</code> 中无需重复调用，直接调用 <code>R_Config_RIIC0_Start()</code> 即可。</p>
+<h1 id="四-slave收发模式切换要点">四、Slave收发模式切换要点 </h1>
+<h2 id="41-smc驱动的核心限制">4.1 SMC驱动的核心限制 </h2>
+<p>SMC生成的RIIC Slave驱动<strong>一次只能处于一种模式</strong>：</p>
+<ul>
+<li><code>R_Config_RIIC0_Slave_Receive()</code> → 等待Master Write</li>
+<li><code>R_Config_RIIC0_Slave_Send()</code> → 等待Master Read</li>
+</ul>
+<p><strong>不能同时arm两个方向</strong>。每次transfer完成后必须重新arm。</p>
+<h2 id="42-状态机流程">4.2 状态机流程 </h2>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>Master Write流程:
+  Slave_Receive() → _15_WAIT_START
+    → START检测(STIE) → _10_RECEIVES_DATA
+    → 数据接收(RXI0) → _14_RECEIVES_STOP
+    → STOP检测(SPIE) → callback_receiveend() → g_rx_done=1
+
+Master Read流程:
+  Slave_Send() → _15_WAIT_START
+    → START检测(STIE) → _11_SENDS_DATA
+    → 数据发送(TXI0) → _12_SENDS_END
+    → TEI0中断 → _13_SENDS_STOP
+    → STOP检测(SPIE) → callback_transmitend() → g_tx_done=1
+</code></pre><h2 id="43-模式切换策略">4.3 模式切换策略 </h2>
+<p>由于SMC驱动只能arm一个方向，采用<strong>交替模式</strong>：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>初始化 → Slave_Receive()
+  ↓ Master WRITE → g_rx_done=1 → 处理数据 → Slave_Send()
+  ↓ Master READ  → g_tx_done=1 → 处理数据 → Slave_Receive()
+  ↓ 循环
+</code></pre><p><strong>限制</strong>：如果连续同方向transfer（Write→Write 或 Read→Read），第二次transfer会静默失败（无callback，状态自动复位）。</p>
+<h2 id="44-中断回调设计原则">4.4 中断回调设计原则 </h2>
+<p>回调函数（ISR上下文）只设标志位，不阻塞：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token comment">// Config_RIIC0_user.c — 回调函数</span>
+<span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">r_Config_RIIC0_callback_receiveend</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    g_rx_done <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 只设标志</span>
+<span class="token punctuation">}</span>
+
+<span class="token keyword keyword-static">static</span> <span class="token keyword keyword-void">void</span> <span class="token function">r_Config_RIIC0_callback_transmitend</span><span class="token punctuation">(</span><span class="token keyword keyword-void">void</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    g_tx_done <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span>  <span class="token comment">// 只设标志</span>
+<span class="token punctuation">}</span>
+</code></pre><p>主循环处理数据和模式切换：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token keyword keyword-while">while</span><span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>g_rx_done<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        g_rx_done <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"RX: %02x %02x %02x %02x %02x\n"</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">R_Config_RIIC0_Slave_Send</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 切换到发送模式</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>g_tx_done<span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        g_tx_done <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <span class="token function">printf</span><span class="token punctuation">(</span><span class="token string">"TX: %02x %02x %02x %02x %02x\n"</span><span class="token punctuation">,</span> <span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token function">R_Config_RIIC0_Slave_Receive</span><span class="token punctuation">(</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">.</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 切换到接收模式</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre><h1 id="五-riic中断详解eei0相关5个中断">五、RIIC中断详解（EEI0相关5个中断） </h1>
+<h2 id="51-中断总览">5.1 中断总览 </h2>
+<p>RIIC的EEI0（Error/Event Interrupt0）是一个复合中断源，由5个子中断共用同一个中断向量。通过ICIER寄存器的各个bit独立使能，通过ICSR2寄存器的状态位判断具体触发源。</p>
+<table>
+<thead>
+<tr>
+<th>中断名称</th>
+<th>ICIER位</th>
+<th>功能</th>
+<th>Slave必须?</th>
+<th>Master必须?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STIE</td>
+<td>bit2</td>
+<td>START条件检测</td>
+<td><strong>必须</strong></td>
+<td>不需要</td>
+</tr>
+<tr>
+<td>SPIE</td>
+<td>bit3</td>
+<td>STOP条件检测</td>
+<td><strong>必须</strong></td>
+<td>不需要</td>
+</tr>
+<tr>
+<td>TMOIE</td>
+<td>bit0</td>
+<td>超时检测</td>
+<td>建议开</td>
+<td>建议开</td>
+</tr>
+<tr>
+<td>ALIE</td>
+<td>bit1</td>
+<td>仲裁丢失</td>
+<td>不需要</td>
+<td>多主机时开</td>
+</tr>
+<tr>
+<td>NAKIE</td>
+<td>bit4</td>
+<td>NACK接收</td>
+<td>可选</td>
+<td>按需开</td>
+</tr>
+</tbody>
+</table>
+<h2 id="52-stie--start条件检测中断">5.2 STIE — START条件检测中断 </h2>
+<p><strong>功能</strong>：当RIIC检测到总线上的START条件时触发EEI0中断。</p>
+<p><strong>Slave模式下必须开的原因</strong>：</p>
+<p>EEI0处理函数中，只有STIE触发时才能将状态从 <code>_15_WAIT_START_CONDITION</code> 转移到活动状态：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token comment">// Config_RIIC0_user.c — EEI0处理函数</span>
+<span class="token comment">// Receive模式</span>
+<span class="token keyword keyword-else">else</span> <span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>_15_IIC_SLAVE_WAIT_START_CONDITION <span class="token operator">==</span> g_riic0_state<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RIIC0<span class="token punctuation">.</span>ICSR2<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>START <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>STIE <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>   <span class="token comment">// 关STIE</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>SPIE <span class="token operator">=</span> <span class="token number">1U</span><span class="token punctuation">;</span>   <span class="token comment">// 开SPIE，准备检测STOP</span>
+    g_riic0_state <span class="token operator">=</span> _10_IIC_SLAVE_RECEIVES_DATA<span class="token punctuation">;</span>  <span class="token comment">// 进入接收状态</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>不开的后果</strong>：slave永远停在 <code>_15_WAIT_START</code> 状态，无法响应任何transfer。</p>
+<p><strong>Master模式</strong>：Master自己产生START条件，硬件自动设置ST标志位，通过轮询或TEI/TXI中断即可知道transfer开始，不需要STIE中断。</p>
+<h2 id="53-spie--stop条件检测中断">5.3 SPIE — STOP条件检测中断 </h2>
+<p><strong>功能</strong>：当RIIC检测到总线上的STOP条件时触发EEI0中断。</p>
+<p><strong>Slave模式下必须开的原因</strong>：</p>
+<p>transfer完成后，必须通过SPIE触发EEI0来调用回调函数：</p>
+<pre data-role="codeBlock" data-info="c" class="language-c c"><code><span class="token comment">// Receive完成</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>_14_IIC_SLAVE_RECEIVES_STOP <span class="token operator">==</span> g_riic0_state<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RIIC0<span class="token punctuation">.</span>ICSR2<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>STOP <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>SPIE <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>   <span class="token comment">// 关SPIE</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>STIE <span class="token operator">=</span> <span class="token number">1U</span><span class="token punctuation">;</span>   <span class="token comment">// 开STIE，准备检测下次START</span>
+    <span class="token function">r_Config_RIIC0_callback_receiveend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 触发回调</span>
+<span class="token punctuation">}</span>
+
+<span class="token comment">// Transmit完成</span>
+<span class="token keyword keyword-if">if</span> <span class="token punctuation">(</span>_13_IIC_SLAVE_SENDS_STOP <span class="token operator">==</span> g_riic0_state<span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    RIIC0<span class="token punctuation">.</span>ICSR2<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>NACKF <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>
+    RIIC0<span class="token punctuation">.</span>ICSR2<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>STOP <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>SPIE <span class="token operator">=</span> <span class="token number">0U</span><span class="token punctuation">;</span>
+    RIIC0<span class="token punctuation">.</span>ICIER<span class="token punctuation">.</span>BIT<span class="token punctuation">.</span>STIE <span class="token operator">=</span> <span class="token number">1U</span><span class="token punctuation">;</span>
+    <span class="token function">r_Config_RIIC0_callback_transmitend</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>  <span class="token comment">// 触发回调</span>
+<span class="token punctuation">}</span>
+</code></pre><p><strong>不开的后果</strong>：transfer完成后无法触发回调，状态机卡死，slave无法响应下一次transfer。</p>
+<p><strong>Master模式</strong>：Master自己产生STOP条件，硬件自动设置SP标志位，通过轮询SP位或TEI中断即可，不需要SPIE中断。</p>
+<h2 id="54-tmoie--超时检测中断">5.4 TMOIE — 超时检测中断 </h2>
+<p><strong>功能</strong>：当SCL被拉低超过规定时间（由ICMR2的超时配置决定）时触发。</p>
+<p><strong>用途</strong>：总线死锁保护。如果slave异常把SCL拉低不放（如通信异常导致状态机卡住），超时中断会触发恢复流程。</p>
+<p><strong>不开的后果</strong>：正常通信不受影响，但失去总线死锁保护。如果SCL被异常拉低，总线将永久挂死，只能通过复位恢复。</p>
+<p><strong>建议</strong>：Slave和Master都建议开启，作为安全保护机制。</p>
+<h2 id="55-alie--仲裁丢失中断">5.5 ALIE — 仲裁丢失中断 </h2>
+<p><strong>功能</strong>：在多主机系统中，当两个主机同时发起START时，检测仲裁结果。仲裁丢失的一方会收到此中断。</p>
+<p><strong>Slave模式</strong>：Slave不发起START，不会参与仲裁，完全不需要。</p>
+<p><strong>Master模式</strong>：只有在多主机系统中才需要。单主机系统不需要。</p>
+<h2 id="56-nakie--nack接收中断">5.6 NAKIE — NACK接收中断 </h2>
+<p><strong>功能</strong>：当接收到NACK信号时触发EEI0中断。</p>
+<p><strong>Slave模式下可选的原因</strong>：</p>
+<p>在Slave Transmit模式下，即使不开NAKIE，流程也能正常完成：</p>
+<ol>
+<li>Slave发完所有字节 → <code>g_riic0_tx_count == 0</code> → 状态 → <code>_12_SENDS_END</code></li>
+<li>TEI0中断触发 → 状态 → <code>_13_SENDS_STOP</code></li>
+<li>Master发NACK → <strong>NAKIE=0，不触发EEI0</strong></li>
+<li>Master发STOP → SPIE触发EEI0 → 状态<code>_13</code> → <code>callback_transmitend()</code> ✓</li>
+</ol>
+<p>STOP条件最终还是会触发回调。NAKIE只是提前处理NACK，提高响应速度，但不是必须的。</p>
+<p><strong>Master模式</strong>：Master发完数据后slave可能NACK（如slave buffer满），此时需要NAKIE来检测NACK并决定重传或停止。</p>
+<h1 id="六-实验测试结果">六、实验测试结果 </h1>
+<h2 id="61-测试master-write--read交替通信">6.1 测试：Master Write + Read交替通信 </h2>
+<p>Master每3秒循环：Write 5字节 → 延时100ms → Read 5字节 → 延时3s</p>
+<h3 id="slave串口输出">Slave串口输出 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>helloworld
+SCI/SCIF Asynchronous Mode | Code Generator | 1.12.0
+RX: aa bb cc dd ee
+TX: 00 11 22 33 45
+RX: aa bb cc dd ef
+TX: 00 11 22 33 46
+RX: aa bb cc dd f0
+TX: 00 11 22 33 47
+</code></pre><h3 id="master串口输出">Master串口输出 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>helloworld!
+hi2c1 write:
+aa bb cc dd ee 
+hi2c1 read:
+00 11 22 33 45 
+hi2c1 write:
+aa bb cc dd ef 
+hi2c1 read:
+00 11 22 33 46 
+hi2c1 write:
+aa bb cc dd f0 
+hi2c1 read:
+00 11 22 33 47 
+</code></pre><h3 id="通信流程分析">通信流程分析 </h3>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>┌─────────────────────────────────────────────────────────────────┐
+│  第1轮                                                            │
+│  Master Write:  aa bb cc dd ee  →  Slave RX: aa bb cc dd ee      │
+│  Master Read:   ← 00 11 22 33 45  ←  Slave TX: 00 11 22 33 45  │
+├─────────────────────────────────────────────────────────────────┤
+│  第2轮                                                            │
+│  Master Write:  aa bb cc dd ef  →  Slave RX: aa bb cc dd ef      │
+│  Master Read:   ← 00 11 22 33 46  ←  Slave TX: 00 11 22 33 46  │
+├─────────────────────────────────────────────────────────────────┤
+│  第3轮                                                            │
+│  Master Write:  aa bb cc dd f0  →  Slave RX: aa bb cc dd f0      │
+│  Master Read:   ← 00 11 22 33 47  ←  Slave TX: 00 11 22 33 47  │
+└─────────────────────────────────────────────────────────────────┘
+</code></pre><ul>
+<li><strong>TX数据</strong>：Slave收到Write后，将每个字节+1作为Read应答</li>
+<li><strong>第4字节递增</strong>：Master每次Write的第4字节(0xEE→0xEF→0xF0)递增，Slave应答的第4字节(0x45→0x46→0x47)也对应递增</li>
+<li><strong>结果</strong>：通过 ✓</li>
+</ul>
+<h1 id="七-关键代码文件说明">七、关键代码文件说明 </h1>
+<table>
+<thead>
+<tr>
+<th>文件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>rx23e_i2c_slave.c</code></td>
+<td>主程序，包含main循环、标志位处理、模式切换</td>
+</tr>
+<tr>
+<td><code>Config_RIIC0.c</code></td>
+<td>SMC生成的RIIC0初始化和收发函数</td>
+</tr>
+<tr>
+<td><code>Config_RIIC0_user.c</code></td>
+<td>SMC生成的中断处理函数（需修改回调部分）</td>
+</tr>
+<tr>
+<td><code>Config_RIIC0.h</code></td>
+<td>RIIC0函数声明</td>
+</tr>
+</tbody>
+</table>
+<h1 id="八-总结">八、总结 </h1>
+<ol>
+<li>使用Smart Configurator生成RIIC Slave代码时，<strong>必须勾选STIE和SPIE中断使能</strong>，否则slave无法正常通信</li>
+<li>TMOIE建议开启作为总线保护，NAKIE可选，ALIE在单主机slave模式下不需要</li>
+</ol>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
